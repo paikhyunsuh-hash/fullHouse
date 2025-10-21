@@ -1,0 +1,148 @@
+.container {
+  width: 100%;
+  margin: 0px auto;
+}
+section {
+  margin: 0px auto;
+  width: 1200px;
+  height: 100vh;
+}
+/* VISUAL */
+#visual {
+  width: 100%;
+  background-image: url(../img/index/visual1.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.visualText {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.visualText h2 {
+  color: #fff;
+  font-size: 8.5vw;
+}
+.visualText span {
+  font-size: 4vw;
+  display: block;
+  color: #f1927b;
+}
+/* CON01 */
+#con01 {
+  position: relative;
+}
+.circle-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.5; /* semi-transparent */
+}
+
+/* CON02 */
+#con02 {
+  width: 100%;
+  background-color: #ddcbbe;
+}
+#con02 .inner {
+  width: 1200px;
+  height: 100%;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#con02 .innerLeft {
+  width: 50%;
+  height: 100%;
+  background-image: url(../img/index/con02.jpg);
+  background-position: center;
+  background-size: cover;
+}
+#con02 .innerRight {
+  width: 50%;
+  height: 100%;
+}
+#con02 .innerRight .imageList {
+  width: 250px;
+  height: 100%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#con02 .innerRight li {
+  width: 250px;
+  height: 200px;
+}
+#con02 .innerRight img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* CON03 */
+/* CON04 */
+#con04 {
+  width: 100%;
+  background-image: url(../img/index/footer.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+#con04 h2 {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #f1927b;
+}
+#con04 .ig {
+  width: 100%;
+  overflow: hidden;
+}
+#con04 .ig ul {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2380px;
+  animation: scroll 5s linear infinite;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0) translateY(-50%);
+  }
+  100% {
+    transform: translateX(-220px) translateY(-50%);
+  } /* li width + gap */
+}
+#con04 .ig ul li {
+  width: 200px;
+  height: 250px;
+  flex-shrink: 0;
+  position: relative;
+}
+#con04 .ig ul li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#con04 .ig ul li .hashTag {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+}
