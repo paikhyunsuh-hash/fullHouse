@@ -180,3 +180,100 @@ header nav ul li a {
 }
 
 /* FOOTER */
+
+/* 기본 스타일 - 모바일 우선 */
+footer {
+  background-color: #f1927b;
+  padding: 20px 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
+}
+footer .bottomLogo img {
+  filter: invert();
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.bottomInfo ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bottomInfo ul li {
+  margin-bottom: 8px;
+}
+
+.bottomLogo img {
+  width: 120px;
+  height: auto;
+}
+
+.bottomSns ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.bottomSns ul li a {
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.bottomSns ul li a:hover {
+  color: #0077ff;
+}
+
+/* 태블릿 스타일 (가로폭 768px 이상) */
+@media screen and (min-width: 768px) {
+  .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 0 40px;
+  }
+
+  .bottomInfo {
+    flex: 1;
+  }
+
+  .bottomLogo {
+    flex: 0 0 auto;
+  }
+
+  .bottomSns {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* PC 스타일 (가로폭 1024px 이상) */
+@media screen and (min-width: 1024px) {
+  footer {
+    padding: 40px 80px;
+  }
+
+  .bottomLogo img {
+    width: 150px;
+  }
+
+  .bottomInfo p {
+    font-size: 16px;
+  }
+
+  .bottomSns ul li a {
+    font-size: 24px;
+  }
+}
