@@ -154,16 +154,21 @@ a {
   position: absolute;
   bottom: 100px;
   right: 5%;
-  width: 30%;
-  height: 110%;
-  z-index: 0;
-  flex-shrink: 0;
+  width: 25%;
+
+  /* object-fit: cover; */
+  /* z-index: 0; */
+  /* flex-shrink: 0; */
 }
 
 /* #con03  */
+#con03 h2 {
+  color: #85bfc1;
+}
 #con03 {
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 #con03 ul {
@@ -174,7 +179,7 @@ a {
 #con03 li {
   width: 700px;
   flex-shrink: 0;
-  padding: 0px 30px;
+  padding: 0px 50px;
   box-sizing: border-box;
 }
 #con03 img {
