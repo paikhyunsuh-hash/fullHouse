@@ -31,6 +31,23 @@ section {
   display: block;
   color: #f1927b;
 }
+#visual .bottom {
+  color: #fff;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+#visual .bottom .bar {
+  width: 200px;
+  height: 1px;
+  background-color: #fff;
+}
+#visual .bottom p {
+  margin: 0px 50px;
+}
 /* CON01 */
 #con01 {
   position: relative;
