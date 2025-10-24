@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservation - Luxury Ocean Resort</title>
+    <!-- jQuery 추가 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      /* ============================================
+           기본 설정 - 여기서 전체 폰트와 색상을 수정하세요
+           ============================================ */
+      :root {
+        /* 사용자 요청에 따라 색상 변경 */
+        --color-primary: #85bfc1; /* 메인 프라이머리 색상 */
+        --color-secondary: #f1927b; /* 세컨더리 색상 */
+        --color-background: #ffefef; /* 배경 색상 */
+        --color-white: #ffffff;
+        --color-text: #333333;
+        --color-text-light: #666666;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--color-text);
+        line-height: 1.6;
+        /* 페이지 최대 너비를 1500px로 제한 */
+        max-width: 1500px;
+        margin: 0 auto;
+      }
+
+      /* ============================================
+           헤더 네비게이션 - 새로 추가
+           ============================================ */
+      /* 이미지와 동일한 헤더 추가 */
+      .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 2rem 4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      .logo svg {
+        width: 50px;
+        height: 50px;
+        fill: white;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 3rem;
+        list-style: none;
+      }
+
+      .nav-menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 0.95rem;
+        letter-spacing: 0.1rem;
+        font-weight: 300;
+        transition: opacity 0.3s;
+      }
+
+      .nav-menu a:hover {
+        opacity: 0.7;
+      }
+
+      /* ============================================
+           히어로 섹션 - 메인 이미지와 제목
+           ============================================ */
+      .hero {
+        position: relative;
+        height: 100vh;
+        background: linear-gradient(
+            rgba(255, 255, 250, 0.1),
+            rgba(255, 255, 250, 0.1)
+          ),
+          url("https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1600")
+            center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-content {
+        color: white;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero h1 {
+        font-size: 5rem;
+        font-weight: 300;
+        letter-spacing: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        letter-spacing: 0.3rem;
+        font-weight: 300;
+        opacity: 0.95;
+      }
+
+      /* 히어로 하단 네비게이션 화살표 */
+      .hero-nav {
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 30rem;
+        align-items: center;
+      }
+      .bottom {
+        color: #fff;
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+      }
+      .bottom .bar {
+        width: 400px;
+        height: 1px;
+        background-color: #fff;
+      }
+      .bottom p {
+        margin: 0px 50px;
+      }
+      .hero-nav button {
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+        letter-spacing: 0.1rem;
+      }
+
+      .hero-nav button:hover {
+        opacity: 1;
+      }
+
+      /* ============================================
+           예약 섹션 - 새로운 디자인
+           ============================================ */
+      .booking-section {
+        background: var(--color-background);
+        padding: 5rem 2rem;
+      }
+
+      .booking-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      /* 새로운 예약 섹션 레이아웃 */
+      .booking-card {
+        background: var(--color-white);
+        border-radius: 30px;
+        padding: 4rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        position: relative;
+        border: 2px solid #e8e8e8;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      /* 왼쪽: 예약 정보 */
+      .booking-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .booking-info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+
+      .booking-icon {
+        font-size: 2rem;
+        color: var(--color-text);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5f5f5;
+        border-radius: 10px;
+        flex-shrink: 0;
+      }
+
+      .booking-info-text h3 {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: var(--color-text);
+      }
+
+      .booking-info-text p {
+        font-size: 1rem;
+        color: var(--color-text-light);
+        line-height: 1.6;
+      }
+
+      /* 중앙: booking now 텍스트 */
+      .booking-now-text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.5rem;
+        font-weight: 300;
+        color: var(--color-primary);
+        letter-spacing: 0.2rem;
+        z-index: 1;
+      }
+
+      /* 오른쪽: 이미지와 텍스트 */
+      .booking-right {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .booking-image-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 350px;
+      }
+
+      .booking-image {
+        width: 100%;
+        height: 280px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .booking-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* 세로 텍스트 */
+      /* FULLHOUSE와 Reservation을 두 줄로 분리하고 위치 조정 */
+      .vertical-text {
+        position: absolute;
+        right: -60px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .vertical-text .fullhouse,
+      .vertical-text .reservation {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        font-size: 2rem;
+        letter-spacing: 0.3rem;
+      }
+
+      .vertical-text .fullhouse {
+        font-weight: 600;
+        color: var(--color-text);
+      }
+
+      .vertical-text .reservation {
+        font-weight: 300;
+        color: var(--color-primary);
+      }
+
+      /* ============================================
+           사진 핫포인트 섹션 - PEACHBEACH POINT
+           ============================================ */
+      /* 이미지와 동일한 레이아웃으로 완전히 재구성 */
+      .hotpoint-section {
+        background: var(--color-primary);
+        padding: 5rem 2rem;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* 배경 워터마크 텍스트 */
+      .hotpoint-section::before {
+        content: "PEACHBEACH POINT";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 8rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.1);
+        letter-spacing: 1rem;
+        white-space: nowrap;
+        z-index: 0;
+      }
+
+      .hotpoint-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hotpoint-title {
+        font-size: 3.5rem;
+        font-weight: 300;
+        letter-spacing: 0.5rem;
+        margin-bottom: 3.5rem;
+        text-align: left;
+      }
+
+      /* 새로운 그리드 레이아웃: 왼쪽 큰 이미지, 오른쪽 2개 */
+      .hotpoint-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 2rem;
+      }
+
+      .hotpoint-item {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .hotpoint-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* 왼쪽 큰 이미지 */
+      .hotpoint-item.large {
+        grid-row: span 2;
+        height: 100%;
+        min-height: 500px;
+      }
+
+      /* 오른쪽 중간 이미지 */
+      .hotpoint-item.medium {
+        height: 350px;
+      }
+
+      /* 오른쪽 상단 작은 이미지 */
+      .hotpoint-item.small {
+        height: 250px;
+      }
+
+      /* 이미지 설명 오버레이 */
+      .hotpoint-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2rem;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      }
+
+      .hotpoint-caption h3 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.1rem;
+      }
+
+      .hotpoint-caption p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      /* ============================================
+           객실 정보 섹션
+           ============================================ */
+      .rooms-section {
+        background: var(--color-background);
+        padding: 5rem 2rem;
+        min-height: 800px;
+      }
+
+      .rooms-container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      /* 새로운 레이아웃: 왼쪽 큰 이미지, 오른쪽 정보 */
+      .rooms-main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+        align-items: start;
+      }
+
+      /* 왼쪽: 큰 메인 이미지 */
+      .rooms-main-image {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        height: 600px;
+      }
+
+      .rooms-main-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.5s ease;
+      }
+
+      /* 오른쪽: 제목과 정보 */
+      .rooms-info-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      /* 제목과 작은 썸네일을 나란히 배치 */
+      .rooms-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+      }
+
+      .rooms-title-text {
+        flex: 1;
+      }
+
+      .rooms-title-text h2 {
+        font-size: 3rem;
+        font-weight: 300;
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        letter-spacing: 0.05rem;
+      }
+
+      .rooms-title-text p {
+        color: var(--color-text-light);
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* 오른쪽 상단 작은 썸네일 이미지에 border-radius 추가 */
+      .rooms-small-thumb {
+        width: 200px;
+        height: 140px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        flex-shrink: 0;
+      }
+
+      .rooms-small-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.5s ease;
+      }
+
+      /* 객실 상세 정보 박스 */
+      .rooms-details-box {
+        background: var(--color-white);
+        padding: 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .rooms-details-box h3 {
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+      }
+
+      .room-type {
+        font-size: 1.2rem;
+        color: var(--color-text-light);
+        margin-bottom: 1rem;
+      }
+
+      .room-specs {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        color: var(--color-text-light);
+      }
+
+      .room-specs p {
+        margin: 0.5rem 0;
+        font-size: 0.95rem;
+      }
+
+      /* 가격 테이블 */
+      .price-table {
+        margin-top: 2rem;
+        border-top: 1px solid #e0e0e0;
+        padding-top: 1.5rem;
+      }
+
+      .price-table h4 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: var(--color-text-light);
+      }
+
+      .price-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+      }
+
+      .price-item {
+        text-align: center;
+        padding: 1rem;
+        background: #f9f9f9;
+        border-radius: 8px;
+      }
+
+      .price-item .date {
+        font-size: 0.85rem;
+        color: var(--color-text-light);
+        margin-bottom: 0.5rem;
+      }
+
+      .price-item .amount {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--color-text);
+      }
+
+      /* 어메니티 그리드 */
+      .amenities-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .amenity-item {
+        text-align: center;
+        padding: 1rem 0.8rem;
+        background: #f9f9f9;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        transition: all 0.3s;
+      }
+
+      .amenity-item:hover {
+        background: var(--color-primary);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      /* 썸네일 슬라이더 */
+      .rooms-slider-container {
+        position: relative;
+        margin-top: 3rem;
+      }
+
+      .slider-controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      .slider-btn {
+        background: var(--color-white);
+        border: 1px solid #e0e0e0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 1.2rem;
+        color: var(--color-text-light);
+        flex-shrink: 0;
+      }
+
+      .slider-btn:hover {
+        background: var(--color-primary);
+        color: white;
+        border-color: var(--color-primary);
+      }
+
+      .rooms-thumbnails {
+        display: flex;
+        gap: 1.5rem;
+        overflow: hidden;
+        flex: 1;
+      }
+
+      .room-thumb {
+        flex: 0 0 calc(25% - 1.125rem);
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border: 3px solid transparent;
+      }
+
+      .room-thumb:hover {
+        transform: scale(1.05);
+      }
+
+      .room-thumb.active {
+        border-color: var(--color-primary);
+        box-shadow: 0 6px 20px rgba(168, 216, 216, 0.4);
+      }
+
+      .room-thumb img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* 프로그레스 바 추가 */
+      .slider-progress {
+        margin-top: 1.5rem;
+        height: 4px;
+        background: #e0e0e0;
+        border-radius: 2px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .slider-progress-bar {
+        height: 100%;
+        background: var(--color-primary);
+        border-radius: 2px;
+        transition: width 0.3s ease;
+      }
+
+      /* ============================================
+           규칙 섹션 - 하우스 룰 & 환불 규정
+           ============================================ */
+      .rules-section {
+        background: var(--color-background);
+        padding: 0 2rem 5rem;
+      }
+
+      .rules-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .rules-content {
+        background: var(--color-white);
+        padding: 3rem;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .rules-content h3 {
+        color: var(--color-primary);
+        font-size: 2rem;
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.1rem;
+      }
+
+      .rules-content ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 2.5rem;
+      }
+
+      .rules-content li {
+        padding: 0.8rem 0;
+        padding-left: 2rem;
+        position: relative;
+        color: var(--color-text-light);
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .rules-content li:before {
+        content: "•";
+        position: absolute;
+        left: 0.5rem;
+        color: var(--color-primary);
+        font-size: 1.3rem;
+      }
+
+      /* ============================================
+           푸터
+           ============================================ */
+      .footer {
+        background: var(--color-secondary);
+        color: white;
+        padding: 3rem 2rem;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-info {
+        text-align: left;
+      }
+
+      .footer-info p {
+        margin: 0.5rem 0;
+        font-size: 0.95rem;
+        opacity: 0.95;
+      }
+
+      .footer-info strong {
+        font-size: 1.2rem;
+        letter-spacing: 0.05rem;
+      }
+
+      .footer-right {
+        text-align: right;
+      }
+
+      .footer-right p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+
+      /* ============================================
+           이미지 모달
+           ============================================ */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+      }
+
+      .close {
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        color: #f1f1f1;
+        font-size: 45px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      .close:hover {
+        color: var(--color-secondary);
+      }
+
+      /* ============================================
+           반응형 디자인 - 모바일
+           ============================================ */
+      @media (max-width: 768px) {
+        .header {
+          padding: 1.5rem 2rem;
+        }
+
+        .nav-menu {
+          gap: 1.5rem;
+        }
+
+        .nav-menu a {
+          font-size: 0.8rem;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+          letter-spacing: 0.5rem;
+        }
+
+        .hero p {
+          font-size: 0.9rem;
+        }
+
+        .booking-card {
+          grid-template-columns: 1fr;
+          padding: 2.5rem;
+        }
+
+        .booking-now-text {
+          position: static;
+          transform: none;
+          text-align: center;
+          margin: 2rem 0;
+        }
+
+        .vertical-text {
+          display: none;
+        }
+
+        .booking-right {
+          align-items: center;
+        }
+
+        .rooms-main-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .hotpoint-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hotpoint-item.large,
+        .hotpoint-item.medium,
+        .hotpoint-item.small {
+          grid-row: span 1;
+          height: 300px;
+          min-height: auto;
+        }
+
+        .hotpoint-section::before {
+          font-size: 3rem;
+        }
+
+        .amenities-grid,
+        .price-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer-content {
+          flex-direction: column;
+          gap: 2rem;
+          text-align: center;
+        }
+
+        .footer-info,
+        .footer-right {
+          text-align: center;
+        }
+
+        .hotpoint-title {
+          font-size: 2rem;
+          letter-spacing: 0.3rem;
+        }
+
+        .rooms-title {
+          flex-direction: column;
+        }
+
+        .rooms-title-text h2 {
+          font-size: 2rem;
+        }
+
+        .rooms-main-image {
+          height: 400px;
+        }
+
+        .room-thumb {
+          flex: 0 0 calc(50% - 0.75rem);
+        }
+
+        .rooms-small-thumb {
+          width: 100%;
+          height: 180px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============================================
+         헤더 네비게이션
+         ============================================ -->
+    <!-- 이미지와 동일한 헤더 추가 -->
+    <header class="header">
+      <div class="logo">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 50 L50 20 L80 50 L50 40 Z" />
+          <rect x="35" y="50" width="30" height="30" />
+          <path
+            d="M10 85 Q50 75 90 85"
+            stroke="white"
+            fill="none"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#reservation">RESERVATION</a></li>
+          <li><a href="#rooms">ROOMS</a></li>
+          <li><a href="#facilities">FACILITIES</a></li>
+          <li><a href="#location">LOCATION</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ============================================
+         히어로 섹션
+         이미지 URL을 변경하려면 background url을 수정하세요
+         ============================================ -->
+    <section class="hero" id="reservation">
+      <div class="hero-content">
+        <h1>RESERVATION</h1>
+        <p>
+          탁 트인 바다가에 자리한 풀하우스는 공간에 담겨진 바다를 더한 바다뷰
+          입니다.<br />풀하우스는 섬 깊숙이 바다뷰로 제주도 특유의 섬 자연적인
+          감성 바다 그 자체로 즐길 수 있습니다.
+        </p>
+      </div>
+      <div class="hero-nav">
+        <button>Prev</button>
+        <div class="bottom">
+          <div class="bar"><p></p></div>
+        </div>
+        <button>Next</button>
+      </div>
+    </section>
+
+    <!-- ============================================
+         예약 섹션 - 새로운 디자인
+         ============================================ -->
+    <section class="booking-section">
+      <div class="booking-container">
+        <div class="booking-card">
+          <!-- 왼쪽: 예약 정보 -->
+          <div class="booking-info">
+            <div class="booking-info-item">
+              <div class="booking-icon">📅</div>
+              <div class="booking-info-text">
+                <h3>예약안내</h3>
+                <p>실시간 + 전화</p>
+              </div>
+            </div>
+
+            <div class="booking-info-item">
+              <div class="booking-icon">📞</div>
+              <div class="booking-info-text">
+                <h3>예약전화</h3>
+                <p>010-2025-1017</p>
+              </div>
+            </div>
+
+            <div class="booking-info-item">
+              <div class="booking-icon">💵</div>
+              <div class="booking-info-text">
+                <h3>예약계좌</h3>
+                <p>123-456-789787-54<br />기업은행 (예금주 : 코랄트리풀빌라)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 중앙: booking now 텍스트 -->
+          <div class="booking-now-text">booking now</div>
+
+          <!-- 오른쪽: 이미지와 세로 텍스트 -->
+          <div class="booking-right">
+            <div class="booking-image-wrapper">
+              <div class="booking-image">
+                <img
+                  src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800"
+                  alt="Resort Pool View"
+                />
+              </div>
+              <!-- 세로 텍스트를 두 줄로 분리 -->
+              <div class="vertical-text">
+                <span class="fullhouse">FULLHOUSE</span>
+                <span class="reservation">Reservation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         사진 핫포인트 섹션 - PEACHBEACH POINT
+         이미지를 변경하려면 각 img의 src를 수정하세요
+         ============================================ -->
+    <!-- 이미지와 동일한 레이아웃으로 완전히 재구성 -->
+    <section class="hotpoint-section" id="facilities">
+      <div class="hotpoint-container">
+        <h2 class="hotpoint-title">PEACHBEACH POINT</h2>
+        <div class="hotpoint-grid">
+          <!-- 왼쪽 큰 이미지 -->
+          <div class="hotpoint-item large">
+            <img
+              src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800"
+              alt="Private pool"
+            />
+            <div class="hotpoint-caption">
+              <h3>Private pool</h3>
+              <p>
+                당신만의 프라이빗 풀에서 여유를 만끽하세요.<br />바다 바람
+                전경을 감상하며 편안함의 극치를 느낄 수 있습니다.<br />프라이빗
+                풀은 편안 여유로운 당신 만의 공간을 제공합니다.
+              </p>
+            </div>
+          </div>
+
+          <!-- 오른쪽 상단 작은 이미지 -->
+          <div class="hotpoint-item small">
+            <img
+              src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600"
+              alt="Barbeque"
+            />
+            <div class="hotpoint-caption">
+              <h3>Barbeque</h3>
+              <p>
+                파라다이스에서 즐기는 프라이빗 바비큐 파티. 바다를 바라보며
+                신선한 식재료로 만든 요리를 즐기세요.
+              </p>
+            </div>
+          </div>
+
+          <!-- 오른쪽 중간 이미지 -->
+          <div class="hotpoint-item medium">
+            <img
+              src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600"
+              alt="Jacuzzi"
+            />
+            <div class="hotpoint-caption">
+              <h3>Jacuzzi</h3>
+              <p>
+                특별한 바쿠지를 당신 바다 뷰를 함께 즐길 수 있습니다.<br />따뜻한
+                물에 몸을 담그고 바다를 바라보며 힐링의 시간을 가지세요.<br />럭스한
+                여유로움을 경험할 수 있습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         객실 정보 섹션
+         ============================================ -->
+    <section class="rooms-section" id="rooms">
+      <div class="rooms-container">
+        <div class="rooms-main-content">
+          <!-- 왼쪽: 큰 메인 이미지 -->
+          <div class="rooms-main-image">
+            <img
+              id="mainRoomImage"
+              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200"
+              alt="Main Room View"
+            />
+          </div>
+
+          <!-- 오른쪽: 제목과 정보 -->
+          <div class="rooms-info-panel">
+            <!-- 제목과 작은 썸네일을 나란히 배치 -->
+            <div class="rooms-title">
+              <div class="rooms-title-text">
+                <h2 id="roomsMainTitle">All Rooms<br />Have Oceanview</h2>
+                <p id="roomsMainDesc">
+                  모든 객실에서 아름다운 바다 전망을 감상하실 수 있습니다
+                </p>
+              </div>
+              <!-- 오른쪽 상단 작은 썸네일 -->
+              <div class="rooms-small-thumb">
+                <img
+                  id="smallThumbImage"
+                  src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=400"
+                  alt="Small Thumb"
+                />
+              </div>
+            </div>
+
+            <div class="rooms-details-box">
+              <h3>객실 정보</h3>
+              <div class="room-type" id="roomType">프라이빗 2동</div>
+
+              <div class="room-specs" id="roomSpecs">
+                <p><strong>구조:</strong></p>
+                <p>침대룸A(싱글) + 침대룸B(싱글,퀸1) + 화장실2 + 거실1</p>
+                <p>55평(약182㎡)</p>
+                <p>독채, 테라스바베큐가능, 풀빌라, 바다전망, 복층</p>
+                <br />
+                <p><strong>기준인원:</strong></p>
+                <p>기준 4명 ~ 최대 6명 / 4명 초과시 추가요금 발생</p>
+              </div>
+
+              <!-- 가격 테이블 -->
+              <div class="price-table">
+                <h4 id="priceTableTitle">
+                  기준 4명 ~ 최대 6명 / 4명 초과시 추가요금 발생
+                </h4>
+                <div class="price-grid" id="priceGrid">
+                  <div class="price-item">
+                    <div class="date">11/01 (금)</div>
+                    <div class="amount">340,000</div>
+                  </div>
+                  <div class="price-item">
+                    <div class="date">11/02 (토)</div>
+                    <div class="amount">340,000</div>
+                  </div>
+                  <div class="price-item">
+                    <div class="date">11/03 (일)</div>
+                    <div class="amount">340,000</div>
+                  </div>
+                  <div class="price-item">
+                    <div class="date">11/04 (월)</div>
+                    <div class="amount">340,000</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 어메니티 -->
+              <div class="amenities-grid" id="amenitiesGrid">
+                <div class="amenity-item">🛏️ 킹사이즈 베드</div>
+                <div class="amenity-item">📺 스마트 TV</div>
+                <div class="amenity-item">❄️ 에어컨</div>
+                <div class="amenity-item">🛁 욕조</div>
+                <div class="amenity-item">☕ 미니바</div>
+                <div class="amenity-item">📶 무료 WiFi</div>
+                <div class="amenity-item">🔒 금고</div>
+                <div class="amenity-item">🌊 발코니</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 썸네일 슬라이더 -->
+        <div class="rooms-slider-container">
+          <div class="slider-controls">
+            <button class="slider-btn" id="prevBtn">‹</button>
+            <div class="rooms-thumbnails" id="thumbnailsContainer">
+              <!-- 썸네일은 JavaScript로 동적 생성 -->
+            </div>
+            <button class="slider-btn" id="nextBtn">›</button>
+          </div>
+          <!-- 프로그레스 바 추가 -->
+          <div class="slider-progress">
+            <div class="slider-progress-bar" id="progressBar"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         규칙 섹션
+         텍스트를 수정하려면 li 태그 안의 내용을 변경하세요
+         ============================================ -->
+    <section class="rules-section">
+      <div class="rules-container">
+        <div class="rules-content">
+          <h3>House rules</h3>
+          <ul>
+            <li>체크인: 오후 3시 이후 / 체크아웃: 오전 11시까지</li>
+            <li>객실 내 금연입니다. 흡연은 지정된 장소에서만 가능합니다.</li>
+            <li>반려동물 동반은 불가능합니다.</li>
+            <li>조용한 시간: 오후 10시 ~ 오전 7시</li>
+            <li>추가 인원 입실 시 추가 요금이 발생할 수 있습니다.</li>
+          </ul>
+
+          <h3>Refund rules</h3>
+          <ul>
+            <li>체크인 7일 전 취소: 100% 환불</li>
+            <li>체크인 3~6일 전 취소: 50% 환불</li>
+            <li>체크인 2일 전 ~ 당일 취소: 환불 불가</li>
+            <li>노쇼(No-show)의 경우 환불이 불가능합니다.</li>
+            <li>천재지변 등 불가피한 사유의 경우 개별 협의 가능합니다.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         푸터
+         연락처 정보를 수정하려면 아래 텍스트를 변경하세요
+         ============================================ -->
+    <footer class="footer" id="location">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p><strong>Luxury Ocean Resort</strong></p>
+          <p>📍 123 Beach Road, Paradise Island</p>
+          <p>📞 +82-123-4567</p>
+          <p>✉️ info@oceanresort.com</p>
+        </div>
+        <div class="footer-right">
+          <p>&copy; 2025 Ocean Resort. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 이미지 확대 모달 -->
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImage" />
+    </div>
+
+    <!-- ============================================
+         JavaScript - jQuery 사용
+         ============================================ -->
+    <script>
+      $(document).ready(function () {
+        // 객실 데이터
+        var roomsData = [
+          {
+            mainImage:
+              "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200",
+            thumbImage:
+              "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400",
+            smallThumb:
+              "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=400",
+            title: "All Rooms<br>Have Oceanview",
+            description:
+              "모든 객실에서 아름다운 바다 전망을 감상하실 수 있습니다",
+            type: "프라이빗 2동",
+            specs:
+              "<p><strong>구조:</strong></p><p>침대룸A(싱글) + 침대룸B(싱글,퀸1) + 화장실2 + 거실1</p><p>55평(약182㎡)</p><p>독채, 테라스바베큐가능, 풀빌라, 바다전망, 복층</p><br><p><strong>기준인원:</strong></p><p>기준 4명 ~ 최대 6명 / 4명 초과시 추가요금 발생</p>",
+            priceTitle: "기준 4명 ~ 최대 6명 / 4명 초과시 추가요금 발생",
+            prices: [
+              { date: "11/01 (금)", amount: "340,000" },
+              { date: "11/02 (토)", amount: "340,000" },
+              { date: "11/03 (일)", amount: "340,000" },
+              { date: "11/04 (월)", amount: "340,000" },
+            ],
+            amenities: [
+              "🛏️ 킹사이즈 베드",
+              "📺 스마트 TV",
+              "❄️ 에어컨",
+              "🛁 욕조",
+              "☕ 미니바",
+              "📶 무료 WiFi",
+              "🔒 금고",
+              "🌊 발코니",
+            ],
+          },
+          {
+            mainImage:
+              "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=1200",
+            thumbImage:
+              "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400",
+            smallThumb:
+              "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400",
+            title: "Deluxe Suite<br>Ocean View",
+            description:
+              "넓은 공간과 럭셔리한 인테리어가 돋보이는 디럭스 스위트",
+            type: "디럭스 스위트",
+            specs:
+              "<p><strong>구조:</strong></p><p>마스터 침실 + 거실 + 욕실2 + 발코니</p><p>45평(약149㎡)</p><p>오션뷰, 킹사이즈 베드, 욕조, 샤워부스</p><br><p><strong>기준인원:</strong></p><p>기준 2명 ~ 최대 4명 / 2명 초과시 추가요금 발생</p>",
+            priceTitle: "기준 2명 ~ 최대 4명 / 2명 초과시 추가요금 발생",
+            prices: [
+              { date: "11/01 (금)", amount: "280,000" },
+              { date: "11/02 (토)", amount: "320,000" },
+              { date: "11/03 (일)", amount: "280,000" },
+              { date: "11/04 (월)", amount: "250,000" },
+            ],
+            amenities: [
+              "🛏️ 킹사이즈 베드",
+              "📺 스마트 TV",
+              "❄️ 에어컨",
+              "🛁 욕조",
+              "☕ 미니바",
+              "📶 무료 WiFi",
+              "🔒 금고",
+              "🌊 발코니",
+            ],
+          },
+          {
+            mainImage:
+              "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
+            thumbImage:
+              "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400",
+            smallThumb:
+              "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400",
+            title: "Premium Pool<br>Villa Suite",
+            description: "프라이빗 풀이 있는 최고급 풀빌라 스위트",
+            type: "프리미엄 풀빌라",
+            specs:
+              "<p><strong>구조:</strong></p><p>침실2 + 거실 + 욕실2 + 프라이빗 풀 + 테라스</p><p>65평(약215㎡)</p><p>독채, 프라이빗 풀, 바베큐 가능, 오션뷰</p><br><p><strong>기준인원:</strong></p><p>기준 4명 ~ 최대 6명 / 4명 초과시 추가요금 발생</p>",
+            priceTitle: "기준 4명 ~ 최대 6명 / 4명 초과시 추가요금 발생",
+            prices: [
+              { date: "11/01 (금)", amount: "450,000" },
+              { date: "11/02 (토)", amount: "500,000" },
+              { date: "11/03 (일)", amount: "450,000" },
+              { date: "11/04 (월)", amount: "420,000" },
+            ],
+            amenities: [
+              "🛏️ 킹사이즈 베드",
+              "📺 스마트 TV",
+              "❄️ 에어컨",
+              "🛁 욕조",
+              "☕ 미니바",
+              "📶 무료 WiFi",
+              "🏊 프라이빗 풀",
+              "🌊 오션뷰",
+            ],
+          },
+          {
+            mainImage:
+              "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200",
+            thumbImage:
+              "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400",
+            smallThumb:
+              "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400",
+            title: "Luxury Spa<br>Suite",
+            description: "스파 시설이 완비된 럭셔리 스위트룸",
+            type: "럭셔리 스파 스위트",
+            specs:
+              "<p><strong>구조:</strong></p><p>침실 + 스파룸 + 욕실 + 발코니</p><p>40평(약132㎡)</p><p>스파 욕조, 사우나, 오션뷰, 킹사이즈 베드</p><br><p><strong>기준인원:</strong></p><p>기준 2명 ~ 최대 3명 / 2명 초과시 추가요금 발생</p>",
+            priceTitle: "기준 2명 ~ 최대 3명 / 2명 초과시 추가요금 발생",
+            prices: [
+              { date: "11/01 (금)", amount: "380,000" },
+              { date: "11/02 (토)", amount: "420,000" },
+              { date: "11/03 (일)", amount: "380,000" },
+              { date: "11/04 (월)", amount: "350,000" },
+            ],
+            amenities: [
+              "🛏️ 킹사이즈 베드",
+              "📺 스마트 TV",
+              "❄️ 에어컨",
+              "🛁 스파 욕조",
+              "🧖 사우나",
+              "📶 무료 WiFi",
+              "🔒 금고",
+              "🌊 오션뷰",
+            ],
+          },
+        ];
+
+        var currentIndex = 0;
+        var autoSlideTimer;
+
+        // 썸네일 만들기
+        function makeThumbnails() {
+          $("#thumbnailsContainer").empty();
+
+          for (var i = 0; i < roomsData.length; i++) {
+            var activeClass = i === 0 ? "active" : "";
+            var thumbHtml =
+              '<div class="room-thumb ' +
+              activeClass +
+              '" data-index="' +
+              i +
+              '">' +
+              '<img src="' +
+              roomsData[i].thumbImage +
+              '" alt="Room ' +
+              (i + 1) +
+              '">' +
+              "</div>";
+            $("#thumbnailsContainer").append(thumbHtml);
+          }
+        }
+
+        // 객실 정보 바꾸기
+        function changeRoom(index) {
+          var room = roomsData[index];
+
+          // 이미지 바꾸기
+          $("#mainRoomImage").fadeOut(300, function () {
+            $(this).attr("src", room.mainImage).fadeIn(300);
+          });
+
+          $("#smallThumbImage").fadeOut(300, function () {
+            $(this).attr("src", room.smallThumb).fadeIn(300);
+          });
+
+          // 텍스트 바꾸기
+          $("#roomsMainTitle").html(room.title);
+          $("#roomsMainDesc").text(room.description);
+          $("#roomType").text(room.type);
+          $("#roomSpecs").html(room.specs);
+          $("#priceTableTitle").text(room.priceTitle);
+
+          // 가격 바꾸기
+          $("#priceGrid").empty();
+          for (var i = 0; i < room.prices.length; i++) {
+            var priceHtml =
+              '<div class="price-item">' +
+              '<div class="date">' +
+              room.prices[i].date +
+              "</div>" +
+              '<div class="amount">' +
+              room.prices[i].amount +
+              "</div>" +
+              "</div>";
+            $("#priceGrid").append(priceHtml);
+          }
+
+          // 어메니티 바꾸기
+          $("#amenitiesGrid").empty();
+          for (var i = 0; i < room.amenities.length; i++) {
+            $("#amenitiesGrid").append(
+              '<div class="amenity-item">' + room.amenities[i] + "</div>"
+            );
+          }
+
+          // 썸네일 활성화
+          $(".room-thumb").removeClass("active");
+          $('.room-thumb[data-index="' + index + '"]').addClass("active");
+
+          // 프로그레스 바 업데이트
+          var percent = ((index + 1) / roomsData.length) * 100;
+          $("#progressBar").css("width", percent + "%");
+        }
+
+        // 썸네일 클릭
+        $(document).on("click", ".room-thumb", function () {
+          currentIndex = $(this).data("index");
+          changeRoom(currentIndex);
+          stopAutoSlide();
+          startAutoSlide();
+        });
+
+        // 이전 버튼
+        $("#prevBtn").click(function () {
+          currentIndex = currentIndex - 1;
+          if (currentIndex < 0) {
+            currentIndex = roomsData.length - 1;
+          }
+          changeRoom(currentIndex);
+          stopAutoSlide();
+          startAutoSlide();
+        });
+
+        // 다음 버튼
+        $("#nextBtn").click(function () {
+          currentIndex = currentIndex + 1;
+          if (currentIndex >= roomsData.length) {
+            currentIndex = 0;
+          }
+          changeRoom(currentIndex);
+          stopAutoSlide();
+          startAutoSlide();
+        });
+
+        // 자동 슬라이드 시작
+        function startAutoSlide() {
+          autoSlideTimer = setInterval(function () {
+            currentIndex = currentIndex + 1;
+            if (currentIndex >= roomsData.length) {
+              currentIndex = 0;
+            }
+            changeRoom(currentIndex);
+          }, 3000);
+        }
+
+        // 자동 슬라이드 멈추기
+        function stopAutoSlide() {
+          clearInterval(autoSlideTimer);
+        }
+
+        // 이미지 모달
+        $(".hotpoint-item img").click(function () {
+          $("#imageModal").fadeIn(300);
+          $("#modalImage").attr("src", $(this).attr("src"));
+        });
+
+        $(".close").click(function () {
+          $("#imageModal").fadeOut(300);
+        });
+
+        $("#imageModal").click(function (e) {
+          if (e.target === this) {
+            $("#imageModal").fadeOut(300);
+          }
+        });
+
+        // 부드러운 스크롤
+        $('a[href^="#"]').click(function (e) {
+          e.preventDefault();
+          var target = $(this).attr("href");
+          $("html, body").animate(
+            {
+              scrollTop: $(target).offset().top,
+            },
+            800
+          );
+        });
+
+        // 스크롤 애니메이션
+        $("section").css({
+          opacity: "0",
+          transform: "translateY(20px)",
+          transition: "opacity 0.6s ease, transform 0.6s ease",
+        });
+
+        $(window).scroll(function () {
+          var scrollTop = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          $("section").each(function () {
+            var sectionTop = $(this).offset().top;
+
+            if (scrollTop + windowHeight > sectionTop + 100) {
+              $(this).css({
+                opacity: "1",
+                transform: "translateY(0)",
+              });
+            }
+          });
+        });
+
+        // 처음 시작
+        makeThumbnails();
+        $("#progressBar").css("width", "25%");
+        startAutoSlide();
+
+        // 페이지 로드시 첫 섹션 보이기
+        $(".hero").css({
+          opacity: "1",
+          transform: "translateY(0)",
+        });
+      });
+    </script>
+  </body>
+</html>
