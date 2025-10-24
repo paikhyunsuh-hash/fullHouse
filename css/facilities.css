@@ -242,6 +242,8 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 #con04 img {
   width: 70%;
@@ -263,4 +265,23 @@ a {
 #con04 p {
   margin: 20px 0px;
   line-height: 2;
+}
+
+#con04 .vertical {
+  width: 8%;
+  position: absolute;
+  right: 50px;
+  top: 0%;
+  filter: brightness(10);
+  opacity: 0.5;
+}
+#con04 .vertical img {
+  width: 100%;
+}
+
+#con04 .left {
+  scale: 0;
+}
+#con04 .right {
+  scale: 0;
 }

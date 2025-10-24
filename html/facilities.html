@@ -175,6 +175,9 @@
               탁 트인 전망으로 아름다운 해돋이와 노을을 감상하실수 있습니다.
             </li>
           </ul>
+          <div class="vertical">
+            <img src="/img/facilities/FACILITIES.png" alt="" />
+          </div>
         </div>
       </section>
     </div>
@@ -203,7 +206,8 @@
     </footer>
 
     <script>
-      /* 스크롤하면 HEADER 배경색 바뀜 */
+      /* header 효과 
+      스크롤하면 HEADER 배경색 바뀜 */
       gsap.registerPlugin(ScrollTrigger);
       const header = document.querySelector("header");
       ScrollTrigger.create({
@@ -216,6 +220,7 @@
     </script>
 
     <script>
+      // section03 가로 슬라이드 효과
       gsap.registerPlugin(ScrollTrigger);
 
       // li 전체 가져오기
@@ -231,6 +236,41 @@
           scrub: 2,
           pin: true,
           // markers: true,
+        },
+      });
+    </script>
+
+    <!-- section04 슬라이드 효과 -->
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to("#con04 .left", {
+        y: 0,
+        scale: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#con04",
+          start: "10% center",
+          end: "40% center",
+          scrub: 2,
+          markers: true,
+          // 테스트 할때는 안내선 보이게
+          // markers: false, // 안내선 안보이게
+        },
+      });
+
+      gsap.to("#con04 .right", {
+        y: 0,
+        scale: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#con04",
+          start: "30% center",
+          end: "60% center",
+          scrub: 3,
+          markers: true,
+          // 테스트 할때는 안내선 보이게
+          // markers: false, // 안내선 안보이게
         },
       });
     </script>
