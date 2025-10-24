@@ -147,23 +147,45 @@ a {
   object-fit: cover;
 }
 .round {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  right: -200px;
+  bottom: 100px;
 }
 .round img {
-  position: absolute;
-  bottom: 100px;
-  right: 5%;
-  width: 25%;
+  width: 60%;
+  /* 애니메이션 이름: spin */
+  animation-name: spin;
 
-  /* object-fit: cover; */
-  /* z-index: 0; */
-  /* flex-shrink: 0; */
+  /* 애니메이션 지속 시간: 3초 */
+  animation-duration: 10s;
+
+  /* 애니메이션 반복 횟수: 무한히 반복 */
+  animation-iteration-count: infinite;
+
+  /* 애니메이션 타이밍 함수: 선형 (일정 속도) */
+  animation-timing-function: linear;
+}
+@keyframes spin {
+  /* 0% (시작): 변형 없음 */
+  0% {
+    transform: rotate(0deg);
+  }
+
+  /* 100% (끝): 360도 회전 */
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* #con03  */
 #con03 h2 {
   color: #85bfc1;
+}
+#con03 h4 {
+  margin: 20px 0px;
+}
+#con03 p {
+  margin-bottom: 20px;
 }
 #con03 {
   width: 100%;
