@@ -124,8 +124,9 @@ header {
   left: 0;
   top: 0;
   padding: 0 20px;
-  z-index: 999;
   box-sizing: border-box;
+  z-index: 9;
+
   transition: background-color 1s ease, color 1s ease;
 }
 header.scrolled {
@@ -143,6 +144,7 @@ header .inner {
   padding: 10px 0px;
   height: 80px;
   box-sizing: border-box;
+  background-color: transparent;
 }
 header h1 {
   width: 100px;
@@ -154,8 +156,9 @@ header h1 img {
   object-fit: cover;
   filter: invert();
 }
-header nav .bar {
+header nav .burger {
   display: none;
+  cursor: pointer;
 }
 header nav ul {
   display: flex;
@@ -167,113 +170,125 @@ header nav ul li a {
   align-items: center;
   height: 50px; /* same as logo height */
 }
+header nav .burger {
+  display: none;
+}
+
+/* SIDE MENU */
+#menu {
+  font-family: "BlackerSans";
+  display: none;
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  /* background-color: rgba(241, 146, 123, 0.8); */
+  background-color: rgba(133, 191, 193, 0.8);
+  color: #fff;
+  font-family: "BlackerSans";
+  box-sizing: border-box;
+  padding: 50px 20px;
+  /* position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999; */
+  overflow-x: hidden;
+  font-family: "AritaBuriKR";
+  font-size: 16px;
+  font-weight: normal;
+}
+footer .inner {
+  max-width: 1200px;
+  margin: 0px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .inner .info {
+  line-height: 1.5;
+}
+footer .inner .sns {
+  display: flex;
+  font-size: 24px;
+  gap: 20px;
+}
+footer .bottom {
+  max-width: 1200px;
+  margin: 0px auto;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+}
+
 @media (max-width: 620px) {
-  header nav .bar {
+  /* HEADER */
+  header nav .burger {
     display: block;
   }
-  header nav .bar i {
+  header nav .burger i {
     font-size: 24px;
+  }
+  header nav .burger .open {
+    display: block;
+  }
+  header nav .burger .close {
+    display: none;
   }
   header nav ul {
     display: none;
   }
-}
-
-/* FOOTER */
-
-/* 기본 스타일 - 모바일 우선 */
-footer {
-  background-color: #f1927b;
-  padding: 20px 10px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  color: #fff;
-}
-footer .bottomLogo img {
-  filter: invert();
-}
-
-.bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
-}
-
-.bottomInfo ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.bottomInfo ul li {
-  margin-bottom: 8px;
-}
-
-.bottomLogo img {
-  width: 120px;
-  height: auto;
-}
-
-.bottomSns ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-}
-
-.bottomSns ul li a {
-  font-size: 20px;
-  transition: color 0.3s;
-}
-
-.bottomSns ul li a:hover {
-  color: #0077ff;
-}
-
-/* 태블릿 스타일 (가로폭 768px 이상) */
-@media screen and (min-width: 768px) {
-  .bottom {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    padding: 0 0px;
+  /* SIDE MENU */
+  #menu {
+    background-color: transparent;
+    color: #fff;
+    width: 100%;
+    text-align: right;
+    height: calc(100vh - 80px);
+    position: fixed;
+    top: 80px;
+    right: 0%;
+    top: 80px;
+    z-index: 10;
+    transition: background-color 1s ease, color 1s ease;
+    display: none;
+  }
+  #menu.active {
+    display: block;
+  }
+  #menu.scrolled {
+    background-color: rgba(241, 146, 123, 0.8);
+  }
+  #menu ul {
+    padding: 10px 20px;
+  }
+  #menu ul li {
+    margin-bottom: 50px;
   }
 
-  .bottomInfo {
-    flex: 1;
+  #container.active {
+    opacity: 50%;
+    /* filter: blur(1px); */
   }
-
-  .bottomLogo {
-    flex: 0 0 auto;
+  /* FOOTER */
+  footer .inner {
+    display: block;
   }
-
-  .bottomSns {
-    flex: 1;
+  footer .inner ul {
+    text-align: center;
+    margin: 0px auto;
+  }
+  footer .inner .info {
+    margin-bottom: 16px;
+  }
+  footer .inner .sns {
     display: flex;
-    justify-content: flex-end;
-  }
-}
-
-/* PC 스타일 (가로폭 1024px 이상) */
-@media screen and (min-width: 1024px) {
-  footer {
-    padding: 40px 80px;
-  }
-
-  .bottomLogo img {
-    width: 150px;
-  }
-
-  .bottomInfo p {
-    font-size: 16px;
-  }
-
-  .bottomSns ul li a {
+    justify-content: center;
     font-size: 24px;
+    margin: 0px auto;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 16px;
   }
 }
