@@ -6,6 +6,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/facilities.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
   </head>
   <body>
     <header>
@@ -89,12 +92,12 @@
 
         <div class="bottom">
           <div><img src="/img/facilities/5.3.jpg" alt="" /></div>
-          <div class="round">
-            <img
-              src="/img/facilities/OCEAN VIEW CAFETERIA BBQ VIEWPOINT.svg"
-              alt=""
-            />
-          </div>
+        </div>
+        <div class="round">
+          <img
+            src="/img/facilities/OCEAN VIEW CAFETERIA BBQ VIEWPOINT.svg"
+            alt=""
+          />
         </div>
       </section>
 
@@ -119,17 +122,43 @@
             </li>
             <li>
               <p>
-                바베큐와 함께 무르익는 이야기 꽃 지글거리는 그릴 소리와 함께
-                노을빛은 황금으로 물들어갑니다
+                바베큐와 함께 무르익는 이야기 꽃 그리고 <br />
+                지글거리는 그릴 소리와 함께 노을빛은 황금으로 물들어갑니다.
               </p>
               <img src="/img/facilities/3.jpg" alt="" />
             </li>
             <li>
               <img src="/img/facilities/3.3.jpg" alt="" />
             </li>
+            <li>
+              <img src="/img/facilities/10.png" alt="" />
+            </li>
           </ul>
         </div>
       </section>
+
+      <section id="con04">
+        <div></div>
+      </section>
+      <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // li 전체 가져오기
+        // let list = document.querySelectorAll(".con03 li");
+        let list = gsap.utils.toArray("#con03 li");
+
+        gsap.to(list, {
+          xPercent: -400, //x축으로 왼쪽방향 400% 만큼 이동
+          scrollTrigger: {
+            trigger: "#con03",
+            start: "top top",
+            end: "+=2000",
+            scrub: 2,
+            pin: true,
+            // markers: true,
+          },
+        });
+      </script>
     </div>
     <footer></footer>
   </body>
