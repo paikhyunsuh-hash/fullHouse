@@ -1,0 +1,182 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* header */
+
+/* visual */
+.visual {
+  background-image: url(/img/facilities/9.jpg);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-image: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* titleBox */
+.titleBox {
+  color: #fff;
+}
+.titleBox h2 {
+  letter-spacing: 1vw;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.titleBox p {
+  line-height: 1.5;
+}
+
+/* #con01 */
+#con01 {
+  width: 100%;
+  height: 100vh;
+  margin: 100px auto;
+}
+/* .fa1 */
+.fa1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .t1 */
+.t1 {
+  color: #333;
+  width: calc(100% / 2);
+}
+.t1 h2 {
+  color: #85bfc1;
+}
+.t1 ul {
+  width: 100%;
+  transform: translate(25%);
+  /* margin: 0px auto; */
+  /* text-align: left; */
+}
+.t1 ul li {
+  margin: 5% 0%;
+}
+.t1 li img {
+  width: 50%;
+}
+
+/* .img1  */
+.img1 {
+  width: calc(100% / 2);
+  height: 100%;
+}
+.img1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* #con2 */
+#con02 {
+  width: 100%;
+  height: 100vh;
+  margin: 100px auto;
+  position: relative;
+}
+
+/* top  */
+.top {
+  width: 100%;
+  height: calc(100% / 2);
+  display: flex;
+}
+.top h2 {
+  color: #85bfc1;
+}
+.top ul {
+  width: calc(100% / 2);
+  transform: translate(25%, 10%);
+}
+.top ul li {
+  margin: 2% 0%;
+}
+.top ul img {
+  width: 25%;
+  object-fit: cover;
+}
+.top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* imgBox  */
+.imgBox {
+  width: calc(100% / 2);
+  height: 100%;
+  object-fit: cover;
+}
+
+/* bottom  */
+.bottom {
+  width: 100%;
+  height: calc(100% / 2);
+  position: relative;
+}
+.bottom div {
+  width: calc(100% / 2);
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.round {
+  width: 100%;
+  height: 100%;
+}
+.round img {
+  position: absolute;
+  bottom: 100px;
+  right: 5%;
+  width: 30%;
+  height: 110%;
+  z-index: 0;
+  flex-shrink: 0;
+}
+
+/* #con03  */
+#con03 {
+  width: 100%;
+  height: 100vh;
+}
+
+#con03 ul {
+  display: flex;
+  margin: 100px 0px;
+}
+
+#con03 li {
+  width: 700px;
+  flex-shrink: 0;
+  padding: 0px 30px;
+  box-sizing: border-box;
+}
+#con03 img {
+  width: 100%;
+}
