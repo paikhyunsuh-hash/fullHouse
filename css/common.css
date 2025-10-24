@@ -125,7 +125,7 @@ header {
   top: 0;
   padding: 0 20px;
   box-sizing: border-box;
-  z-index: 999;
+  z-index: 9;
 
   transition: background-color 1s ease, color 1s ease;
 }
@@ -156,7 +156,7 @@ header h1 img {
   object-fit: cover;
   filter: invert();
 }
-header nav .bar {
+header nav .burger {
   display: none;
   cursor: pointer;
 }
@@ -170,40 +170,14 @@ header nav ul li a {
   align-items: center;
   height: 50px; /* same as logo height */
 }
-header nav .bar .close {
+header nav .burger {
   display: none;
 }
 
-@media (max-width: 620px) {
-  header nav .bar {
-    display: block;
-  }
-  header nav .bar i {
-    font-size: 24px;
-  }
-  header nav ul {
-    display: none;
-  }
-  #menu {
-    background-color: #fdfbf7;
-    width: 300px;
-    height: calc(100vh - 80px);
-    position: fixed;
-    left: 0px;
-    top: 80px;
-    z-index: 10;
-    transform: translateX(-1000%);
-    transition: 0.4s;
-  }
-  #menu.active {
-    transform: translateX(0);
-  }
-}
-
 /* SIDE MENU */
-#container.active {
-  opacity: 50%;
-  /* filter: blur(1px); */
+#menu {
+  font-family: "BlackerSans";
+  display: none;
 }
 
 /* FOOTER */
@@ -247,7 +221,57 @@ footer .bottom {
   text-align: center;
   font-size: 12px;
 }
+
 @media (max-width: 620px) {
+  /* HEADER */
+  header nav .burger {
+    display: block;
+  }
+  header nav .burger i {
+    font-size: 24px;
+  }
+  header nav .burger .open {
+    display: block;
+  }
+  header nav .burger .close {
+    display: none;
+  }
+  header nav ul {
+    display: none;
+  }
+  /* SIDE MENU */
+  #menu {
+    background-color: transparent;
+    color: #fff;
+    width: 100%;
+    text-align: right;
+    height: calc(100vh - 80px);
+    position: fixed;
+    top: 80px;
+    right: 0%;
+    top: 80px;
+    z-index: 10;
+    transition: background-color 1s ease, color 1s ease;
+    display: none;
+  }
+  #menu.active {
+    display: block;
+  }
+  #menu.scrolled {
+    background-color: rgba(241, 146, 123, 0.8);
+  }
+  #menu ul {
+    padding: 10px 20px;
+  }
+  #menu ul li {
+    margin-bottom: 50px;
+  }
+
+  #container.active {
+    opacity: 50%;
+    /* filter: blur(1px); */
+  }
+  /* FOOTER */
   footer .inner {
     display: block;
   }
