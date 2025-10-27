@@ -23,6 +23,12 @@ body {
   height: 100vh;
   position: relative;
 }
+#visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
 #visual .textBox {
   width: 100%;
   color: white;
@@ -193,8 +199,9 @@ body {
 
 /* 위에 흘러가는 로고 */
 .con03 .top {
-  width: 400%;
   position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
   display: flex;
   gap: 80px;
   font-size: 40px;
@@ -203,6 +210,16 @@ body {
   color: #85bfc1;
   border: 1px solid #85bfc1;
   box-sizing: border-box;
+  padding: 10px 0;
+  animation: flowText 25s linear infinite;
+}
+@keyframes flowText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* con03밑에 내용 */
@@ -290,6 +307,16 @@ body {
   position: absolute;
   top: 65%;
   right: 5%;
+}
+.con03 .prev a,
+.con03 .next a {
+  color: #555555;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.con03 .prev a:hover,
+.con03 .next a:hover {
+  color: #85bfc1;
 }
 
 /* bar */
