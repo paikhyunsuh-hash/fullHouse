@@ -109,11 +109,13 @@ body {
   position: relative;
 }
 .con02 .wrap {
-  width: 70%;
+  width: 100%;
   margin: 0px auto;
+  box-sizing: border-box;
   color: #fff;
-  padding-top: 5%;
+  padding: 10%;
 }
+
 .con02 h2 {
   font-size: 40px;
   padding: 50px 0px;
@@ -131,28 +133,30 @@ body {
   flex-wrap: wrap;
   gap: 50px;
   font-size: 50px;
-  width: 700px;
+  width: 50%;
 }
 .con02 .icon li {
-  width: 70px;
+  width: 10%;
 }
-.con02 .imgbox {
+
+/* 움직이는 글 */
+.con02 .round {
   position: absolute;
   top: 0;
-  right: 5%;
+  right: 10%;
 }
 .con02 img {
-  width: 100%;
+  width: 50%;
   height: 100%;
 }
-.round {
+.con02 .round {
   /* width: 100%;
   height: 100%; */
   position: absolute;
   right: 150px;
   bottom: 100px;
 }
-.round img {
+.con02 .round img {
   /* 애니메이션 이름: spin */
   animation-name: spin;
 
@@ -180,7 +184,7 @@ body {
 /* con03 */
 
 .con03 {
-  width: 1200px;
+  width: 100%;
   height: 100vh;
   margin: 0px auto;
   position: relative;
@@ -194,7 +198,7 @@ body {
   display: flex;
   gap: 80px;
   font-size: 40px;
-  bottom: 10%;
+  top: 15%;
   left: -50%;
   color: #85bfc1;
   border: 1px solid #85bfc1;
@@ -219,14 +223,14 @@ body {
 
 /* li img */
 .con03 .imgBox {
-  width: 50%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   margin: 50px auto;
-  height: 400px;
   padding-bottom: 50px;
   box-sizing: border-box;
   gap: 50px;
+  height: 500px;
 }
 
 .con03 img {
@@ -245,7 +249,7 @@ body {
   width: calc(100% / 3);
   background: url(/img/rooms/ROSE.jpg) no-repeat center;
   background-size: cover;
-  border-radius: 150px 150px 0px 0px;
+  border-radius: 250px 250px 0px 0px;
 }
 .con03 .bg3 {
   width: calc(100% / 3);
@@ -256,33 +260,36 @@ body {
 .con03 .imgBox li a {
   display: block;
   line-height: 400px;
+
   text-align: center;
   font-size: 16px;
   color: #555555;
   width: 100%;
-  height: 100%;
 }
 /* 눌렀을때 효과주기 hover */
 .con03 .imgBox li a:hover {
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
 }
 .con03 .imgBox li:nth-child(2) a:hover {
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
-  border-radius: 150px 150px 0px 0px;
+
+  width: 100%;
+  border-radius: 250px 250px 0px 0px;
 }
 
 /* 양옆 */
 .con03 .prev {
   position: absolute;
-  top: 60%;
-  left: 0%;
+  top: 65%;
+  left: 5%;
 }
 .con03 .next {
   position: absolute;
-  top: 60%;
-  left: 97%;
+  top: 65%;
+  right: 5%;
 }
 
 /* bar */
@@ -310,7 +317,7 @@ body {
 
 .con04 {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: url(/img/rooms/3.jpg) no-repeat center;
   background-size: cover;
 }
