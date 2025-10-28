@@ -6,9 +6,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/facilities.css" />
-    <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
   </head>
   <body>
     <header>
@@ -40,7 +43,7 @@
       </div>
     </header>
     <div class="wrap">
-      <div class="visual">
+      <div id="visual">
         <div class="titleBox">
           <h2>facilities</h2>
           <p>
@@ -49,6 +52,13 @@
             풀하우스는 전 객실이 바다뷰로 제주도 특유의 서정적인 감성 바다 그
             자체로 작품이 되는 공간 입니다.
           </p>
+        </div>
+        <div class="bottom">
+          <p><a href="#">Prev</a></p>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <p><a href="#">Next</a></p>
         </div>
       </div>
       <section id="con01">
@@ -132,34 +142,137 @@
             </li>
             <li>
               <img src="/img/facilities/10.png" alt="" />
+              <p>
+                "답답한 일상에서 벗어나, 붉게 타오르는 숯불 앞에 서보세요.
+                <br />
+                사랑하는 사람들과 함께 나누는 웃음과, 그릴 위에서 익어가는
+                <br />고기만큼 완벽한 힐링은 없습니다."
+              </p>
             </li>
           </ul>
         </div>
       </section>
 
       <section id="con04">
-        <div></div>
+        <div class="left">
+          <ul>
+            <li><h2>View Point</h2></li>
+            <li><h4>지평선을 품은 하늘.바다의 쉼터</h4></li>
+            <li>
+              <p>
+                하늘과 바다와 수영장을 한눈에 조망할 수 있는 공간입니다.
+                <br />석양과 일출을 보는 특별한 경험을 해보시길 바랍니다.
+              </p>
+            </li>
+            <li><img src="/img/facilities/4.jpg" alt="" /></li>
+          </ul>
+        </div>
+        <div class="right">
+          <ul>
+            <li><img src="/img/facilities/6.jpg" alt="" /></li>
+            <li><h4>일출과 일몰</h4></li>
+            <li>
+              탁 트인 전망으로 아름다운 해돋이와 노을을 감상하실수 있습니다.
+            </li>
+          </ul>
+          <div class="vertical">
+            <img src="/img/facilities/FACILITIES.png" alt="" />
+          </div>
+        </div>
       </section>
-      <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        // li 전체 가져오기
-        // let list = document.querySelectorAll(".con03 li");
-        let list = gsap.utils.toArray("#con03 li");
-
-        gsap.to(list, {
-          xPercent: -400, //x축으로 왼쪽방향 400% 만큼 이동
-          scrollTrigger: {
-            trigger: "#con03",
-            start: "top top",
-            end: "+=2000",
-            scrub: 2,
-            pin: true,
-            // markers: true,
-          },
-        });
-      </script>
     </div>
-    <footer></footer>
+    <footer>
+      <div class="inner">
+        <ul class="info">
+          <li>상호 : 풀하우스 (FullHouse)</li>
+          <li>전화번호 : 064-567-8910</li>
+          <li>사업자번호 : 682-77-00101</li>
+          <li>주소 : 제주특별자치도 서귀포시 성산읍 성산리 137-1</li>
+        </ul>
+
+        <ul class="sns">
+          <li>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-comment"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="bottom">© FULL HOUSE 2025 | ALL RIGHTS RESERVED</div>
+    </footer>
+
+    <script>
+      /* header 효과 
+      스크롤하면 HEADER 배경색 바뀜 */
+      gsap.registerPlugin(ScrollTrigger);
+      const header = document.querySelector("header");
+      ScrollTrigger.create({
+        trigger: "#con01",
+        start: "top top",
+        end: "bottom top",
+        onEnter: () => header.classList.add("scrolled"),
+        onLeaveBack: () => header.classList.remove("scrolled"),
+      });
+    </script>
+
+    <script>
+      // section03 가로 슬라이드 효과
+      gsap.registerPlugin(ScrollTrigger);
+
+      // li 전체 가져오기
+      // let list = document.querySelectorAll(".con03 li");
+      let list = gsap.utils.toArray("#con03 li");
+
+      gsap.to(list, {
+        xPercent: -400, //x축으로 왼쪽방향 400% 만큼 이동
+        scrollTrigger: {
+          trigger: "#con03",
+          start: "top top",
+          end: "+=2000",
+          scrub: 2,
+          pin: true,
+          // markers: true,
+        },
+      });
+    </script>
+
+    <!-- section04 슬라이드 효과 -->
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to("#con04 .left", {
+        y: 0,
+        scale: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#con04",
+          start: "10% center",
+          end: "40% center",
+          scrub: 2,
+          // markers: true,
+          // 테스트 할때는 안내선 보이게
+          // markers: false, // 안내선 안보이게
+        },
+      });
+
+      gsap.to("#con04 .right", {
+        y: 0,
+        scale: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#con04",
+          start: "30% center",
+          end: "60% center",
+          scrub: 3,
+          // markers: true,
+          // 테스트 할때는 안내선 보이게
+          // markers: false, // 안내선 안보이게
+        },
+      });
+    </script>
   </body>
 </html>
