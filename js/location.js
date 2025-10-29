@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 $(function () {
   const total = $("#visual .panel li").length;
   let i = 0;
@@ -54,7 +52,6 @@ $("#visual .prev a").click(function (e) {
   fadeSlide();
   startSlide();
 });
->>>>>>> b1a5d166788fffa6cf5af897d7c29efcbb60458c
 // DOMContentLoaded: HTML 문서를 모두 읽고 난 후 스크립트를 실행합니다.
 document.addEventListener("DOMContentLoaded", () => {
   /**
