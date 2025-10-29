@@ -16,52 +16,91 @@ a {
 #visual {
   width: 100%;
   height: 100vh;
-  background-image: url(/img/facilities/9.jpg);
-  background-position: center;
-  background-image: cover;
-  background-repeat: no-repeat;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  background-size: cover;
   position: relative;
 }
-#visual .titleBox {
-  position: absolute;
+
+#visual .panel li {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  position: absolute;
+  display: none;
+}
+#visual .panel .panel01 {
+  background: url(/img/facilities/9.jpg) no-repeat center;
+  background-size: cover;
+  display: block;
+}
+#visual .panel .panel02 {
+  background: url(/img/facilities/visual4.jpg) no-repeat center;
+  background-size: cover;
+}
+#visual .panel .panel03 {
+  background: url(/img/facilities/visual2.jpg) no-repeat bottom;
+  background-size: cover;
 }
 
-#visual .bottom {
+#visual .textBox {
+  width: 100%;
+  margin: 23% auto;
   color: #fff;
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#visual h2 {
+  letter-spacing: 20px;
+  margin-bottom: 50px;
+}
+#visual p {
+  line-height: 2;
+}
+
+/* navi */
+#visual .navi {
   display: flex;
   align-items: center;
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
 }
-#visual .bottom .bar {
-  width: 200px;
+#visual .navi li:nth-child(2) {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+#visual .navi li:nth-child(2) span {
+  margin: 0px 10px;
+  display: none;
+}
+#visual .bar {
+  width: 500px;
   height: 1px;
-  background-color: #fff;
+  background-color: #ccc;
 }
-#visual .bottom p {
-  margin: 0px 50px;
+#visual .bar > div {
+  width: 25%;
+  height: 100%;
+  background-color: #32f8ff;
+}
+#visual .navi li a {
+  padding: 10px;
 }
 
-/* titleBox */
-.titleBox {
-  color: #fff;
+#visual .navi li:first-child {
+  color: rgb(255, 255, 255);
 }
-.titleBox h2 {
-  font-size: 8.5vw;
-  letter-spacing: 1vw;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.titleBox p {
-  line-height: 1.5;
+
+#visual .navi li:last-child {
+  color: rgb(255, 255, 255);
 }
 
 /* #con01 */
@@ -79,12 +118,17 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 1s;
 }
 
 /* .t1 */
+.fa1:hover {
+  transform: scale(90%);
+}
 .t1 {
   color: #333;
   width: calc(100% / 2);
+  line-height: 2;
 }
 .t1 h2 {
   color: #85bfc1;
@@ -103,6 +147,7 @@ a {
 }
 
 /* .img1  */
+
 .img1 {
   width: calc(100% / 2);
   height: 100%;
@@ -119,6 +164,7 @@ a {
   height: 100vh;
   margin: 100px auto;
   position: relative;
+  overflow: hidden;
 }
 
 /* top  */
@@ -130,9 +176,12 @@ a {
 .top h2 {
   color: #85bfc1;
 }
+.top p {
+  line-height: 2;
+}
 .top ul {
   width: calc(100% / 2);
-  transform: translate(25%, 10%);
+  transform: translate(25%, 0%);
 }
 .top ul li {
   margin: 2% 0%;
@@ -152,6 +201,7 @@ a {
   width: calc(100% / 2);
   height: 100%;
   object-fit: cover;
+  transform: translate(1000px);
 }
 
 /* bottom  */
@@ -165,6 +215,7 @@ a {
   height: 100%;
   display: flex;
   justify-content: space-between;
+  transform: translate(-1000px);
 }
 
 #con02 .bottom img {
@@ -274,7 +325,7 @@ a {
   right: 50px;
   top: 0%;
   filter: brightness(10);
-  opacity: 0.5;
+  opacity: 0.7;
 }
 #con04 .vertical img {
   width: 100%;

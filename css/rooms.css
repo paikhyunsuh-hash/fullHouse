@@ -49,7 +49,11 @@ body {
 
 #visual .textBox {
   width: 100%;
+<<<<<<< HEAD
+  margin: 23% auto;
+=======
   margin: 25% auto;
+>>>>>>> b1a5d166788fffa6cf5af897d7c29efcbb60458c
   color: #fff;
   text-align: center;
 }
@@ -57,10 +61,13 @@ body {
 #visual h2 {
   letter-spacing: 20px;
   margin-bottom: 50px;
+<<<<<<< HEAD
+=======
 }
 #visual P {
   line-height: 1.6;
   margin-bottom: 50px;
+>>>>>>> b1a5d166788fffa6cf5af897d7c29efcbb60458c
 }
 
 /* navi */

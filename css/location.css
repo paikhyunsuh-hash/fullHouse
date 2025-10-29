@@ -50,6 +50,7 @@ body {
 
 #visual .textBox {
   width: 100%;
+  margin: 23% auto;
   margin: 25% auto;
   color: #fff;
   text-align: center;
@@ -58,6 +59,9 @@ body {
 #visual h2 {
   letter-spacing: 20px;
   margin-bottom: 50px;
+}
+#visual p {
+  line-height: 2;
 }
 #visual P {
   line-height: 1.6;
@@ -264,10 +268,11 @@ iframe {
 
 .con02 .wrap {
   width: 100%;
+  max-width: 1200px;
+  height: 100%;
   margin: 0px auto;
   padding: 50px;
   display: flex;
-  justify-content: space-between;
   box-sizing: border-box;
 }
 
@@ -337,12 +342,25 @@ iframe {
 
 /* right */
 
+.con02 .wrap {
+  width: 100%;
+  margin: 0px auto;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
 .con02 .right {
   width: calc(100% / 2);
+  /* align-items: right; */
 }
 .con02 .right img {
+  align-items: right;
   width: 500px;
   height: 691px;
+}
+.con02 .right {
+  align-items: right;
 }
 /* .con02 .right li {
   display: none;
