@@ -156,7 +156,7 @@ header h1 img {
   object-fit: cover;
   filter: invert();
 }
-header nav .burger {
+header nav .bar {
   display: none;
   cursor: pointer;
 }
