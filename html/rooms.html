@@ -4,11 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- 제이쿼리 -->
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/rooms.js"></script>
+
+    <!-- 공용 글꼴 -->
     <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/rooms.css" />
+<<<<<<< HEAD
     <script src="/js/rooms.js"></script>
+=======
+    <!-- font-awesome CDN  -->
+>>>>>>> b1a5d166788fffa6cf5af897d7c29efcbb60458c
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -61,35 +69,38 @@
       <ul class="panel">
         <li class="panel01">
           <div class="textBox">
-            <h2>LOCATION</h2>
+            <h2>ROOMS</h2>
             <p>
-              탁 트인 바닷가에 자리한 풀하우스는 공간에 감성을 더한 바다뷰
-              입니다.<br />
-              풀하우스는 전 객실이 바다뷰로 제주도 특유의 서정적인 감성 바다 그
-              자체로 작품이 되는 공간 입니다.
+              “이 룸은 바람과 햇살이 머무는 공간입니다. 커다란 창 너머로 남해의
+              빛이 부드럽게 스며들고, 고요한 파도 소리가 하루의 피로를 감싸
+              안습니다.<br />
+              단순한 휴식이 아닌, 진심으로 쉬어간다는 의미를 느낄 수 있는 곳.
+              머무는 그 순간부터 당신의 하루가 천천히, 아름답게 흐릅니다.”
             </p>
           </div>
         </li>
 
         <li class="panel02">
           <div class="textBox">
-            <h2>LOCATION</h2>
+            <h2>ROOMS</h2>
             <p>
-              탁 트인 바닷가에 자리한 풀하우스는 공간에 감성을 더한 바다뷰
-              입니다.<br />
-              풀하우스는 전 객실이 바다뷰로 제주도 특유의 서정적인 감성 바다 그
-              자체로 작품이 되는 공간 입니다.
+              “이 룸은 바람과 햇살이 머무는 공간입니다. 커다란 창 너머로 남해의
+              빛이 부드럽게 스며들고, 고요한 파도 소리가 하루의 피로를 감싸
+              안습니다.<br />
+              단순한 휴식이 아닌, 진심으로 쉬어간다는 의미를 느낄 수 있는 곳.
+              머무는 그 순간부터 당신의 하루가 천천히, 아름답게 흐릅니다.”
             </p>
           </div>
         </li>
         <li class="panel03">
           <div class="textBox">
-            <h2>LOCATION</h2>
+            <h2>ROOMS</h2>
             <p>
-              탁 트인 바닷가에 자리한 풀하우스는 공간에 감성을 더한 바다뷰
-              입니다.<br />
-              풀하우스는 전 객실이 바다뷰로 제주도 특유의 서정적인 감성 바다 그
-              자체로 작품이 되는 공간 입니다.
+              “이 룸은 바람과 햇살이 머무는 공간입니다. 커다란 창 너머로 남해의
+              빛이 부드럽게 스며들고, 고요한 파도 소리가 하루의 피로를 감싸
+              안습니다.<br />
+              단순한 휴식이 아닌, 진심으로 쉬어간다는 의미를 느낄 수 있는 곳.
+              머무는 그 순간부터 당신의 하루가 천천히, 아름답게 흐릅니다.”
             </p>
           </div>
         </li>
@@ -108,7 +119,6 @@
           </div>
           <span></span>
         </li>
-
         <li class="next">
           <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
         </li>
@@ -146,7 +156,7 @@
     <section class="con02">
       <div class="wrap">
         <div class="round">
-          <img src="/img/rooms/OCEAN VIEW CAFETERIA BBQ VIEWPOINT.svg" />
+          <img src="/img/rooms/index (1).png" />
         </div>
         <div class="bg1">
           <h2>Facilities</h2>
@@ -214,9 +224,14 @@
         </ul>
       </div>
     </section>
+
     <!-- con03 -->
     <section class="con03">
       <ul class="top">
+        <li>Enhance Your Stay</li>
+        <li>Enhance Your Stay</li>
+        <li>Enhance Your Stay</li>
+        <li>Enhance Your Stay</li>
         <li>Enhance Your Stay</li>
         <li>Enhance Your Stay</li>
         <li>Enhance Your Stay</li>
@@ -308,8 +323,10 @@
     </section>
 
     <script>
-      /* 스크롤하면 HEADER 배경색 바뀜 */
       gsap.registerPlugin(ScrollTrigger);
+
+      /* 스크롤하면 HEADER 배경색 바뀜 */
+      // heade
       const header = document.querySelector("header");
       ScrollTrigger.create({
         trigger: ".con01",
@@ -320,27 +337,46 @@
       });
 
       // con01
-      const tl = gsap.timeline();
 
-      tl.fromTo(
-        ".con01 .right",
-        { x: -100, opacity: 0 },
-        { x: 0, opacity: 1, duration: 2, ease: "power2.out" }
-      );
+      gsap.from(".con01 .right", {
+        scrollTrigger: {
+          trigger: ".con01 .right",
+          start: "top 80%",
+          scrub: 2,
+          toggleActions: "play none reverse none",
+          // 아래로 내려올 때 재생, 위로 올릴 때 역재생
+        },
+        x: -100,
+        opacity: 0,
+        duration: 2,
+        ease: "power2.out",
+      });
 
-      tl.fromTo(
-        ".con01 .left",
-        { y: -100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 2, ease: "power2.out" },
-        "0.3"
-      );
+      gsap.from(".con01 .left", {
+        scrollTrigger: {
+          trigger: ".con01 .left",
+          start: "top 80%",
+          scrub: 2,
+          toggleActions: "play none reverse none",
+        },
+        y: -100,
+        opacity: 0,
+        duration: 2,
+        ease: "power2.out",
+      });
 
-      tl.fromTo(
-        ".con01 .pinkBox",
-        { scale: 0.8, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1.5, ease: "power2.out" },
-        "0.4"
-      );
+      gsap.from(".con01 .pinkBox", {
+        scrollTrigger: {
+          trigger: ".con01 .pinkBox",
+          start: "top 85%",
+          scrub: 2,
+          toggleActions: "play none reverse none",
+        },
+        scale: 0.8,
+        opacity: 0,
+        duration: 1.5,
+        ease: "power2.out",
+      });
 
       // con02
 
@@ -348,6 +384,9 @@
         scrollTrigger: {
           trigger: ".con02",
           start: "top 80%",
+          end: "bottom 100%",
+          scrub: 2,
+          markes: true,
         },
       });
 
@@ -361,7 +400,7 @@
         ".con02 .bg2",
         { y: 50, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
-        "-=0.3" // 약간 겹쳐서 자연스럽게
+        "-=0.3"
       );
 
       tl2.fromTo(
@@ -377,6 +416,40 @@
         { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: "power2.out" },
         "-=0.2"
       );
+
+      // con03
+
+      // 1️⃣ h2 등장: 아래에서 올라오면서 살짝 커짐
+      gsap.from(".con03 h2", {
+        scrollTrigger: {
+          trigger: ".con03",
+          start: "top 100%",
+          end: "top 50%",
+          scrub: 2,
+          markes: true,
+        },
+        y: 50,
+        scale: 1.2,
+        opacity: 0,
+        ease: "power3.out",
+      });
+
+      // 2️⃣ 이미지 순차적으로 등장
+      const images = gsap.utils.toArray(".con03 .imgBox li");
+      images.forEach((el, i) => {
+        gsap.from(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+          y: 80,
+          opacity: 0,
+          duration: 1,
+          delay: i * 0.2,
+          ease: "power2.out",
+        });
+      });
     </script>
   </body>
 </html>
