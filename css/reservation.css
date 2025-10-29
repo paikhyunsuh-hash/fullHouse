@@ -1,0 +1,629 @@
+/* ------------------------------------
+       0) 폰트 (요청한 그대로)
+    ------------------------------------ */
+/*영문폰트*/
+/*  font-family: "BlackerSans"; */
+@font-face {
+  font-family: "BlackerSans";
+  src: url("../fonts/BlackerSansDisplayTrial-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BlackerSans";
+  src: url("../fonts/BlackerSansDisplayTrial-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BlackerSans";
+  src: url("../fonts/BlackerSansDisplayTrial-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BlackerSans";
+  src: url("../fonts/BlackerSansDisplayTrial-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BlackerSans";
+  src: url("../fonts/BlackerSansDisplayTrial-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BlackerSans";
+  src: url("../fonts/BlackerSansDisplayTrial-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+/*한글폰트*/
+/* font-family: "AritaBuriKR"; */
+@font-face {
+  font-family: "AritaBuriKR";
+  src: url("../fonts/AritaBuriKR-HairLine.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AritaBuriKR";
+  src: url("../fonts/AritaBuriKR-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AritaBuriKR";
+  src: url("../fonts/AritaBuriKR-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AritaBuriKR";
+  src: url("../fonts/AritaBuriKR-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AritaBuriKR";
+  src: url("../fonts/AritaBuriKR-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ------------------------------------
+       1) 리셋 + 공통
+    ------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body {
+  background: #ffefef;
+  color: #333;
+  word-break: keep-all;
+  font-family: "AritaBuriKR", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Noto Sans KR", sans-serif;
+}
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* 폰트(요청값) */
+h2 {
+  font-family: "BlackerSans";
+  font-size: 70px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+h3 {
+  font-family: "BlackerSans";
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+h4 {
+  font-family: "BlackerSans";
+  font-size: 24px;
+  font-weight: 700;
+}
+p {
+  font-family: "AritaBuriKR";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* ============================================
+           헤더 네비게이션
+         ============================================ */
+header {
+  width: 100%;
+  margin: 0 auto;
+  background-color: transparent;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 0 20px;
+  z-index: 999;
+  box-sizing: border-box;
+  transition: background-color 1s ease, color 1s ease;
+}
+header.scrolled {
+  background-color: rgba(241, 146, 123, 0.8);
+}
+header .inner {
+  max-width: 1200px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "BlackerSans";
+  height: 80px;
+}
+header h1 {
+  width: 100px;
+  height: 50px;
+}
+header h1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: invert();
+}
+header nav .bar {
+  display: none;
+}
+header nav ul {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+header nav ul li a {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+@media (max-width: 620px) {
+  header nav .bar {
+    display: block;
+  }
+  header nav .bar i {
+    font-size: 24px;
+  }
+  header nav ul {
+    display: none;
+  }
+}
+
+/* ------------------------------------
+       3) 히어로
+    ------------------------------------ */
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url("https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1600")
+      center/cover;
+  padding-top: 80px; /* 헤더 높이 만큼 */
+}
+.hero h2 {
+  font-weight: 300;
+  letter-spacing: 12px;
+}
+.hero p {
+  margin-top: 16px;
+  color: #f1f1f1;
+}
+
+/* ------------------------------------
+       4) PEACHBEACH POINT 섹션 (요청 배치)
+          - 왼쪽 큰 이미지 / 오른쪽 위,아래 이미지
+    ------------------------------------ */
+.point-wrap {
+  background: #85bfc1;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  background-image: url(/img/reservation/back.png);
+}
+
+.point {
+  padding: 80px 0;
+  position: relative;
+  z-index: 1;
+}
+.point .title {
+  margin-bottom: 32px;
+  letter-spacing: 6px;
+}
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+.item.large {
+  grid-row: 1 / span 2;
+  min-height: 520px;
+}
+.item.small {
+  height: 320px;
+}
+.item.med {
+  height: 320px;
+}
+.cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 70%);
+}
+.cap h4 {
+  color: #fff;
+  margin-bottom: 6px;
+}
+.cap p {
+  color: #ddd;
+  font-size: 14px;
+}
+
+/* ------------------------------------
+       5) 객실(Rooms)
+       - 왼쪽: 큰 이미지
+       - 왼쪽 아래: info 카드(오버레이)  ← 요청 반영
+       - 아래: 썸네일 슬라이더(간단)
+    ------------------------------------ */
+/* ===== 레이아웃 (그리드) ===== */
+.wrap {
+  padding-top: 16px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 24px;
+}
+
+.col-left {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 16px;
+  min-height: 520px;
+}
+/* ✦ 메인 이미지 박스 높이/비율 고정 → 출렁임 방지 */
+.main {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ddd;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  aspect-ratio: 16 / 9; /* 필요 시 height:420px로 바꿔도 OK */
+}
+.main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 1;
+}
+
+.lower {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 16px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.lower .txt h2 {
+  font-size: 48px;
+  margin-bottom: 6px;
+}
+.lower .txt .desc {
+  color: #666;
+}
+.lower .small {
+  width: 100%;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* 오른쪽 카드 */
+.info {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  /* 선택: 스크롤 시 따라오게 하고 싶으면 주석 해제
+        position: sticky; top: 100px;
+        */
+}
+.info .type {
+  margin: 8px 0 12px;
+  color: #555;
+}
+.info .box {
+  margin-top: 16px;
+}
+.info .box h4 {
+  margin-bottom: 10px;
+}
+.spec p {
+  margin: 4px 0;
+}
+
+.prices {
+  margin-top: 14px;
+  border-top: 1px solid #e9e9e9;
+  padding-top: 12px;
+}
+
+/* 기본값은 일단 4열. JS가 실제 개수에 맞춰 즉시 덮어씌움(빈칸 0) */
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.pi {
+  background: #f7f7f7;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  min-height: 72px;
+  display: grid;
+  place-items: center;
+}
+.pi .date {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 6px;
+}
+.pi .amt {
+  font-weight: 700;
+}
+
+/* 편의시설은 CSS만으로 유연하게 */
+.amen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+.amen .a {
+  background: #f7f7f7;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* 썸네일 슬라이더 (하단 가로 리스트) */
+.thumbs-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  grid-column: 1 / 3;
+}
+.btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #85bfc1;
+  color: #fff;
+  border-color: #85bfc1;
+}
+.thumbs {
+  display: flex;
+  gap: 12px;
+  overflow: hidden;
+  flex: 1;
+}
+.thumb {
+  flex: 0 0 calc(25% - 9px);
+  height: 110px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+.thumb.active {
+  border-color: #85bfc1;
+  box-shadow: 0 6px 16px rgba(133, 191, 193, 0.4);
+}
+
+.prog {
+  height: 4px;
+  background: #e5e5e5;
+  margin-top: 10px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.bar {
+  height: 100%;
+  width: 0%;
+  background: #85bfc1;
+  transition: 0.3s;
+}
+
+/* ------------------------------------
+         6) 이미지 모달 (간단)
+      ------------------------------------ */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+}
+.close {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  color: #fff;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+/* ------------------------------------
+       7) 푸터(간단)
+    ------------------------------------ */
+
+/* 기본 스타일 - 모바일 우선 */
+footer {
+  background-color: #f1927b;
+  padding: 20px 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
+}
+footer .bottomLogo img {
+  filter: invert();
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.bottomInfo ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bottomInfo ul li {
+  margin-bottom: 8px;
+}
+
+.bottomLogo img {
+  width: 120px;
+  height: auto;
+}
+
+.bottomSns ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.bottomSns ul li a {
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.bottomSns ul li a:hover {
+  color: #0077ff;
+}
+
+/* 태블릿 스타일 (가로폭 768px 이상) */
+@media screen and (min-width: 768px) {
+  .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 0 0px;
+  }
+
+  .bottomInfo {
+    flex: 1;
+  }
+
+  .bottomLogo {
+    flex: 0 0 auto;
+  }
+
+  .bottomSns {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* PC 스타일 (가로폭 1024px 이상) */
+@media screen and (min-width: 1024px) {
+  footer {
+    padding: 40px 80px;
+  }
+
+  .bottomLogo img {
+    width: 150px;
+  }
+
+  .bottomInfo p {
+    font-size: 16px;
+  }
+
+  .bottomSns ul li a {
+    font-size: 24px;
+  }
+}
+
+/* 반응형 */
+@media (max-width: 980px) {
+  h2 {
+    font-size: 44px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .col-left {
+    min-height: auto;
+  }
+  .lower {
+    grid-template-columns: 1fr;
+  }
+  .pgrid,
+  .amen {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+  }
+
+  .thumb {
+    flex: 0 0 calc(50% - 6px);
+    height: 110px;
+  }
+}

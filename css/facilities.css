@@ -16,52 +16,84 @@ a {
 #visual {
   width: 100%;
   height: 100vh;
-  background-image: url(/img/facilities/9.jpg);
-  background-position: center;
-  background-image: cover;
-  background-repeat: no-repeat;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  background-size: cover;
   position: relative;
 }
-#visual .titleBox {
-  position: absolute;
+
+#visual .panel li {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  position: absolute;
+  display: none;
+}
+#visual .panel .panel01 {
+  background: url(/img/facilities/9.jpg) no-repeat center;
+  display: block;
+}
+#visual .panel .panel02 {
+  background: url(/img/facilities/visual\\(1\).png) no-repeat center;
+}
+#visual .panel .panel03 {
+  background: url(/img/facilities/visual\\(2\).png) no-repeat center;
 }
 
-#visual .bottom {
+#visual .textBox {
+  width: 100%;
+  margin: 40% auto;
   color: #fff;
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#visual h2 {
+  letter-spacing: 20px;
+}
+
+/* navi */
+#visual .navi {
   display: flex;
   align-items: center;
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
 }
-#visual .bottom .bar {
-  width: 200px;
+#visual .navi li:nth-child(2) {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+#visual .navi li:nth-child(2) span {
+  margin: 0px 10px;
+  display: none;
+}
+#visual .bar {
+  width: 500px;
   height: 1px;
-  background-color: #fff;
+  background-color: #ccc;
 }
-#visual .bottom p {
-  margin: 0px 50px;
+#visual .bar > div {
+  width: 25%;
+  height: 100%;
+  background-color: #32f8ff;
+}
+#visual .navi li a {
+  padding: 10px;
 }
 
-/* titleBox */
-.titleBox {
-  color: #fff;
+#visual .navi li:first-child {
+  color: rgb(255, 255, 255);
 }
-.titleBox h2 {
-  font-size: 8.5vw;
-  letter-spacing: 1vw;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.titleBox p {
-  line-height: 1.5;
+
+#visual .navi li:last-child {
+  color: rgb(255, 255, 255);
 }
 
 /* #con01 */
