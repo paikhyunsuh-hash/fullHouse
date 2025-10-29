@@ -50,13 +50,18 @@ body {
 
 #visual .textBox {
   width: 100%;
-  margin: 40% auto;
+  margin: 25% auto;
   color: #fff;
   text-align: center;
 }
 
 #visual h2 {
   letter-spacing: 20px;
+  margin-bottom: 50px;
+}
+#visual P {
+  line-height: 1.6;
+  margin-bottom: 50px;
 }
 
 /* navi */
@@ -66,7 +71,7 @@ body {
   gap: 10px;
   position: absolute;
   left: 50%;
-  bottom: 20px;
+  bottom: 5%;
   transform: translateX(-50%);
 }
 #visual .navi li:nth-child(2) {

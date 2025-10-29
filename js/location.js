@@ -42,6 +42,16 @@ $(function () {
     fadeSlide();
     startSlide();
   });
+});
+
+// 이전 버튼
+$("#visual .prev a").click(function (e) {
+  e.preventDefault();
+  clearInterval(interval);
+  i = (i - 1 + total) % total;
+  fadeSlide();
+  startSlide();
+});
 // DOMContentLoaded: HTML 문서를 모두 읽고 난 후 스크립트를 실행합니다.
 document.addEventListener("DOMContentLoaded", () => {
   /**
