@@ -49,13 +49,14 @@ body {
 
 #visual .textBox {
   width: 100%;
-  margin: 40% auto;
+  margin: 23% auto;
   color: #fff;
   text-align: center;
 }
 
 #visual h2 {
   letter-spacing: 20px;
+  margin-bottom: 50px;
 }
 
 /* navi */
