@@ -49,23 +49,29 @@ body {
 
 #visual .textBox {
   width: 100%;
-  margin: 40% auto;
+  margin: 25% auto;
   color: #fff;
   text-align: center;
 }
 
 #visual h2 {
   letter-spacing: 20px;
+  margin-bottom: 50px;
+}
+#visual P {
+  line-height: 1.6;
+  margin-bottom: 50px;
 }
 
 /* navi */
+
 #visual .navi {
   display: flex;
   align-items: center;
   gap: 10px;
   position: absolute;
   left: 50%;
-  bottom: 20px;
+  bottom: 5%;
   transform: translateX(-50%);
 }
 #visual .navi li:nth-child(2) {
@@ -105,13 +111,18 @@ body {
   width: 100%;
   max-width: 1200px;
   height: 100vh;
-  margin: 100px auto;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .con01 .wrap {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 3%;
-  padding-top: 10%;
 }
+
 .con01 img {
   width: 100%;
   height: 100%;
@@ -148,6 +159,7 @@ body {
   height: 100vh;
   background-color: #f1927b;
   position: relative;
+  overflow: hidden;
 }
 .con02 .wrap {
   width: 100%;
@@ -180,43 +192,26 @@ body {
   width: 10%;
 }
 
-/* 움직이는 글 */
 .con02 .round {
   position: absolute;
-  top: 0;
-  right: 10%;
+  right: -30%;
+  bottom: 0%;
+  width: 60%;
+  height: 100%px;
+  border-radius: 50%;
 }
-.con02 img {
-  width: 50%;
-  height: 100%;
-}
-.con02 .round {
-  /* width: 100%;
-  height: 100%; */
-  position: absolute;
-  right: 150px;
-  bottom: 100px;
-}
+
 .con02 .round img {
-  /* 애니메이션 이름: spin */
-  animation-name: spin;
-
-  /* 애니메이션 지속 시간: 3초 */
-  animation-duration: 10s;
-
-  /* 애니메이션 반복 횟수: 무한히 반복 */
-  animation-iteration-count: infinite;
-
-  /* 애니메이션 타이밍 함수: 선형 (일정 속도) */
-  animation-timing-function: linear;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: spin 10s linear infinite;
 }
+
 @keyframes spin {
-  /* 0% (시작): 변형 없음 */
   0% {
     transform: rotate(0deg);
   }
-
-  /* 100% (끝): 360도 회전 */
   100% {
     transform: rotate(360deg);
   }
@@ -232,39 +227,12 @@ body {
   overflow: hidden;
 }
 
-/* 위에 흘러가는 로고 */
-.con03 .top {
-  position: absolute;
-  white-space: nowrap;
-  overflow: hidden;
-  display: flex;
-  gap: 80px;
-  font-size: 40px;
-  top: 15%;
-  left: -50%;
-  color: #85bfc1;
-  border: 1px solid #85bfc1;
-  box-sizing: border-box;
-  padding: 10px 0;
-  animation: flowText 25s linear infinite;
-}
-@keyframes flowText {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 /* con03밑에 내용 */
 
 .con03 .wrap {
   width: 100%;
   height: 100vh;
-  margin: 50px auto;
-  padding-top: 200px;
-  box-sizing: border-box;
+  margin: 200px auto;
 }
 .con03 h2 {
   font-size: 70px;
@@ -276,13 +244,14 @@ body {
 /* li img */
 .con03 .imgBox {
   width: 80%;
+  height: 50%;
   display: flex;
   justify-content: space-between;
   margin: 50px auto;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
   box-sizing: border-box;
   gap: 50px;
-  height: 500px;
+  /* height: 500px; */
 }
 
 .con03 img {
@@ -309,14 +278,18 @@ body {
   background-size: cover;
   clip-path: polygon(0 15%, 50% 0, 100% 15%, 100% 100%, 0 100%);
 }
+.con03 .imgBox {
+  position: relative; /* 가운데 정렬 기준 잡기 */
+  overflow: hidden;
+}
 .con03 .imgBox li a {
-  display: block;
-  line-height: 400px;
-
-  text-align: center;
-  font-size: 16px;
-  color: #555555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #555555;
 }
 /* 눌렀을때 효과주기 hover */
 .con03 .imgBox li a:hover {
@@ -327,7 +300,6 @@ body {
 .con03 .imgBox li:nth-child(2) a:hover {
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
-
   width: 100%;
   border-radius: 250px 250px 0px 0px;
 }
@@ -335,12 +307,14 @@ body {
 /* 양옆 */
 .con03 .prev {
   position: absolute;
+  transform: translateY(-50%);
   top: 65%;
   left: 5%;
 }
 .con03 .next {
   position: absolute;
   top: 65%;
+  transform: translateY(-50%);
   right: 5%;
 }
 .con03 .prev a,
@@ -356,6 +330,7 @@ body {
 
 /* bar */
 .con03 .bottom {
+  width: 100%;
   color: #555555;
   display: flex;
   align-items: center;
@@ -376,6 +351,32 @@ body {
 }
 
 /* con04 */
+
+/* 위에 흘러가는 로고 */
+.con03 .top {
+  position: absolute;
+  white-space: nowrap;
+  display: flex;
+  gap: 80px;
+  font-size: 40px;
+  color: #85bfc1;
+  /* border: 1px solid #85bfc1; */
+  /box-sizing: border-box;
+  animation: flowText 25s linear infinite;
+  bottom: -1%;
+  left: 0%;
+  pointer-events: none;
+
+  opacity: 0.3;
+}
+@keyframes flowText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
 .con04 {
   width: 100%;
@@ -423,4 +424,70 @@ body {
 .con04 .full .btn:hover {
   transform: scale(0.95); /* 눌릴 때 살짝 줄어듬 */
   box-shadow: 0 2px 0 #f1927b; /* 그림자도 낮아짐 */
+}
+@media (min-width: 1200px) {
+  .con03 .imgBox {
+    width: 80%;
+    gap: 50px;
+  }
+  .con03 h2 {
+    font-size: 70px;
+  }
+  .con03 .top {
+    font-size: 40px;
+  }
+  .con03 .bottom .bar {
+    width: 350px;
+  }
+}
+
+/* 태블릿 */
+@media (min-width: 620px) and (max-width: 1200px) {
+  .con03 .imgBox {
+    width: 90%;
+    gap: 30px;
+  }
+  .con03 h2 {
+    font-size: 50px;
+  }
+  .con03 .top {
+    font-size: 30px;
+  }
+  .con03 .bottom .bar {
+    width: 250px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 620px) {
+  .con03 .wrap {
+    margin: 100px auto;
+  }
+  .con03 h2 {
+    font-size: 35px;
+    padding-bottom: 30px;
+  }
+  .con03 .imgBox {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
+  .con03 .imgBox li {
+    width: 100%;
+    height: 200px;
+  }
+  .con03 .top {
+    font-size: 20px;
+    gap: 40px;
+    bottom: -5%;
+  }
+  .con03 .bottom .bar {
+    width: 150px;
+  }
+  .con03 .prev,
+  .con03 .next {
+    top: auto;
+    bottom: 0;
+    transform: translateY(0);
+  }
 }
