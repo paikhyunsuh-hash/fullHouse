@@ -217,158 +217,35 @@ body {
   }
 }
 
-/* con03 */
-
+/* con03  */
 .con03 {
   width: 100%;
-  height: 100vh;
-  margin: 0px auto;
+  min-height: 100vh;
   position: relative;
-  overflow: hidden;
-}
-
-/* con03밑에 내용 */
-
-.con03 .wrap {
-  width: 100%;
-  height: 100vh;
-  margin: 200px auto;
-}
-.con03 h2 {
-  font-size: 70px;
-  color: #85bfc1;
-  text-align: center;
-  padding-bottom: 50px;
-}
-
-/* li img */
-.con03 .imgBox {
-  width: 80%;
-  height: 50%;
-  display: flex;
-  justify-content: space-between;
-  margin: 50px auto;
-  /* padding-bottom: 50px; */
+  /* overflow: hidden; */
+  padding: 300px 0 100px; /* 위쪽 패딩 증가 */
+  background-color: #ffefef;
   box-sizing: border-box;
-  gap: 50px;
-  /* height: 500px; */
-}
-
-.con03 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.con03 .bg1 {
-  width: calc(100% / 3);
-  background: url(/img/rooms/LUCA.jpg) no-repeat center;
-  background-size: cover;
-  clip-path: polygon(0 15%, 50% 0, 100% 15%, 100% 100%, 0 100%);
-}
-.con03 .bg2 {
-  width: calc(100% / 3);
-  background: url(/img/rooms/ROSE.jpg) no-repeat center;
-  background-size: cover;
-  border-radius: 250px 250px 0px 0px;
-}
-.con03 .bg3 {
-  width: calc(100% / 3);
-  background: url(/img/rooms/23.jpg) no-repeat center;
-  background-size: cover;
-  clip-path: polygon(0 15%, 50% 0, 100% 15%, 100% 100%, 0 100%);
-}
-.con03 .imgBox {
-  position: relative; /* 가운데 정렬 기준 잡기 */
   overflow: hidden;
 }
-.con03 .imgBox li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  color: #555555;
-}
-/* 눌렀을때 효과주기 hover */
-.con03 .imgBox li a:hover {
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-}
-.con03 .imgBox li:nth-child(2) a:hover {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  width: 100%;
-  border-radius: 250px 250px 0px 0px;
-}
 
-/* 양옆 */
-.con03 .prev {
-  position: absolute;
-  transform: translateY(-50%);
-  top: 65%;
-  left: 5%;
-}
-.con03 .next {
-  position: absolute;
-  top: 65%;
-  transform: translateY(-50%);
-  right: 5%;
-}
-.con03 .prev a,
-.con03 .next a {
-  color: #555555;
-  font-size: 20px;
-  transition: 0.3s;
-}
-.con03 .prev a:hover,
-.con03 .next a:hover {
-  color: #85bfc1;
-}
-
-/* bar */
-.con03 .bottom {
-  width: 100%;
-  color: #555555;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.con03 .bottom .bar {
-  width: 350px;
-  height: 1px;
-  background-color: #555555;
-}
-.con03 .bottom .on {
-  width: 350px;
-  height: 1px;
-  background-color: #32f8ff;
-}
-.con03 .bottom p {
-  margin: 0px 50px;
-}
-
-/* con04 */
-
-/* 위에 흘러가는 로고 */
+/* 위에 흘러가는 텍스트 */
 .con03 .top {
   position: absolute;
   white-space: nowrap;
   display: flex;
   gap: 80px;
-  font-size: 40px;
+  font-size: 50px;
   color: #85bfc1;
-  /* border: 1px solid #85bfc1; */
-  /box-sizing: border-box;
   animation: flowText 25s linear infinite;
-  bottom: -1%;
-  left: 0%;
+  top: 15%; /* 헤더 아래로 내림 */
+  left: 0;
   pointer-events: none;
-
-  opacity: 0.3;
+  opacity: 0.3; /* 좀 더 진하게 */
+  font-weight: bold;
+  z-index: 1; /* 헤더보다 아래 */
 }
+
 @keyframes flowText {
   0% {
     transform: translateX(0);
@@ -377,6 +254,147 @@ body {
     transform: translateX(-50%);
   }
 }
+
+/* imgwrap 전체 감싸기 */
+.con03 .imgwrap {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.con03 .wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* 타이틀 */
+.con03 h2 {
+  font-size: 80px;
+  color: #85bfc1;
+  text-align: center;
+  padding-bottom: 80px;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+/* 이미지 박스 */
+.con03 .imgBox {
+  display: flex;
+  gap: 40px;
+  margin: 0 auto;
+  width: 133.33%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.con03 .imgBox li {
+  flex: 0 0 calc((100% - 80px) / 3); /* 3개만 보이기 */
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.con03 .imgBox li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.con03 .imgBox li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.con03 .imgBox li a p {
+  position: absolute;
+  z-index: 10;
+  font-size: 24px;
+  font-weight: bold;
+  color: transparent;
+  transition: color 0.3s ease;
+}
+
+.con03 .imgBox li a:hover p {
+  color: #fff;
+}
+
+/* 배경 이미지 */
+.con03 .bg1 {
+  background: url(/img/rooms/LUCA.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.con03 .bg2 {
+  background: url(/img/rooms/ROSE.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.con03 .bg3 {
+  background: url(/img/rooms/23.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.con03 .bg4 {
+  background: url(/img/rooms/ROSE.jpg) no-repeat center;
+  background-size: cover;
+}
+
+/* hover 오버레이 효과 */
+.con03 .imgBox li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.con03 .imgBox li a:hover::before {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* 하단 바*/
+.con03 .bottom {
+  width: 100%;
+  max-width: 800px;
+  margin: 60px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+.con03 .bottom p {
+  margin: 0 5%;
+}
+/* ... (Prev/Next 버튼 스타일 유지) ... */
+
+.con03 .bottom .on,
+.con03 .bottom .bar {
+  width: 200px;
+  height: 1px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.con03 .bottom .on {
+  background-color: #32f8ff;
+  box-shadow: 0 0 10px rgba(50, 248, 255, 0.5);
+}
+
+/* con04 */
 
 .con04 {
   width: 100%;
@@ -404,7 +422,6 @@ body {
   height: 70px;
   line-height: 70px;
   margin: 10% auto;
-
   background-color: #ffffff96;
   color: #f1927b;
   border: 2px solid #f1927b;
@@ -460,6 +477,30 @@ body {
 
 /* 모바일 */
 @media (max-width: 620px) {
+  #visual {
+    height: 90vh; /* 모바일 주소창 감안하여 높이 살짝 줄임 */
+  }
+  #visual .titleBox {
+    width: 90%; /* 좌우 여백 확보 */
+    text-align: center;
+  }
+  #visual .titleBox h2 {
+    font-size: 13vw; /* 모바일에서 더 잘 보이도록 vw 값 증가 */
+    letter-spacing: 0.5vw;
+  }
+  #visual .titleBox p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  #visual .navi {
+    flex-direction: column; /* Prev/Next 버튼 세로 배치 */
+  }
+  #visual .navi .bar {
+    display: none; /* 바 숨김 */
+  }
+  #visual .bottom p {
+    margin: 10px 0; /* 상하 여백 */
+  }
   .con03 .wrap {
     margin: 100px auto;
   }
@@ -486,8 +527,69 @@ body {
   }
   .con03 .prev,
   .con03 .next {
-    top: auto;
-    bottom: 0;
-    transform: translateY(0);
+    display: none;
+  }
+}
+
+/* 반응형 - 태블릿 */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .con03 h2 {
+    font-size: 60px;
+    padding-bottom: 60px;
+  }
+
+  .con03 .imgBox {
+    gap: 30px;
+  }
+
+  .con03 .imgBox li {
+    flex: 0 0 calc((100% - 60px) / 3);
+    height: 450px;
+  }
+
+  .con03 .top {
+    font-size: 35px;
+  }
+}
+
+/* 반응형 - 모바일 */
+@media (max-width: 767px) {
+  .con03 {
+    padding: 60px 0;
+  }
+
+  .con03 h2 {
+    font-size: 40px;
+    padding-bottom: 40px;
+  }
+
+  .con03 .imgBox {
+    flex-direction: column;
+    gap: 30px;
+    max-width: 100%;
+  }
+
+  .con03 .imgBox li {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 350px;
+  }
+
+  .con03 .top {
+    font-size: 25px;
+    gap: 50px;
+  }
+
+  .con03 .bottom {
+    gap: 15px;
+  }
+
+  .con03 .bottom .on,
+  .con03 .bottom .bar {
+    width: 100px;
+  }
+
+  .con03 .bottom p a {
+    font-size: 14px;
   }
 }
