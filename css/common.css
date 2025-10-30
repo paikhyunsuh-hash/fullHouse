@@ -222,6 +222,7 @@ footer .bottom {
   font-size: 12px;
 }
 
+/* 모바일 */
 @media (max-width: 620px) {
   /* HEADER */
   header nav .burger {
@@ -291,4 +292,11 @@ footer .bottom {
     text-align: center;
     margin-bottom: 16px;
   }
+}
+
+/* 태블릿 */
+@media (min-width: 620px) and (max-width: 1200px) {
+}
+/* PC */
+@media (min-width: 1200px) {
 }

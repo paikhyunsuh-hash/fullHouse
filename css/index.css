@@ -154,3 +154,15 @@ section {
   bottom: 0;
   color: #fff;
 }
+
+/* 모바일 */
+@media (max-width: 620px) {
+}
+
+/* 태블릿 */
+@media (min-width: 620px) and (max-width: 1200px) {
+}
+
+/* PC */
+@media (min-width: 1200px) {
+}
