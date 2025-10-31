@@ -1,7 +1,4 @@
 $(function () {
-  // ------------------------------------
-  // 1. Visual 섹션 슬라이드
-  // ------------------------------------
   const visual_total = $("#visual .panel li").length;
   let visual_i = 0;
   let visual_interval;
@@ -12,11 +9,6 @@ $(function () {
   $("#visual .navi li:nth-child(2) span:last").text(visual_total);
   $(".bar > div").css("width", ((visual_i + 1) / visual_total) * 100 + "%");
 
-  /**
-   * [수정됨] 깜빡임 방지 (Cross-fade)
-   * :visible 선택자를 사용하여 현재 보이는 패널만 fadeOut 시키고,
-   * 동시에 다음 패널을 fadeIn 시킵니다.
-   */
   function visual_fadeSlide() {
     // 1. 현재 보이는 패널을 사라지게 함
     $("#visual .panel li:visible").fadeOut(600);
@@ -53,11 +45,26 @@ $(function () {
   // 이전 버튼
   $("#visual .prev a").click(function (e) {
     e.preventDefault();
-    clearInterval(visual_interval);
-    visual_i = (visual_i - 1 + visual_total) % visual_total;
-    visual_fadeSlide();
-    visual_startSlide();
+    clearInterval(interval);
+    i = (i - 1 + total) % total;
+    fadeSlide();
+    startSlide();
   });
 
-  // (이하 con03 코드 ... )
+  //  con03
+  $(function () {
+    const items = $(".con03 .accordion-item");
+
+    items.click(function () {
+      items.removeClass("active");
+
+      // 2. 클릭된 아이템에만 'active' 클래스 추가
+      $(this).addClass("active");
+    });
+    // ... (별도의 초기화 함수 없이 끝)
+  });
+  clearInterval(visual_interval);
+  visual_i = (visual_i - 1 + visual_total) % visual_total;
+  visual_fadeSlide();
+  visual_startSlide();
 });
