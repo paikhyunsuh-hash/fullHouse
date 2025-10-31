@@ -87,9 +87,10 @@ body {
   width: 500px;
   height: 1px;
   background-color: #ccc;
+  display: block;
 }
 #visual .bar > div {
-  width: 25%;
+  width: 33.33%;
   height: 100%;
   background-color: #32f8ff;
 }
@@ -218,15 +219,15 @@ body {
 }
 
 /* con03  */
+
 .con03 {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
+  padding: 150px 20px 200px;
   position: relative;
-  /* overflow: hidden; */
-  padding: 300px 0 100px; /* 위쪽 패딩 증가 */
+  overflow: hidden;
   background-color: #ffefef;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 /* 위에 흘러가는 텍스트 */
@@ -238,12 +239,12 @@ body {
   font-size: 50px;
   color: #85bfc1;
   animation: flowText 25s linear infinite;
-  top: 15%; /* 헤더 아래로 내림 */
+  top: 15%;
   left: 0;
   pointer-events: none;
-  opacity: 0.3; /* 좀 더 진하게 */
+  opacity: 0.2;
   font-weight: bold;
-  z-index: 1; /* 헤더보다 아래 */
+  z-index: 1;
 }
 
 @keyframes flowText {
@@ -254,173 +255,129 @@ body {
     transform: translateX(-50%);
   }
 }
-
-/* imgwrap 전체 감싸기 */
-.con03 .imgwrap {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
 .con03 .wrap {
-  width: 100%;
-  margin: 0 auto;
+  width: 50px auto;
+  padding-top: 150px;
+  box-sizing: border-box;
 }
-
-/* 타이틀 */
 .con03 h2 {
   font-size: 80px;
   color: #85bfc1;
   text-align: center;
-  padding-bottom: 80px;
+  margin-bottom: 80px;
   letter-spacing: 5px;
   font-weight: bold;
 }
 
-/* 이미지 박스 */
-.con03 .imgBox {
-  display: flex;
-  gap: 40px;
+.con03 .accordion-container {
+  max-width: 100%;
+  height: 600px; /* 전체 높이 고정 */
   margin: 0 auto;
-  width: 133.33%;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.con03 .imgBox li {
-  flex: 0 0 calc((100% - 80px) / 3); /* 3개만 보이기 */
-  height: 550px;
   position: relative;
-  overflow: hidden;
-  position: relative;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
 
-.con03 .imgBox li:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  /* gsap */
+  opacity: 0;
+  transform: translateY(50px);
 }
-
-.con03 .imgBox li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.con03 .accordion-container img {
   width: 100%;
   height: 100%;
-  position: relative;
+  object-fit: cover;
+}
+/* 아코디언 (기존 .carousel 대체) */
+.con03 .accordion {
+  width: 100%;
+  height: 100%;
+  display: flex; /* Flexbox 사용 */
+  gap: 10px; /* 아이템 간 간격 */
   overflow: hidden;
 }
 
-.con03 .imgBox li a p {
+.con03 .accordion-item {
+  position: relative;
+  flex-grow: 1; /* 기본적으로 공간을 균등하게 나눠 가짐 */
+  height: 100%;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  /* 애니메이션 효과를 위해 transition 설정 */
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.con03 .accordion-item.active {
+  flex-grow: 4; /* 활성화되면 더 넓은 공간을 차지 */
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+}
+
+.con03 .accordion-item::before {
+  content: "";
   position: absolute;
-  z-index: 10;
-  font-size: 24px;
-  font-weight: bold;
-  color: transparent;
-  transition: color 0.3s ease;
+  inset: 0;
+  /* 비활성화 시 더 어둡게 만들어 집중도 높이기 */
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+  border-radius: 20px;
+  opacity: 1;
+  transition: opacity 0.6s;
 }
 
-.con03 .imgBox li a:hover p {
-  color: #fff;
+/* 활성화된 아이템의 오버레이를 덜 어둡게 */
+.con03 .accordion-item.active::before {
+  background: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.5));
 }
 
-/* 배경 이미지 */
 .con03 .bg1 {
-  background: url(/img/rooms/LUCA.jpg) no-repeat center;
+  background: url(/img/rooms/cc.jpg) no-repeat center;
   background-size: cover;
 }
 
 .con03 .bg2 {
-  background: url(/img/rooms/ROSE.jpg) no-repeat center;
+  background: url(/img/rooms/roomimg.jpg) no-repeat center;
   background-size: cover;
 }
 
 .con03 .bg3 {
-  background: url(/img/rooms/23.jpg) no-repeat center;
+  background: url(/img/rooms/visual2.jpg) no-repeat center;
   background-size: cover;
 }
 
 .con03 .bg4 {
-  background: url(/img/rooms/ROSE.jpg) no-repeat center;
+  background: url(/img/rooms/visual.jpg) no-repeat center;
   background-size: cover;
 }
 
-/* hover 오버레이 효과 */
-.con03 .imgBox li a::before {
-  content: "";
+/* 라벨 */
+.con03 .accordion-item .label {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  transition: background-color 0.3s ease;
-  z-index: 1;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  color: white;
+  z-index: 2;
+  transition: opacity 0.3s, transform 0.6s;
 }
 
-.con03 .imgBox li a:hover::before {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-/* 하단 바*/
-.con03 .bottom {
-  width: 100%;
-  max-width: 800px;
-  margin: 60px auto 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-}
-.con03 .bottom p {
-  margin: 0 5%;
-}
-/* ... (Prev/Next 버튼 스타일 유지) ... */
-
-.con03 .bottom .on,
-.con03 .bottom .bar {
-  width: 200px;
-  height: 1px;
-  background-color: #ddd;
-  border-radius: 10px;
-  overflow: hidden;
+/* 비활성화된 아이템의 텍스트 숨기기 */
+.con03 .accordion-item:not(.active) .label {
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-.con03 .bottom .on {
-  background-color: #32f8ff;
-  box-shadow: 0 0 10px rgba(50, 248, 255, 0.5);
+.con03 .accordion-item h3 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.con03 .accordion-item p {
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.6;
 }
 
 /* con04 */
-
-/* 위에 흘러가는 로고 */
-.con03 .top {
-  position: absolute;
-  white-space: nowrap;
-  display: flex;
-  gap: 80px;
-  font-size: 40px;
-  color: #85bfc1;
-  /* border: 1px solid #85bfc1; */
-  box-sizing: border-box;
-  animation: flowText 25s linear infinite;
-  bottom: -1%;
-  left: 0%;
-  pointer-events: none;
-
-  opacity: 0.3;
-}
-@keyframes flowText {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
 .con04 {
   width: 100%;
@@ -468,40 +425,9 @@ body {
   transform: scale(0.95); /* 눌릴 때 살짝 줄어듬 */
   box-shadow: 0 2px 0 #f1927b; /* 그림자도 낮아짐 */
 }
-@media (min-width: 1200px) {
-  .con03 .imgBox {
-    width: 80%;
-    gap: 50px;
-  }
-  .con03 h2 {
-    font-size: 70px;
-  }
-  .con03 .top {
-    font-size: 40px;
-  }
-  .con03 .bottom .bar {
-    width: 350px;
-  }
-}
-
-/* 태블릿 */
-@media (min-width: 620px) and (max-width: 1200px) {
-  .con03 .imgBox {
-    width: 90%;
-    gap: 30px;
-  }
-  .con03 h2 {
-    font-size: 50px;
-  }
-  .con03 .top {
-    font-size: 30px;
-  }
-  .con03 .bottom .bar {
-    width: 250px;
-  }
-}
 
 /* 모바일 */
+
 @media (max-width: 620px) {
   #visual {
     height: 90vh; /* 모바일 주소창 감안하여 높이 살짝 줄임 */
@@ -527,95 +453,67 @@ body {
   #visual .bottom p {
     margin: 10px 0; /* 상하 여백 */
   }
-  .con03 .wrap {
-    margin: 100px auto;
-  }
-  .con03 h2 {
-    font-size: 35px;
-    padding-bottom: 30px;
-  }
-  .con03 .imgBox {
-    flex-direction: column;
-    gap: 20px;
-    height: auto;
-  }
-  .con03 .imgBox li {
-    width: 100%;
-    height: 200px;
-  }
-  .con03 .top {
-    font-size: 20px;
-    gap: 40px;
-    bottom: -5%;
-  }
-  .con03 .bottom .bar {
-    width: 150px;
-  }
-  .con03 .prev,
-  .con03 .next {
-    display: none;
-  }
 }
 
 /* 반응형 - 태블릿 */
+
 @media (min-width: 768px) and (max-width: 1200px) {
   .con03 h2 {
     font-size: 60px;
-    padding-bottom: 60px;
-  }
-
-  .con03 .imgBox {
-    gap: 30px;
-  }
-
-  .con03 .imgBox li {
-    flex: 0 0 calc((100% - 60px) / 3);
-    height: 450px;
+    margin-bottom: 60px;
   }
 
   .con03 .top {
     font-size: 35px;
+  }
+
+  .con03 .accordion-container {
+    height: 500px;
   }
 }
 
 /* 반응형 - 모바일 */
+
 @media (max-width: 767px) {
   .con03 {
-    padding: 60px 0;
+    padding: 100px 0 200px;
+    box-sizing: border-box;
   }
 
   .con03 h2 {
     font-size: 40px;
-    padding-bottom: 40px;
+    margin-bottom: 40px;
   }
 
-  .con03 .imgBox {
-    flex-direction: column;
-    gap: 30px;
-    max-width: 100%;
+  .con03 .accordion-container {
+    height: 700px;
+    padding: 0 20px; /* 좌우 패딩 추가 */
+    box-sizing: border-box;
   }
 
-  .con03 .imgBox li {
-    flex: 0 0 auto;
-    width: 100%;
-    height: 350px;
+  .con03 .accordion {
+    flex-direction: column; /* 모바일에서는 세로로 쌓기 */
+    gap: 10px;
+  }
+
+  .con03 .accordion-item.active {
+    flex-grow: 3; /* 활성화된 아이템이 더 많은 공간 차지 */
+  }
+
+  .con03 .accordion-item {
+    flex-grow: 1;
+  }
+
+  .con03 .accordion-item h3 {
+    font-size: 22px;
+  }
+
+  .con03 .accordion-item p {
+    font-size: 12px;
   }
 
   .con03 .top {
     font-size: 25px;
     gap: 50px;
-  }
-
-  .con03 .bottom {
-    gap: 15px;
-  }
-
-  .con03 .bottom .on,
-  .con03 .bottom .bar {
-    width: 100px;
-  }
-
-  .con03 .bottom p a {
-    font-size: 14px;
   }
 }
