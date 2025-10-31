@@ -83,7 +83,7 @@ section {
   height: 100%;
   object-fit: cover;
 }
-/* #con01 .circleTxt {
+#con01 .circleTxt {
   width: 50%;
   position: absolute;
   left: 50%;
@@ -93,7 +93,7 @@ section {
 .circleTxt img {
   height: 100%;
   width: 100%;
-} */
+}
 
 /* CON02 */
 #con02 {
@@ -152,72 +152,9 @@ section {
   height: 100%;
   object-fit: cover;
 }
-/* CON03 */
-/* #con03 {
-  width: 100%;
-  height: 100vh;
-}
-#con03 .inner {
-  max-width: 1200px;
-  height: 100%;
-  text-align: center;
-  color: rgba(133, 191, 193);
-  font-weight: normal;
-  position: relative;
-  margin: 0px auto;
-  overflow: hidden;
-}
-#con03 .inner .fixedTxt {
-  width: 100%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 999;
-}
-#con03 .inner .fixedTxt h2 {
-  font-family: "AritaBuriKR";
-  font-weight: normal;
-  font-size: 3vw;
-}
-#con03 .inner .fixedTxt h3 {
-  font-weight: normal;
-  font-size: 4vw;
-}
-#con03 .inner .fixedTxt p {
-  color: #000;
-}
-#con03 .inner .imgScroll {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
-#con03 .inner .imgScroll .imgScrollLeft {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transform: translateY(-500px);
-}
-#con03 .inner .imgScroll .imgScrollLeft img {
-  width: 50%;
-}
-#con03 .inner .imgScroll .imgScrollRight {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transform: translateY(500px);
-}
-#con03 .inner .imgScroll .imgScrollRight img {
-  width: 50%;
-} */
 
-/* CON03 */
+/* #con03 Section CSS */
+
 #con03 {
   width: 100%;
   height: 100vh;
@@ -226,61 +163,111 @@ section {
   background: #fff;
   color: rgba(133, 191, 193);
 }
-#con03 h2 {
-  font-family: Arita Buri Kr;
-}
-#con03 h3 {
-  color: rgba(133, 191, 193);
-}
-#con03 p {
-  color: #000;
-}
 
-/* Base (desktop default) */
+/* Inner wrapper for fixed text */
 #con03 .inner {
+  position: relative;
   max-width: 1200px;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
-  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  z-index: 10;
   box-sizing: border-box;
 }
 
+/* Fixed Text */
 #con03 .fixedTxt {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  position: relative;
   z-index: 10;
-  width: 100%;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  color: rgba(133, 191, 193);
+}
+#con03 h2 {
+  font-family: Arita Buri Kr;
+}
+#con03 .fixedTxt h2,
+#con03 .fixedTxt h3 {
+  margin: 0 0 10px;
 }
 
+#con03 .fixedTxt p {
+  margin-bottom: 20px;
+  color: #000;
+}
+
+#con03 .fixedTxt a {
+  display: inline-block;
+  padding: 10px 25px;
+  background: rgba(133, 191, 193, 0.8);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+#con03 .fixedTxt a:hover {
+  background: rgba(133, 191, 193, 1);
+}
+
+/* ---------------------------- */
+/* Image scroll container */
 #con03 .imgScroll {
-  display: flex;
-  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  align-items: stretch;
-  position: relative;
+  display: flex;
   z-index: 1;
 }
 
-#con03 .imgScrollLeft,
-#con03 .imgScrollRight {
-  width: 48%; /* roughly equal with small gap between */
+/* Left column */
+#con03 .imgScrollLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center; /* center images horizontally */
+  box-sizing: border-box;
+  padding-top: 20px;
 }
 
+/* Right column */
+#con03 .imgScrollRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; /* center images horizontally */
+  box-sizing: border-box;
+  padding-top: 20px;
+}
+
+/* Individual images */
 #con03 .imgScrollLeft li,
 #con03 .imgScrollRight li {
-  width: 100%;
-  height: calc(33.33% - 10px);
+  width: 70%; /* desktop width */
+  height: 25%;
+  margin-bottom: 60px;
   overflow: hidden;
+}
+
+#con03 .imgScrollLeft li:last-child,
+#con03 .imgScrollRight li:last-child {
+  margin-bottom: 0;
 }
 
 #con03 .imgScrollLeft img,
@@ -292,64 +279,36 @@ section {
   border-radius: 0;
 }
 
-/* Between 620px and 1200px */
-@media (max-width: 1200px) and (min-width: 621px) {
-  #con03 .inner {
-    max-width: 90%;
-    padding: 0 10px;
+/* ---------------------------- */
+/* Responsive: Tablet (620px ~ 1200px) */
+@media (max-width: 1200px) and (min-width: 620px) {
+  #con03 .imgScrollLeft li,
+  #con03 .imgScrollRight li {
+    width: 100%; /* images touch edges of screen */
+    height: 25%;
+    margin-bottom: 50px;
   }
-
-  #con03 .imgScrollLeft,
-  #con03 .imgScrollRight {
-    width: 48%;
-  }
-
   #con03 .fixedTxt {
-    font-size: 1.1rem;
+    max-width: 500px;
   }
 }
 
-/* Below 620px: stack vertically */
+/* ---------------------------- */
+/* Responsive: Mobile (<620px) */
 @media (max-width: 620px) {
   #con03 {
-    height: auto; /* let content define height */
-    padding: 60px 0;
+    height: 100vh;
   }
-
-  #con03 .inner {
-    flex-direction: column;
-    max-width: 100%;
-    padding: 0 0px;
-  }
-
-  #con03 .imgScroll {
-    flex-direction: column;
-    gap: 20px;
-    height: auto;
-  }
-
-  #con03 .imgScrollLeft,
-  #con03 .imgScrollRight {
-    width: 100%;
-  }
-
+  /* Keep images visible and animated */
   #con03 .imgScrollLeft li,
   #con03 .imgScrollRight li {
-    height: auto;
+    width: 100%; /* full width */
+    height: 25%;
+    margin-bottom: 40px;
   }
-
-  #con03 .imgScrollLeft img,
-  #con03 .imgScrollRight img {
-    width: 100%;
-    height: auto;
-  }
-
   #con03 .fixedTxt {
-    position: relative;
-    transform: none;
-    top: 0;
-    left: 0;
-    margin-bottom: 30px;
+    max-width: 90%;
+    padding: 20px 0;
   }
 }
 
