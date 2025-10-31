@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!--CSS-->
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="/fullHouse/css/common.css" />
+    <link rel="stylesheet" href="/fullHouse/css/index.css" />
     <!--FONT AWESOME-->
     <link
       rel="stylesheet"
@@ -29,7 +29,7 @@
     <!-- jQuery CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- jQuery -->
-    <script src="js/header.js"></script>
+    <script src="/fullHouse/js/header.js"></script>
   </head>
   <body>
     <header>
@@ -46,16 +46,16 @@
           </div>
           <ul>
             <li>
-              <a href="html/reservation.html">RESERVATION</a>
+              <a href="reservation.html">RESERVATION</a>
             </li>
             <li>
-              <a href="html/rooms.html">ROOMS</a>
+              <a href="rooms.html">ROOMS</a>
             </li>
             <li>
-              <a href="html/facilities.html">FACILITIES</a>
+              <a href="facilities.html">FACILITIES</a>
             </li>
             <li>
-              <a href="html/location.html">LOCATION</a>
+              <a href="location.html">LOCATION</a>
             </li>
           </ul>
         </nav>
@@ -64,11 +64,11 @@
     <div id="menu">
       <ul>
         <li>
-          <a href="html/reservation.html"> RESERVATION</a>
+          <a href="reservation.html"> RESERVATION</a>
         </li>
-        <li><a href="html/rooms.html">ROOMS</a></li>
-        <li><a href="html/facilities.html">FACILITIES</a></li>
-        <li><a href="html/location.html">LOCATION</a></li>
+        <li><a href="rooms.html">ROOMS</a></li>
+        <li><a href="facilities.html">FACILITIES</a></li>
+        <li><a href="location.html">LOCATION</a></li>
       </ul>
     </div>
     <div class="container">
@@ -183,43 +183,43 @@
           <h2>FOLLOW US</h2>
           <ul>
             <li>
-              <img src="/img/index/instaReview1.jpg" />
+              <img src="img/index/instaReview1.jpg" />
               <p class="hashTag">#풀하우스</p>
             </li>
             <li>
-              <img src="/img/index/instaReview2.jpeg" />
+              <img src="img/index/instaReview2.jpeg" />
               <p class="hashTag">#풀하우스</p>
             </li>
             <li>
-              <img src="/img/index/instaReview3.jpeg" />
+              <img src="img/index/instaReview3.jpeg" />
               <p class="hashTag">#풀하우스</p>
             </li>
             <li>
-              <img src="/img/index/instaReview4.jpg" />
+              <img src="img/index/instaReview4.jpg" />
               <p class="hashTag">#풀하우스</p>
             </li>
             <li>
-              <img src="/img/index/instaReview 5.jpg" />
+              <img src="img/index/instaReview 5.jpg" />
               <p class="hashTag">#풀하우스</p>
             </li>
             <li>
-              <img src="/img/index/instaReview6.jfif" />
+              <img src="img/index/instaReview6.jfif" />
               <p class="hashTag">#풀하우스</p>
             </li>
             <li>
-              <img src="/img/index/instaReview7.jpg" />
+              <img src="img/index/instaReview7.jpg" />
               <p class="hashTag">#풀하우스</p>
             </li>
             <li>
-              <img src="/img/index/instaReview8.jpg" />
+              <img src="img/index/instaReview8.jpg" />
               <p class="hashTag">#풀하우스</p>
             </li>
             <li>
-              <img src="/img/index/instaReview9.jpg" />
+              <img src="img/index/instaReview9.jpg" />
               <p class="hashTag">#풀하우스</p>
             </li>
             <li>
-              <img src="/img/index/instaReview10.jpg" />
+              <img src="img/index/instaReview10.jpg" />
               <img src="img/index/visual1.jpg" />
               <p class="hashTag">#풀하우스</p>
             </li>
@@ -346,6 +346,33 @@
         onEnter: () => menu.classList.add("scrolled"),
         onLeaveBack: () => menu.classList.remove("scrolled"),
       });
+
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger);
+
+      // #con03 scroll animation
+      let con03 = document.querySelector("#con03");
+      let imgLeft = con03.querySelector(".imgScrollLeft");
+      let imgRight = con03.querySelector(".imgScrollRight");
+      let fixedTxt = con03.querySelector(".fixedTxt");
+
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: con03,
+          start: "top top",
+          end: "+=200%", // the scroll length; increase for longer animation
+          scrub: 1,
+          pin: true, // pin the entire section
+          anticipatePin: 1,
+        },
+      });
+
+      tl.fromTo(
+        imgLeft,
+        { yPercent: -50 },
+        { yPercent: 50, ease: "none" },
+        0
+      ).fromTo(imgRight, { yPercent: 50 }, { yPercent: -50, ease: "none" }, 0);
     </script>
   </body>
 </html>
