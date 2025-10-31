@@ -37,14 +37,14 @@ body {
   display: none;
 }
 #visual .panel .panel01 {
-  background: url(/img/rooms/4.jpg) no-repeat center;
+  background: url(../img/rooms/4.jpg) no-repeat center;
   display: block;
 }
 #visual .panel .panel02 {
-  background: url(/img/rooms/visual.jpg) no-repeat center;
+  background: url(../img/rooms/visual.jpg) no-repeat center;
 }
 #visual .panel .panel03 {
-  background: url(/img/rooms/visual2.jpg) no-repeat center;
+  background: url(../img/rooms/visual2.jpg) no-repeat center;
 }
 
 #visual .textBox {
@@ -331,22 +331,22 @@ body {
 }
 
 .con03 .bg1 {
-  background: url(/img/rooms/cc.jpg) no-repeat center;
+  background: url(../img/rooms/cc.jpg) no-repeat center;
   background-size: cover;
 }
 
 .con03 .bg2 {
-  background: url(/img/rooms/roomimg.jpg) no-repeat center;
+  background: url(../img/rooms/roomimg.jpg) no-repeat center;
   background-size: cover;
 }
 
 .con03 .bg3 {
-  background: url(/img/rooms/visual2.jpg) no-repeat center;
+  background: url(../img/rooms/visual2.jpg) no-repeat center;
   background-size: cover;
 }
 
 .con03 .bg4 {
-  background: url(/img/rooms/visual.jpg) no-repeat center;
+  background: url(../img/rooms/visual.jpg) no-repeat center;
   background-size: cover;
 }
 
@@ -384,7 +384,7 @@ body {
 .con04 {
   width: 100%;
   height: 100%;
-  background: url(/img/rooms/3.jpg) no-repeat center;
+  background: url(..../img/rooms/3.jpg) no-repeat center;
   background-size: cover;
 }
 .con04 .full {
