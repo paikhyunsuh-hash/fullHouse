@@ -26,7 +26,7 @@ $(function () {
   startSlide();
 
   // 다음 버튼
-  $("#visual .next a").click(function (e) {
+  $("#visual .navi .next a").click(function (e) {
     e.preventDefault();
     clearInterval(interval);
     i = (i + 1) % total;
@@ -35,7 +35,7 @@ $(function () {
   });
 
   // 이전 버튼
-  $("#visual .prev a").click(function (e) {
+  $("#visual .navi .prev a").click(function (e) {
     e.preventDefault();
     clearInterval(interval);
     i = (i - 1 + total) % total;

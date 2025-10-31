@@ -579,3 +579,326 @@ iframe {
   background-color: #fff;
   color: #f1927b;
 }
+
+/* ---------------------------------- */
+/* 태블릿 (Tablet) : 620px ~ 1200px */
+/* ---------------------------------- */
+@media (min-width: 620px) and (max-width: 1200px) {
+  /* --- Visual --- */
+  #visual .textBox {
+    width: 90%;
+    margin: 30% auto;
+  }
+  #visual h2 {
+    letter-spacing: 15px;
+    font-size: 2.5rem;
+  }
+  #visual .bar {
+    width: 400px; /* 슬라이더 바 너비 축소 */
+  }
+
+  /* --- Con01, Con02 (컨텐츠 섹션) --- */
+  .con01,
+  .con02 {
+    height: auto; /* vh 높이 제거 */
+    margin: 50px auto;
+  }
+  .con01 .wrap,
+  .con02 .wrap {
+    width: 90%; /* 고정 너비 -> % 너비 */
+    max-width: 90%;
+    height: auto; /* vh 높이 제거 */
+    flex-direction: column; /* 좌우 레이아웃을 상하로 변경 */
+    padding: 30px;
+  }
+
+  .con01 .left,
+  .con01 .right,
+  .con02 .left,
+  .con02 .right {
+    width: 100%; /* 너비 100% */
+    height: auto;
+  }
+
+  /* .con01의 PC 100% 높이값 오버라이드 */
+  .con01 .right img {
+    height: auto;
+    max-height: 600px; /* 이미지 최대 높이 제한 (선택 사항) */
+  }
+
+  /* .con02의 고정 픽셀값 오버라이드 */
+  .con02 .right img {
+    width: 100%;
+    height: auto;
+  }
+
+  .con01 .txt p,
+  .con02 .txt p {
+    width: 100%; /* 텍스트 너비 100% */
+  }
+
+  /* --- Con03 (Location) --- */
+  .con03 {
+    width: 90%; /* 고정 너비 -> % 너비 */
+    height: auto; /* vh 높이 제거 */
+    margin: 50px auto;
+  }
+  .con03 .map iframe {
+    width: 100%;
+    height: 350px;
+  }
+  .con03 .box {
+    width: 100%;
+    flex-direction: column; /* 좌우 레이아웃을 상하로 변경 */
+  }
+  .con03 .left,
+  .con03 .right {
+    width: 100%;
+  }
+  .con03 .imgbox {
+    height: auto; /* 이미지 높이 자동 */
+  }
+  .con03 .imgbox img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* --- Con04 (Airport) --- */
+  .con04 {
+    height: auto; /* vh 높이 제거 */
+    padding-bottom: 100px;
+    background-position: center;
+  }
+  .con04 .wrap {
+    padding: 100px 5%; /* 좌우 패딩 %로 변경 */
+    width: auto;
+  }
+  .con04 .box {
+    width: 100%; /* 고정 너비 -> 100% */
+    height: auto;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+}
+
+/* ---------------------------------- */
+/* 모바일 (Mobile) : 0px ~ 620px */
+/* ---------------------------------- */
+@media (max-width: 620px) {
+  /* --- Header (햄버거 메뉴) --- */
+  /* 참고: .bar 아이콘 클릭 시 메뉴를 여는 
+     jQuery/JS 코드가 추가되어야 합니다. 
+  */
+  header nav .bar {
+    display: block; /* 햄버거 아이콘 보이기 */
+    color: #555; /* 아이콘 색상 (scrolled 시 흰색) */
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+  }
+  header.scrolled nav .bar {
+    color: #fff; /* 스크롤 내렸을 때 색상 */
+  }
+  header nav ul {
+    display: none; /* 기본 메뉴 숨기기 */
+    /* --- 
+        JS로 .active 클래스 추가 시 
+        아래 스타일 적용 필요
+       ---
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding-top: 60px;
+    */
+  }
+  header h1 {
+    width: 150px; /* 로고 크기 줄이기 */
+  }
+
+  /* --- Visual --- */
+  #visual .textBox {
+    width: 90%;
+    margin: 50% auto;
+  }
+  #visual h2 {
+    letter-spacing: 5px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  #visual p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  #visual .bar {
+    width: 250px; /* 슬라이더 바 너비 축소 */
+  }
+
+  /* --- Headings --- */
+  .con01 h2,
+  .con02 h2,
+  .con03 h2,
+  .con04 h2 {
+    font-size: 36px; /* H2 제목 크기 축소 */
+    padding: 15px 0;
+  }
+
+  /* --- Con01, Con02 (컨텐츠 섹션) --- */
+  .con01,
+  .con02 {
+    height: auto; /* vh 높이 제거 */
+    margin: 30px auto;
+    width: 100%;
+    padding: 0 15px; /* 섹션 좌우 여백 */
+    box-sizing: border-box;
+  }
+  .con01 .wrap,
+  .con02 .wrap {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    flex-direction: column; /* 상하 정렬 */
+    padding: 20px 0;
+  }
+
+  .con01 .left,
+  .con01 .right,
+  .con02 .left,
+  .con02 .right {
+    width: 100%;
+    height: auto;
+  }
+
+  .con01 .right img {
+    height: auto; /* 높이 자동 */
+  }
+  .con02 .right img {
+    width: 100%;
+    height: auto; /* 높이 자동 */
+  }
+
+  .con01 .txt h3,
+  .con02 .txt h3 {
+    font-size: 1.2rem;
+  }
+  .con01 .txt p,
+  .con02 .txt p {
+    width: 100%;
+    font-size: 14px;
+    margin: 20px 0;
+  }
+
+  .con01 .btn,
+  .con02 .btn {
+    width: 100%; /* 버튼 100% */
+  }
+
+  .con01 .left .bg,
+  .con02 .left .bg {
+    flex-wrap: wrap; /* 썸네일 줄바꿈 */
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+  .con01 .left .bg img,
+  .con02 .left .bg img {
+    width: 80px;
+    height: 100px;
+    margin-top: 0;
+  }
+
+  /* --- Con03 (Location) --- */
+  .con03 {
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  .con03 .map iframe {
+    width: 100%;
+    height: 250px;
+  }
+  .con03 .ph,
+  .con03 .add {
+    font-size: 14px;
+    padding: 15px 0 0 0;
+  }
+  .con03 .add {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .con03 h3 {
+    font-size: 1.25rem;
+    padding: 20px 0;
+  }
+  .con03 .box {
+    width: 100%;
+    flex-direction: column;
+  }
+  .con03 .left,
+  .con03 .right {
+    width: 100%;
+  }
+  .con03 .busbox {
+    flex-direction: column; /* 버스 아이콘, 텍스트 상하 정렬 */
+  }
+  .con03 .bus,
+  .con03 .gate {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .con03 .imgbox {
+    height: auto;
+  }
+  .con03 .imgbox img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* --- Con04 (Airport) --- */
+  .con04 {
+    height: auto;
+    padding: 80px 0;
+    margin-top: 30px;
+    background-position: center;
+  }
+  .con04 .wrap {
+    padding: 0 15px;
+    width: auto;
+  }
+  .con04 h3 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  .con04 .box {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .con04 p {
+    padding: 10px 0 30px 0;
+    font-size: 14px;
+  }
+  .con04 ul {
+    flex-direction: column; /* 버튼 상하 정렬 */
+    padding: 0;
+    gap: 10px;
+  }
+  .con04 li {
+    width: 100%;
+  }
+}

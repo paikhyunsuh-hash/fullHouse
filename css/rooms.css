@@ -95,6 +95,7 @@ body {
 }
 #visual .navi li a {
   padding: 10px;
+  /* z-index: 10; */
 }
 
 #visual .navi li:first-child {
@@ -115,6 +116,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .con01 .wrap {
   display: flex;
