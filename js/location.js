@@ -44,82 +44,46 @@ $(function () {
   });
 });
 
-// con01, con02 자동 슬라이드
 $(document).ready(function () {
   /**
-   * 💡 범용 자동 및 상호작용 슬라이드 함수
+   * 💡 범용 수동 슬라이드 함수 (클릭 이벤트만 처리)
    * @param {string} containerSelector - 제어할 섹션의 CSS 선택자 (예: '.con01', '.con02')
    */
-  function initializeAutoSlider(containerSelector) {
-    // 1. 변수 정의 (컨테이너 내에서 요소를 찾도록 범위 지정)
+  function initializeManualSlider(containerSelector) {
     const $container = $(containerSelector);
 
-    // 해당 섹션이 없으면 종료하여 오류 방지
     if ($container.length === 0) return;
 
     const $txtItems = $container.find(".txt li");
     const $bgItems = $container.find(".bg li");
     const $imgItems = $container.find(".right ul li");
-    const totalSlides = $txtItems.length;
-    let currentIndex = 0;
-    const slideDuration = 3000;
-    let autoSlideTimer;
 
-    // 2. 슬라이드 전환 핵심 함수 (상태 업데이트)
+    // 1. 슬라이드 전환 핵심 함수 (Active 클래스만 토글)
     function goToSlide(index) {
-      // 인덱스 순환 처리
-      if (index >= totalSlides) {
-        index = 0;
-      } else if (index < 0) {
-        index = totalSlides - 1;
-      }
-      currentIndex = index;
-
-      // 모든 active 클래스 제거 (텍스트/썸네일)
+      // 모든 active 클래스 제거 (텍스트/썸네일/이미지)
       $txtItems.removeClass("active");
       $bgItems.removeClass("active");
+      $imgItems.removeClass("active");
 
-      // 이미지 전환 시 페이드 효과 적용
-      $imgItems.removeClass("active").fadeOut(300);
-
-      // 해당 인덱스의 항목에 active 클래스 및 fadeIn 적용
-      $txtItems.eq(currentIndex).addClass("active");
-      $bgItems.eq(currentIndex).addClass("active");
-      $imgItems.eq(currentIndex).fadeIn(300).addClass("active");
+      // 해당 인덱스의 항목에 active 클래스 적용
+      $txtItems.eq(index).addClass("active");
+      $bgItems.eq(index).addClass("active");
+      $imgItems.eq(index).addClass("active");
     }
 
-    // 3. 자동 슬라이드 시작
-    function startAutoSlide() {
-      stopAutoSlide();
-      autoSlideTimer = setInterval(function () {
-        goToSlide(currentIndex + 1);
-      }, slideDuration);
-    }
-
-    // 4. 자동 슬라이드 중지
-    function stopAutoSlide() {
-      clearInterval(autoSlideTimer);
-    }
-
-    // 5. 썸네일 클릭 이벤트: 수동 전환
+    // 2. 썸네일 클릭 이벤트: 수동 전환
     $bgItems.on("click", function (e) {
       e.preventDefault(); // <a> 태그 점프 방지
-      stopAutoSlide();
       const clickedIndex = $(this).index();
       goToSlide(clickedIndex);
-      startAutoSlide(); // 다시 시작
     });
 
-    // 6. 마우스 오버 시 슬라이드 중지/재시작
-    $container.find(".wrap").hover(stopAutoSlide, startAutoSlide);
-
-    // 7. 초기 시작 및 상태 설정
-    // 첫 번째 슬라이드 (index 0)를 활성화하고 자동 슬라이드 시작
+    // 3. 초기 상태 설정
+    // 첫 번째 슬라이드 (index 0)를 활성화
     goToSlide(0);
-    startAutoSlide();
   }
 
-  // 🚀 두 섹션에 범용 함수 적용
-  initializeAutoSlider(".con01");
-  initializeAutoSlider(".con02");
+  // 🚀 두 섹션에 범용 수동 함수 적용
+  initializeManualSlider(".con01");
+  initializeManualSlider(".con02");
 });

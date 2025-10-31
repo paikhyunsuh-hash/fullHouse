@@ -159,12 +159,6 @@ iframe {
   line-height: 2;
   color: #555555;
 }
-/* .con01 .txt li {
-  display: none;
-}
-.con01 .txt .txt1 {
-  display: block;
-} */
 
 /* left .bg */
 .con01 .left .bg img {
@@ -210,18 +204,13 @@ iframe {
   width: calc(100% / 2);
   height: 100%;
   /* object-fit: cover; */
+  transition: 1s;
 }
 .con01 .right img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-/* .con01 .right li {
-  display: none;
-}
-.con01 .right .img1 {
-  display: block;
-} */
 
 /* 기본적으로 모든 텍스트와 큰 이미지를 숨깁니다 */
 .con01 .txt li {
@@ -236,7 +225,8 @@ iframe {
   display: block; /* 또는 li의 기본값인 list-item */
 }
 .con01 .right ul li.active {
-  display: block; /* 또는 li의 기본값인 list-item */
+  display: block;
+  /* 또는 li의 기본값인 list-item */
 }
 
 /* (선택 사항) 현재 선택된 썸네일(bg)에 시각적 표시 */
@@ -255,7 +245,6 @@ iframe {
 }
 
 /* con02 */
-
 .con02 {
   width: 100%;
   height: 100vh;
@@ -298,12 +287,6 @@ iframe {
   line-height: 2;
   color: #555555;
 }
-/* .con02 .txt li {
-  display: none;
-}
-.con02 .txt .txt1 {
-  display: block;
-} */
 
 /* left */
 .con02 .left .bg img {
@@ -365,12 +348,6 @@ iframe {
 .con02 .right {
   align-items: right;
 }
-/* .con02 .right li {
-  display: none;
-}
-.con02 .right .img1 {
-  display: block;
-} */
 
 /* 기본적으로 모든 텍스트와 큰 이미지를 숨깁니다 */
 .con02 .txt li {
