@@ -6,10 +6,11 @@
     <title>Document</title>
     <!-- 제이쿼리 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/js/location.js"></script>
+    <script src="js/location.js"></script>
+    <script src="js/header.js"></script>
     <!-- 공용 글꼴 -->
-    <link rel="stylesheet" href="/css/common.css" />
-    <link rel="stylesheet" href="/css/location.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/location.css" />
     <!-- font-awesome CDN  -->
     <link
       rel="stylesheet"
@@ -19,8 +20,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <!--GSAP ScrollTrigger CDN-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-
-    />
   </head>
   <body>
     <!-- header -->
@@ -28,12 +27,13 @@
       <div class="inner">
         <h1>
           <a href="index.html">
-            <img src="/img/logos/logo.svg" />
+            <img src="img/logos/logo.svg" />
           </a>
         </h1>
         <nav>
-          <div class="bar">
-            <i class="fa-solid fa-bars"></i>
+          <div class="burger">
+            <div class="open"><i class="fa-solid fa-bars"></i></div>
+            <div class="close"><i class="fa-solid fa-xmark"></i></div>
           </div>
           <ul>
             <li>
@@ -52,6 +52,16 @@
         </nav>
       </div>
     </header>
+    <div id="menu">
+      <ul>
+        <li>
+          <a href="reservation.html"> RESERVATION</a>
+        </li>
+        <li><a href="rooms.html">ROOMS</a></li>
+        <li><a href="facilities.html">FACILITIES</a></li>
+        <li><a href="location.html">LOCATION</a></li>
+      </ul>
+    </div>
 
     <!-- visual -->
 
@@ -184,16 +194,16 @@
             <!-- bg -->
             <ul class="bg">
               <li class="bg1 active">
-                <a href="#"> <img src="../img/location/성산일출봉.jpg" /></a>
+                <a href="#"> <img src="img/location/성산일출봉.jpg" /></a>
               </li>
               <li class="bg2">
-                <a href="#"> <img src="../img/location/우도.jpg" /></a>
+                <a href="#"> <img src="img/location/우도.jpg" /></a>
               </li>
               <li class="bg3">
-                <a href="#"> <img src="../img/location/한라산.jfif" /></a>
+                <a href="#"> <img src="img/location/한라산.jfif" /></a>
               </li>
               <li class="bg4">
-                <a href="#"> <img src="../img/location/협재해수욕장.jpg" /></a>
+                <a href="#"> <img src="img/location/협재해수욕장.jpg" /></a>
               </li>
             </ul>
           </div>
@@ -201,16 +211,16 @@
         <div class="right">
           <ul>
             <li class="img1 active">
-              <img src="../img/location/성산일출봉.jpg" />
+              <img src="img/location/성산일출봉.jpg" />
             </li>
             <li class="img2">
-              <img src="../img/location/우도.jpg" />
+              <img src="img/location/우도.jpg" />
             </li>
             <li class="img3">
-              <img src="../img/location/한라산.jfif" />
+              <img src="img/location/한라산.jfif" />
             </li>
             <li class="img4">
-              <img src="../img/location/협재해수욕장.jpg" />
+              <img src="img/location/협재해수욕장.jpg" />
             </li>
           </ul>
         </div>
@@ -224,16 +234,16 @@
         <div class="right">
           <ul>
             <li class="img1 active">
-              <img src="/img/location/오설록.jpg" alt="" />
+              <img src="img/location/오설록.jpg" alt="" />
             </li>
             <li class="img2">
-              <img src="/img/location/만장굴.jpg" />
+              <img src="img/location/만장굴.jpg" />
             </li>
             <li class="img3">
-              <img src="/img/location/주상절리대.jpg" />
+              <img src="img/location/주상절리대.jpg" />
             </li>
             <li class="img4">
-              <img src="/img/location/카멜리아힐.jpg" />
+              <img src="img/location/카멜리아힐.jpg" />
             </li>
           </ul>
         </div>
@@ -305,16 +315,16 @@
             <!-- bg -->
             <ul class="bg">
               <li class="bg1 active">
-                <a href="#"> <img src="/img/location/오설록.jpg" /></a>
+                <a href="#"> <img src="img/location/오설록.jpg" /></a>
               </li>
               <li class="bg2">
-                <a href="#"><img src="/img/location/만장굴.jpg" /></a>
+                <a href="#"><img src="img/location/만장굴.jpg" /></a>
               </li>
               <li class="bg3">
-                <a href="#"><img src="/img/location/주상절리대.jpg" /></a>
+                <a href="#"><img src="img/location/주상절리대.jpg" /></a>
               </li>
               <li class="bg4">
-                <a href="#"> <img src="/img/location/카멜리아힐.jpg" /></a>
+                <a href="#"> <img src="img/location/카멜리아힐.jpg" /></a>
               </li>
             </ul>
           </div>
@@ -362,7 +372,7 @@
         </div>
         <div class="right">
           <div class="txt">주차안내</div>
-          <div class="imgbox"><img src="/img/location/av.png" /></div>
+          <div class="imgbox"><img src="img/location/av.png" /></div>
         </div>
       </div>
     </section>

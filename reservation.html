@@ -6,12 +6,13 @@
     <title>Reservation - Luxury Ocean Resort</title>
     <!-- jQuery 추가 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/header.js"></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/reservation.css" />
-    <script src="../js/reservation.js"></script>
+    <link rel="stylesheet" href="css/reservation.css" />
+    <script src="js/reservation.js" defer></script>
   </head>
   <body>
     <!-- ============================================
@@ -21,28 +22,51 @@
       <div class="inner">
         <h1>
           <a href="index.html">
-            <img src="../img/reservation/logo.svg" alt="Logo" />
+            <img src="img/logos/logo.svg" />
           </a>
         </h1>
         <nav>
-          <div class="bar">
-            <i class="fa-solid fa-bars"></i>
+          <div class="burger">
+            <div class="open"><i class="fa-solid fa-bars"></i></div>
+            <div class="close"><i class="fa-solid fa-xmark"></i></div>
           </div>
           <ul>
-            <li><a href="reservation.html">RESERVATION</a></li>
-            <li><a href="rooms.html">ROOMS</a></li>
-            <li><a href="facilities.html">FACILITIES</a></li>
-            <li><a href="location.html">LOCATION</a></li>
+            <li>
+              <a href="reservation.html">RESERVATION</a>
+            </li>
+            <li>
+              <a href="rooms.html">ROOMS</a>
+            </li>
+            <li>
+              <a href="facilities.html">FACILITIES</a>
+            </li>
+            <li>
+              <a href="location.html">LOCATION</a>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
+    <div id="menu">
+      <ul>
+        <li>
+          <a href="reservation.html"> RESERVATION</a>
+        </li>
+        <li><a href="rooms.html">ROOMS</a></li>
+        <li><a href="facilities.html">FACILITIES</a></li>
+        <li><a href="location.html">LOCATION</a></li>
+      </ul>
+    </div>
 
     <!-- 히어로 -->
     <section class="hero">
       <div class="inner">
         <h2>RESERVATION</h2>
-        <p>탁 트인 오션뷰에서 휴식과 여유를 즐겨보세요.</p>
+        <p>
+          탁 트인 오션뷰에서 휴식과 여유를 즐겨보세요.<br />“럭셔리
+          풀하우스에서의 특별한 하루, 예약으로 시작하세요. 고요한 파도와 따스한
+          햇살이 당신을 기다립니다.”
+        </p>
       </div>
     </section>
 
@@ -55,7 +79,7 @@
           <!-- 왼쪽 큰 이미지 -->
           <div class="item large pic">
             <img
-              src="../img/reservation/sub2_reser_top.jpg"
+              src="..img/reservation/sub2_reser_top.jpg"
               alt="Private pool"
             />
             <div class="cap">
@@ -69,7 +93,7 @@
 
           <!-- 오른쪽 위 -->
           <div class="item med pic">
-            <img src="../img/reservation/3 (1).jpg" alt="Jacuzzi" />
+            <img src="..img/reservation/3 (1).jpg" alt="Jacuzzi" />
             <div class="cap">
               <h4>Jacuzzi</h4>
               <p>
@@ -80,7 +104,7 @@
 
           <!-- 오른쪽 아래 -->
           <div class="item small pic">
-            <img src="../img/reservation/special_6.jpg" alt="Barbeque" />
+            <img src="..img/reservation/special_6.jpg" alt="Barbeque" />
             <div class="cap">
               <h4>Barbeque</h4>
               <p>프라이빗한 바비큐 타임으로 여행의 즐거움을 더하세요.</p>
@@ -156,7 +180,7 @@
         </div>
 
         <div class="bottomLogo">
-          <img src="../img/reservation/logo.svg" alt="Brand Logo" />
+          <img src="..img/reservation/logo.svg" alt="Brand Logo" />
         </div>
 
         <div class="bottomSns">

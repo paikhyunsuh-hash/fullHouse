@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- 제이쿼리 -->
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/js/rooms.js"></script>
+
+    <!-- room.js -->
+    <script src="js/rooms.js"></script>
+    <script src="js/header.js"></script>
+
+    <!-- header.js -->
+    <script src="js/header.js"></script>
 
     <!-- 공용 글꼴 -->
-    <link rel="stylesheet" href="/css/common.css" />
-    <link rel="stylesheet" href="/css/rooms.css" />
+
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/rooms.css" />
 
     <!-- font-awesome CDN  -->
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -36,12 +41,13 @@
       <div class="inner">
         <h1>
           <a href="index.html">
-            <img src="/img/logos/logo.svg" />
+            <img src="img/logos/logo.svg" />
           </a>
         </h1>
         <nav>
-          <div class="bar">
-            <i class="fa-solid fa-bars"></i>
+          <div class="burger">
+            <div class="open"><i class="fa-solid fa-bars"></i></div>
+            <div class="close"><i class="fa-solid fa-xmark"></i></div>
           </div>
           <ul>
             <li>
@@ -60,6 +66,16 @@
         </nav>
       </div>
     </header>
+    <div id="menu">
+      <ul>
+        <li>
+          <a href="reservation.html"> RESERVATION</a>
+        </li>
+        <li><a href="rooms.html">ROOMS</a></li>
+        <li><a href="facilities.html">FACILITIES</a></li>
+        <li><a href="location.html">LOCATION</a></li>
+      </ul>
+    </div>
 
     <!-- visual -->
 
@@ -125,7 +141,7 @@
     <section class="con01">
       <div class="wrap">
         <div class="right">
-          <img src="/img/rooms/23.jpg" />
+          <img src="img/rooms/23.jpg" />
         </div>
         <div class="left">
           <div class="leftText">
@@ -140,7 +156,7 @@
                 특별하게 기억될 거예요.
               </p>
               <div class="leftimgbox">
-                <img src="/img/rooms/354.jpg" />
+                <img src="img/rooms/354.jpg" />
               </div>
             </div>
           </div>
@@ -151,7 +167,7 @@
     <section class="con02">
       <div class="wrap">
         <div class="round">
-          <img src="/img/rooms/index (1).png" />
+          <img src="img/rooms/index (1).png" />
         </div>
         <div class="bg1">
           <h2>Facilities</h2>
