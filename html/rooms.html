@@ -110,7 +110,7 @@
 
       <ul class="navi">
         <li class="prev">
-          <a href="#"><i class="fa-solid fa-angle-left"></i></a>
+          <a href="#">Prev</a>
         </li>
         <li>
           <span></span>
@@ -120,7 +120,7 @@
           <span></span>
         </li>
         <li class="next">
-          <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+          <a href="#">Next</a>
         </li>
       </ul>
     </div>
@@ -245,48 +245,62 @@
         <li>Enhance Your Stay</li>
         <li>Enhance Your Stay</li>
       </ul>
+
       <!-- imgBox -->
-      <div class="wrap">
-        <h2>ROOM PREVIEW</h2>
-        <ul class="imgBox">
-          <li class="bg1">
-            <a href="#">
-              <p>MOREVIEW</p>
-            </a>
-          </li>
-          <li class="bg2">
-            <a href="#">
-              <p>MOREVIEW</p>
-            </a>
-          </li>
-          <li class="bg3">
-            <a href="#">
-              <p>MOREVIEW</p>
-            </a>
-          </li>
-          <!-- < >  -->
-        </ul>
-        <div class="prev">
-          <p><a href="#">Prev</a></p>
-        </div>
-        <div class="next">
-          <p><a href="#">Next</a></p>
+      <div class="imgwrap">
+        <div class="wrap">
+          <h2>ROOM PREVIEW</h2>
+          <ul class="imgBox">
+            <li class="bg1">
+              <a href="#">
+                <p>MOREVIEW</p>
+              </a>
+            </li>
+            <li class="bg2">
+              <a href="#">
+                <p>MOREVIEW</p>
+              </a>
+            </li>
+            <li class="bg3">
+              <a href="#">
+                <p>MOREVIEW</p>
+              </a>
+            </li>
+            <li class="bg4">
+              <a href="#">
+                <p>MOREVIEW</p>
+              </a>
+            </li>
+          </ul>
         </div>
 
         <!-- bar -->
-        <div class="bottom">
+        <!-- <div class="bottom">
           <p>
-            <a href="#"><i class="fa-solid fa-angle-left"></i></a>
+            <a href="#">Prev</a>
           </p>
           <div class="on"></div>
           <div class="bar"></div>
           <div class="bar"></div>
           <p>
-            <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+            <a href="#">Next</a>
+          </p>
+        </div> -->
+        <div class="bottom">
+          <p>
+            <a href="#">Prev</a>
+          </p>
+          <div class="on"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <p>
+            <a href="#">Next</a>
           </p>
         </div>
       </div>
     </section>
+
     <!-- con04 -->
 
     <section class="con04">
@@ -417,39 +431,120 @@
         "-=0.2"
       );
 
-      // con03
-
-      // 1️⃣ h2 등장: 아래에서 올라오면서 살짝 커짐
-      gsap.from(".con03 h2", {
+      // con04
+      const tl4 = gsap.timeline({
         scrollTrigger: {
-          trigger: ".con03",
-          start: "top 100%",
-          end: "top 50%",
-          scrub: 2,
-          markes: true,
+          trigger: ".con04",
+          start: "top 70%",
+          end: "bottom 80%", // end 지점 추가
+          toggleActions: "play none none reverse", // 올릴 때 역재생
+          // markers: true, // 디버깅용 (필요시 주석 해제)
         },
-        y: 50,
-        scale: 1.2,
-        opacity: 0,
-        ease: "power3.out",
       });
 
-      // 2️⃣ 이미지 순차적으로 등장
-      const images = gsap.utils.toArray(".con03 .imgBox li");
-      images.forEach((el, i) => {
-        gsap.from(el, {
-          scrollTrigger: {
-            trigger: el,
-            start: "top 90%",
-            toggleActions: "play none none reverse",
-          },
-          y: 80,
+      tl4.from(".con04 .full h2", {
+        scale: 0.3,
+        opacity: 0,
+        duration: 1.2,
+        ease: "back.out(2)",
+      });
+
+      tl4.from(
+        ".con04 .full p",
+        {
+          scale: 0,
           opacity: 0,
+          letterSpacing: "50px",
           duration: 1,
-          delay: i * 0.2,
-          ease: "power2.out",
+          ease: "power4.out",
+        },
+        "-=0.4"
+      );
+
+      // 4. 버튼 등장 - 간단하고 확실하게
+      tl4.fromTo(
+        ".con04 .full .btn",
+        {
+          y: 100,
+          opacity: 0,
+          scale: 0.5,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "back.out(1.7)",
+        },
+        "-=0.3"
+      );
+
+      // 버튼 상시 애니메이션 - 위아래로 살랑살랑 무한 반복
+      gsap.to(".con04 .full .btn", {
+        y: -10,
+        duration: 1.5,
+        ease: "power1.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: 2,
+      });
+
+      // 버튼 hover 추가 애니메이션
+      const btn = document.querySelector(".con04 .full .btn");
+
+      btn.addEventListener("mouseenter", () => {
+        gsap.to(btn, {
+          scale: 1.1,
+          rotation: 5,
+          duration: 0.3,
+          ease: "back.out(2)",
         });
       });
+
+      btn.addEventListener("mouseleave", () => {
+        gsap.to(btn, {
+          scale: 1,
+          rotation: 0,
+          duration: 0.3,
+          ease: "back.out(2)",
+        });
+      });
+
+      // footer
+
+      tl4.from(
+        ".con04 footer .info li",
+        {
+          y: 30,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.1, // 각 항목이 0.1초 간격으로 등장
+          ease: "power2.out",
+        },
+        "-=0.4"
+      );
+      tl4.from(
+        ".con04 footer .sns li",
+        {
+          scale: 0,
+          rotation: 360,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.15,
+          ease: "back.out(1.7)",
+        },
+        "-=0.8"
+      );
+      tl4.from(
+        ".con04 footer .bottom",
+        {
+          y: 20,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      );
     </script>
   </body>
 </html>
