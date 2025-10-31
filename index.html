@@ -46,16 +46,16 @@
           </div>
           <ul>
             <li>
-              <a href="html/reservation.html">RESERVATION</a>
+              <a href="reservation.html">RESERVATION</a>
             </li>
             <li>
-              <a href="html/rooms.html">ROOMS</a>
+              <a href="rooms.html">ROOMS</a>
             </li>
             <li>
-              <a href="html/facilities.html">FACILITIES</a>
+              <a href="facilities.html">FACILITIES</a>
             </li>
             <li>
-              <a href="html/location.html">LOCATION</a>
+              <a href="location.html">LOCATION</a>
             </li>
           </ul>
         </nav>
@@ -64,11 +64,11 @@
     <div id="menu">
       <ul>
         <li>
-          <a href="html/reservation.html"> RESERVATION</a>
+          <a href="reservation.html"> RESERVATION</a>
         </li>
-        <li><a href="html/rooms.html">ROOMS</a></li>
-        <li><a href="html/facilities.html">FACILITIES</a></li>
-        <li><a href="html/location.html">LOCATION</a></li>
+        <li><a href="rooms.html">ROOMS</a></li>
+        <li><a href="facilities.html">FACILITIES</a></li>
+        <li><a href="/location.html">LOCATION</a></li>
       </ul>
     </div>
     <div class="container">
@@ -309,6 +309,33 @@
         onEnter: () => menu.classList.add("scrolled"),
         onLeaveBack: () => menu.classList.remove("scrolled"),
       });
+
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger);
+
+      // #con03 scroll animation
+      let con03 = document.querySelector("#con03");
+      let imgLeft = con03.querySelector(".imgScrollLeft");
+      let imgRight = con03.querySelector(".imgScrollRight");
+      let fixedTxt = con03.querySelector(".fixedTxt");
+
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: con03,
+          start: "top top",
+          end: "+=200%", // the scroll length; increase for longer animation
+          scrub: 1,
+          pin: true, // pin the entire section
+          anticipatePin: 1,
+        },
+      });
+
+      tl.fromTo(
+        imgLeft,
+        { yPercent: -50 },
+        { yPercent: 50, ease: "none" },
+        0
+      ).fromTo(imgRight, { yPercent: 50 }, { yPercent: -50, ease: "none" }, 0);
     </script>
   </body>
 </html>
