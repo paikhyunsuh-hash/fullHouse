@@ -598,6 +598,24 @@ iframe {
     height: auto;
   }
 
+  .con01 .right,
+  .con02 .right {
+    display: none;
+  }
+
+  .con01 .left .btn,
+  .con02 .left .btn {
+    display: none;
+  }
+
+  .con01 .bg li.active img,
+  .con02 .bg li.active img {
+    border: 3px solid #85bfc1;
+    box-sizing: border-box;
+    opacity: 1;
+    scale: 1.2;
+  }
+
   /* .con01의 PC 100% 높이값 오버라이드 */
   .con01 .right img {
     height: auto;
@@ -757,6 +775,18 @@ iframe {
     height: auto;
   }
 
+  .con01 .right,
+  .con02 .right {
+    display: none;
+  }
+
+  .con01 .bg li.active img,
+  .con02 .bg li.active img {
+    border: 3px solid #85bfc1;
+    box-sizing: border-box;
+    opacity: 1;
+    scale: 1.2;
+  }
   .con01 .right img {
     height: auto; /* 높이 자동 */
   }
@@ -779,6 +809,7 @@ iframe {
   .con01 .btn,
   .con02 .btn {
     width: 100%; /* 버튼 100% */
+    display: none;
   }
 
   .con01 .left .bg,
