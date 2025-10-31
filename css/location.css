@@ -208,10 +208,13 @@ iframe {
 
 .con01 .right {
   width: calc(100% / 2);
-  object-fit: cover;
+  height: 100%;
+  /* object-fit: cover; */
 }
 .con01 .right img {
-  width: 500px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /* .con01 .right li {
   display: none;
