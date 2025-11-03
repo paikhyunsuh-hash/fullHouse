@@ -110,7 +110,7 @@ a {
   margin: 100px auto;
 }
 /* .fa1 */
-.fa1 {
+#con01 .fa1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -122,37 +122,37 @@ a {
 }
 
 /* .t1 */
-.fa1:hover {
+#con01 .fa1:hover {
   transform: scale(90%);
 }
-.t1 {
+#con01 .t1 {
   color: #333;
   width: calc(100% / 2);
   line-height: 2;
 }
-.t1 h2 {
+#con01 .t1 h2 {
   color: #85bfc1;
 }
-.t1 ul {
+#con01 .t1 ul {
   width: 100%;
   transform: translate(25%);
   /* margin: 0px auto; */
   /* text-align: left; */
 }
-.t1 ul li {
+#con01 .t1 ul li {
   margin: 5% 0%;
 }
-.t1 li img {
+#con01 .t1 li img {
   width: 50%;
 }
 
 /* .img1  */
 
-.img1 {
+#con01 .img1 {
   width: calc(100% / 2);
   height: 100%;
 }
-.img1 img {
+#con01 .img1 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -168,36 +168,36 @@ a {
 }
 
 /* top  */
-.top {
+#con02 .top {
   width: 100%;
   height: calc(100% / 2);
   display: flex;
 }
-.top h2 {
+#con02 .top h2 {
   color: #85bfc1;
 }
-.top p {
+#con02 .top p {
   line-height: 2;
 }
-.top ul {
+#con02 .top ul {
   width: calc(100% / 2);
   transform: translate(25%, 0%);
 }
-.top ul li {
+#con02 .top ul li {
   margin: 2% 0%;
 }
-.top ul img {
+#con02 .top ul img {
   width: 25%;
   object-fit: cover;
 }
-.top img {
+#con02 .top img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 /* imgBox  */
-.imgBox {
+#con02 .imgBox {
   width: calc(100% / 2);
   height: 100%;
   object-fit: cover;
@@ -223,14 +223,14 @@ a {
   height: 100%;
   object-fit: cover;
 }
-.round {
+#con02 .round {
   /* width: 100%;
   height: 100%; */
   position: absolute;
   right: 150px;
   bottom: 100px;
 }
-.round img {
+#con02 .round img {
   /* 애니메이션 이름: spin */
   animation-name: spin;
 
@@ -338,6 +338,10 @@ a {
   scale: 0;
 }
 
+/* footer */
+footer {
+  position: relative;
+}
 /* ---------------------------------- */
 /* 태블릿 (min-width: 620px) and (max-width: 1200px) */
 /* ---------------------------------- */
