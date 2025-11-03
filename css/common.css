@@ -115,7 +115,7 @@ p {
 }
 
 .num {
-  font-family: "BlackerSans";
+  font-family: "AritaBuriKR", "BlackerSans";
 }
 
 /* HEADER */
@@ -190,7 +190,6 @@ footer {
   /* background-color: rgba(241, 146, 123, 0.8); */
   background-color: rgba(133, 191, 193, 0.8);
   color: #fff;
-  font-family: "BlackerSans";
   box-sizing: border-box;
   padding: 50px 20px;
   position: absolute;
