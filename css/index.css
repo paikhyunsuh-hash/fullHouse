@@ -90,7 +90,7 @@ section {
   left: 25%;
   top: 0;
   transform: translate(0% -50%);
-  transform: rotate(-120deg);
+  transform: rotate(-45deg);
 }
 .circleTxt img {
   height: 100%;
@@ -395,15 +395,15 @@ section {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 2380px;
-  animation: scroll 5s linear infinite;
+  width: 4000px;
+  animation: scroll 30s linear infinite;
 }
 @keyframes scroll {
   0% {
-    transform: translateX(0) translateY(-50%);
+    margin-left: 0;
   }
   100% {
-    transform: translateX(-220px) translateY(-50%);
+    margin-left: -2200px;
   }
 }
 #con04 .ig ul li {
