@@ -1,80 +1,3 @@
-/* ------------------------------------
-       0) 폰트 (요청한 그대로)
-    ------------------------------------ */
-/*영문폰트*/
-/*  font-family: "BlackerSans"; */
-@font-face {
-  font-family: "BlackerSans";
-  src: url("../fonts/BlackerSansDisplayTrial-Thin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: "BlackerSans";
-  src: url("../fonts/BlackerSansDisplayTrial-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "BlackerSans";
-  src: url("../fonts/BlackerSansDisplayTrial-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "BlackerSans";
-  src: url("../fonts/BlackerSansDisplayTrial-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "BlackerSans";
-  src: url("../fonts/BlackerSansDisplayTrial-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "BlackerSans";
-  src: url("../fonts/BlackerSansDisplayTrial-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-}
-/*한글폰트*/
-/* font-family: "AritaBuriKR"; */
-@font-face {
-  font-family: "AritaBuriKR";
-  src: url("../fonts/AritaBuriKR-HairLine.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: "AritaBuriKR";
-  src: url("../fonts/AritaBuriKR-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "AritaBuriKR";
-  src: url("../fonts/AritaBuriKR-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "AritaBuriKR";
-  src: url("../fonts/AritaBuriKR-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "AritaBuriKR";
-  src: url("../fonts/AritaBuriKR-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-/* ------------------------------------
-       1) 리셋 + 공통
-    ------------------------------------ */
 * {
   margin: 0;
   padding: 0;
@@ -146,37 +69,154 @@ p {
   }
 }
 
-/* ------------------------------------
-       3) 히어로
-    ------------------------------------ */
-.hero {
+#visual {
   width: 100%;
   height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+
+#visual .panel li {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: none;
+}
+#visual .panel .panel01 {
+  background: url(../img/reservation/sub2_reser_top.jpg) no-repeat center;
+  display: block;
+}
+#visual .panel .panel02 {
+  background: url(../img/reservation/vi1.jpg) no-repeat center;
+}
+#visual .panel .panel03 {
+  background: url(../img/reservation/vi2.jpg) no-repeat center;
+}
+
+#visual .textBox {
+  width: 100%;
+  margin: 25% auto;
+  color: #fff;
+  text-align: center;
+}
+
+#visual h2 {
+  letter-spacing: 20px;
+  margin-bottom: 50px;
+}
+#visual P {
+  line-height: 1.6;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+/* navi */
+
+#visual .navi {
   display: flex;
   align-items: center;
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+}
+#visual .navi li:nth-child(2) {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+#visual .navi li:nth-child(2) span {
+  margin: 0px 10px;
+  display: none;
+}
+#visual .bar {
+  width: 500px;
+  height: 1px;
+  background-color: #ccc;
+  display: block;
+}
+#visual .bar > div {
+  width: 33.33%;
+  height: 100%;
+  background-color: #32f8ff;
+}
+#visual .navi li a {
+  padding: 10px;
+  /* z-index: 10; */
+}
+
+#visual .navi li:first-child {
+  color: rgb(255, 255, 255);
+}
+
+#visual .navi li:last-child {
+  color: rgb(255, 255, 255);
+}
+
+/* con01 */
+
+#con01 {
+  width: 100%;
+  margin: 0px auto;
+  /* padding-top: 200px; */
+  height: 100vh;
+  box-sizing: border-box;
+  /* position: relative; */
+}
+#con01 .wrap {
+  display: flex;
   justify-content: center;
-  text-align: center;
-  color: #fff;
-  position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url("https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1600")
-      center/cover;
-  padding-top: 80px; /* 헤더 높이 만큼 */
+  align-items: center;
+  gap: 3%;
 }
-.hero h2 {
-  font-weight: 300;
-  letter-spacing: 20px;
+#con01 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.hero p {
-  margin-top: 50px;
-  color: #f1f1f1;
+
+#con01 .textBox p {
+  padding: 10px;
+  font-size: 20px;
+  padding-left: 9%;
 }
+#con01 .more {
+  color: #85bfc1;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+#con01 .imgBox1 {
+  width: 70px;
+}
+#con01 .imgBox2 img {
+  border-radius: 0px 280px 0px 0px;
+}
+/* #con01 .back {
+  width: 80%;
+  position: absolute;
+  top: 5;
+  right: 10%;
+  border: 1px solid #85bfc1;
+  background-color: #32f8ff;
+} */
 
 /* ------------------------------------
        4) PEACHBEACH POINT 섹션 (요청 배치)
           - 왼쪽 큰 이미지 / 오른쪽 위,아래 이미지
     ------------------------------------ */
 .point-wrap {
+  width: 100%;
+  height: 100vh;
+  padding-top: 200px;
+  box-sizing: border-box;
   background: #85bfc1;
   color: #fff;
   position: relative;
@@ -201,7 +241,7 @@ p {
 }
 .item {
   position: relative;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   overflow: hidden;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
@@ -241,6 +281,11 @@ p {
 /* ===== 레이아웃 (그리드) ===== */
 .wrap {
   padding-top: 16px;
+  width: 100%;
+  height: 100vh;
+  margin: 0px auto;
+  padding-top: 200px;
+  box-sizing: border-box;
 }
 .grid {
   display: grid;
@@ -276,8 +321,8 @@ p {
   display: grid;
   grid-template-columns: 1fr 220px;
   gap: 16px;
-  background: #fff;
-  border-radius: 16px;
+  /* background: #fff; */
+  /* border-radius: 16px; */
   padding: 20px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
@@ -291,17 +336,17 @@ p {
 .lower .small {
   width: 100%;
   height: 160px;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   overflow: hidden;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
 }
 
 /* 오른쪽 카드 */
 .info {
-  background: #fff;
-  border-radius: 16px;
+  /* background: #fff; */
+  /* border-radius: 16px; */
   padding: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
   display: flex;
   flex-direction: column;
   /* 선택: 스크롤 시 따라오게 하고 싶으면 주석 해제
@@ -450,6 +495,125 @@ p {
   font-size: 36px;
   cursor: pointer;
 }
+/* con04 */
+#con04 {
+  width: 100%;
+  height: 100vh;
+  padding: 100px 0 0 0;
+  position: relative;
+  overflow: hidden;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+#con04 .all {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#con04 .wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  /* padding: 50px; */
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+#con04 .section-block {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+#con04 .title {
+  width: 35%;
+  min-width: 250px;
+}
+
+#con04 .title h2 {
+  font-size: 48px;
+  color: #85bfc1;
+  letter-spacing: 3px;
+  line-height: 1.2;
+}
+
+#con04 .rules {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#con04 .rules li {
+  /* background-color: rgba(255, 255, 255, 0.95);
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#con04 .rules li:hover {
+  transform: translateY(-5px);
+}
+
+#con04 .rules li h4 {
+  font-size: 20px;
+  color: #85bfc1;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+#con04 .rules li p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+#con04 .rules li p:last-child {
+  margin-bottom: 0;
+}
+/* 움직이는 모션 */
+
+#con04 .round {
+  position: absolute;
+  width: 45%;
+  top: 5%;
+  right: -300px;
+}
+.round img {
+  /* 애니메이션 이름: spin */
+  animation-name: spin;
+
+  /* 애니메이션 지속 시간: 3초 */
+  animation-duration: 10s;
+
+  /* 애니메이션 반복 횟수: 무한히 반복 */
+  animation-iteration-count: infinite;
+
+  /* 애니메이션 타이밍 함수: 선형 (일정 속도) */
+  animation-timing-function: linear;
+}
+@keyframes spin {
+  /* 0% (시작): 변형 없음 */
+  0% {
+    transform: rotate(0deg);
+  }
+
+  /* 100% (끝): 360도 회전 */
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* footer */
+footer {
+  position: relative;
+}
 
 /* ------------------------------------
        7) 푸터(간단)
@@ -523,5 +687,154 @@ p {
   .thumb {
     flex: 0 0 calc(50% - 6px);
     height: 110px;
+  }
+}
+
+@media (min-width: 620px) and (max-width: 1200px) {
+  #con04 {
+    padding: 80px 0 0 0;
+  }
+
+  #con04 .wrap {
+    padding: 40px 35px;
+    margin-bottom: 60px;
+    gap: 50px;
+  }
+
+  #con04 .section-block {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  #con04 .title {
+    width: 100%;
+    text-align: center;
+  }
+
+  #con04 .title h2 {
+    font-size: 42px;
+  }
+
+  #con04 .rules {
+    width: 100%;
+    gap: 22px;
+  }
+
+  #con04 .rules li {
+    padding: 22px 25px;
+  }
+
+  #con04 .rules li h4 {
+    font-size: 18px;
+  }
+
+  #con04 .rules li p {
+    font-size: 14px;
+  }
+
+  footer .inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    padding: 0 30px;
+  }
+
+  footer .info li {
+    font-size: 13px;
+  }
+
+  footer .sns li a {
+    font-size: 22px;
+  }
+
+  footer .bottom {
+    margin: 0 30px;
+  }
+}
+
+/* 모바일: ~ 620px */
+
+@media (max-width: 620px) {
+  #con04 {
+    padding: 60px 0 0 0;
+  }
+
+  #con04 .all {
+    padding: 0 15px;
+  }
+
+  #con04 .wrap {
+    padding: 30px 20px;
+    margin-bottom: 50px;
+    gap: 40px;
+  }
+
+  #con04 .section-block {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #con04 .title {
+    width: 100%;
+    text-align: center;
+  }
+
+  #con04 .title h2 {
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
+
+  #con04 .rules {
+    width: 100%;
+    gap: 18px;
+  }
+
+  #con04 .rules li {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  #con04 .rules li h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+
+  #con04 .rules li p {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+
+  footer {
+    padding: 40px 0 20px;
+  }
+
+  footer .inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  footer .info li {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  footer .sns {
+    gap: 15px;
+  }
+
+  footer .sns li a {
+    font-size: 20px;
+  }
+
+  footer .bottom {
+    font-size: 10px;
+    padding-top: 20px;
+    margin: 0 20px;
   }
 }

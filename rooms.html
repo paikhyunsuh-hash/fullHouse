@@ -482,17 +482,6 @@
         "-=0.3"
       );
 
-      // 버튼 상시 애니메이션 - 위아래로 살랑살랑 무한 반복
-      gsap.to(".con04 .full .btn", {
-        y: -10,
-        duration: 1.5,
-        ease: "power1.inOut",
-        repeat: -1,
-        yoyo: true,
-        delay: 2,
-      });
-
-      // 버튼 hover 추가 애니메이션
       const btn = document.querySelector(".con04 .full .btn");
 
       btn.addEventListener("mouseenter", () => {
