@@ -184,39 +184,39 @@
           <ul>
             <li>
               <img src="img/index/instaReview1.jpg" />
-              <p class="hashTag">#풀하우스</p>
+              <p class="hashTag">#프라이빗풀</p>
             </li>
             <li>
               <img src="img/index/instaReview2.jpeg" />
-              <p class="hashTag">#풀하우스</p>
+              <p class="hashTag">#제주펜션</p>
             </li>
             <li>
               <img src="img/index/instaReview3.jpeg" />
-              <p class="hashTag">#풀하우스</p>
+              <p class="hashTag">#독채펜션</p>
             </li>
             <li>
               <img src="img/index/instaReview4.jpg" />
-              <p class="hashTag">#풀하우스</p>
+              <p class="hashTag">#개인풀장</p>
             </li>
             <li>
               <img src="img/index/instaReview 5.jpg" />
-              <p class="hashTag">#풀하우스</p>
+              <p class="hashTag">#수영장</p>
             </li>
             <li>
               <img src="img/index/instaReview6.jfif" />
-              <p class="hashTag">#풀하우스</p>
+              <p class="hashTag">#오션뷰</p>
             </li>
             <li>
               <img src="img/index/instaReview7.jpg" />
-              <p class="hashTag">#풀하우스</p>
+              <p class="hashTag">#바다뷰</p>
             </li>
             <li>
               <img src="img/index/instaReview8.jpg" />
-              <p class="hashTag">#풀하우스</p>
+              <p class="hashTag">#포토스팟</p>
             </li>
             <li>
               <img src="img/index/instaReview9.jpg" />
-              <p class="hashTag">#풀하우스</p>
+              <p class="hashTag">#감성숙소</p>
             </li>
             <li>
               <img src="img/index/instaReview10.jpg" />
@@ -347,8 +347,20 @@
         onLeaveBack: () => menu.classList.remove("scrolled"),
       });
 
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.registerPlugin(ScrollTrigger);
+      //#con01 scroll animation
+      gsap.to("#con01 .circleTxt", {
+        rotate: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#con01",
+          start: "20% center",
+          end: "80% center",
+          scrub: 4,
+          // markers: true,
+          // 테스트 할때는 안내선 보이게
+          // markers: false, // 안내선 안보이게
+        },
+      });
 
       // #con03 scroll animation
       let con03 = document.querySelector("#con03");

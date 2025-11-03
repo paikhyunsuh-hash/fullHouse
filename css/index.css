@@ -53,6 +53,7 @@ section {
   width: 100%;
   background-color: #ffefef;
   position: relative;
+  overflow: hidden;
 }
 #con01 .inner {
   max-width: 1200px;
@@ -86,9 +87,10 @@ section {
 #con01 .circleTxt {
   width: 50%;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 25%;
+  top: 0;
+  transform: translate(0% -50%);
+  transform: rotate(-120deg);
 }
 .circleTxt img {
   height: 100%;
