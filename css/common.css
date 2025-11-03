@@ -114,6 +114,10 @@ p {
   font-weight: normal;
 }
 
+.num {
+  font-family: "BlackerSans";
+}
+
 /* HEADER */
 header {
   width: 100%;
