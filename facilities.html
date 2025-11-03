@@ -248,7 +248,6 @@
         </div>
       </section>
     </div>
-
     <!-- footer  -->
     <footer>
       <div class="inner">
@@ -286,64 +285,8 @@
         onEnter: () => header.classList.add("scrolled"),
         onLeaveBack: () => header.classList.remove("scrolled"),
       });
-    </script>
 
-    <script>
-      // section03 가로 슬라이드 효과
-      gsap.registerPlugin(ScrollTrigger);
-
-      // li 전체 가져오기
-      // let list = document.querySelectorAll(".con03 li");
-      let list = gsap.utils.toArray("#con03 li");
-
-      gsap.to(list, {
-        xPercent: -400, //x축으로 왼쪽방향 400% 만큼 이동
-        scrollTrigger: {
-          trigger: "#con03",
-          start: "top top",
-          end: "+=2000",
-          scrub: 2,
-          pin: true,
-          // markers: true,
-        },
-      });
-    </script>
-
-    <!-- section04 슬라이드 효과 -->
-    <script>
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.to("#con04 .left", {
-        y: 0,
-        scale: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: "#con04",
-          start: "10% center",
-          end: "40% center",
-          scrub: 2,
-          // markers: true,
-          // 테스트 할때는 안내선 보이게
-          // markers: false, // 안내선 안보이게
-        },
-      });
-
-      gsap.to("#con04 .right", {
-        y: 0,
-        scale: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: "#con04",
-          start: "30% center",
-          end: "40% center",
-          scrub: 3,
-          // markers: true,
-          // 테스트 할때는 안내선 보이게
-          // markers: false, // 안내선 안보이게
-        },
-      });
-
-      // con02 슬라이드 효과
+      // #con02 슬라이드 효과
       gsap.to("#con02 .top .imgBox", {
         x: 0,
         duration: 1,
@@ -367,6 +310,52 @@
           end: "40% center",
           scrub: 3,
           // markers: true,
+          // 테스트 할때는 안내선 보이게
+          // markers: false, // 안내선 안보이게
+        },
+      });
+
+      // section03 가로 슬라이드 효과
+      // li 전체 가져오기
+      // let list = document.querySelectorAll(".con03 li");
+      let list = gsap.utils.toArray("#con03 li");
+
+      gsap.to(list, {
+        xPercent: -300, //x축으로 왼쪽방향 400% 만큼 이동
+        scrollTrigger: {
+          trigger: "#con03",
+          start: "top top",
+          end: "+=2000",
+          scrub: 2,
+          pin: true,
+          // markers: true,
+        },
+      });
+
+      // <!-- section04 슬라이드 효과 -->
+      gsap.to("#con04 .left", {
+        y: 0,
+        scale: 1,
+        scrollTrigger: {
+          trigger: "#con04",
+          start: "10% center",
+          end: "30% center",
+          scrub: 2,
+          // markers: true,
+          // 테스트 할때는 안내선 보이게
+          // markers: false, // 안내선 안보이게
+        },
+      });
+
+      gsap.to("#con04 .right", {
+        y: 0,
+        scale: 1,
+        scrollTrigger: {
+          trigger: "#con04",
+          start: "30% center",
+          end: "50% center",
+          scrub: 2,
+          markers: true,
           // 테스트 할때는 안내선 보이게
           // markers: false, // 안내선 안보이게
         },
