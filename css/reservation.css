@@ -90,14 +90,17 @@ p {
   display: none;
 }
 #visual .panel .panel01 {
-  background: url(../img/reservation/sub2_reser_top.jpg) no-repeat center;
+  background: url(/img/reservation/vis.avif) no-repeat center;
   display: block;
+  background-size: cover;
 }
 #visual .panel .panel02 {
   background: url(../img/reservation/vi1.jpg) no-repeat center;
+  background-size: cover;
 }
 #visual .panel .panel03 {
-  background: url(../img/reservation/vi2.jpg) no-repeat center;
+  background: url(../img/reservation/vi3.jpg) no-repeat center;
+  background-size: cover;
 }
 
 #visual .textBox {
@@ -243,7 +246,7 @@ p {
   position: relative;
   /* border-radius: 12px; */
   overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); */
 }
 .item.large {
   grid-row: 1 / span 2;
@@ -622,7 +625,7 @@ footer {
 /* 기본 스타일 - 모바일 우선 */
 
 /* 태블릿 스타일 (가로폭 768px 이상) */
-@media screen and (min-width: 768px) {
+@media (min-width: 620px) and (max-width: 1200px) {
   .bottom {
     flex-direction: row;
     justify-content: space-between;
@@ -647,7 +650,7 @@ footer {
 }
 
 /* PC 스타일 (가로폭 1024px 이상) */
-@media screen and (min-width: 1024px) {
+@media (min-width: 1200px) {
   footer {
     padding: 40px 80px;
   }
@@ -664,9 +667,8 @@ footer {
     font-size: 24px;
   }
 }
-
-/* 반응형 */
-@media (max-width: 980px) {
+/* 모바일 */
+@media (max-width: 620px) {
   h2 {
     font-size: 44px;
   }
