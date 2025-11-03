@@ -8,45 +8,96 @@ section {
   height: 100vh;
 }
 /* VISUAL */
+/* visual */
 #visual {
   width: 100%;
-  background-image: url(../img/index/visual1.jpg);
-  background-position: center;
+  height: 100vh;
   background-size: cover;
   position: relative;
 }
-.visualText {
-  position: absolute;
-  left: 50%;
+
+#visual .panel li {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
+  position: absolute;
+  display: none;
+}
+#visual .panel .panel01 {
+  background: url(../img/index/visual1.jpg) no-repeat center;
+  display: block;
+}
+#visual .panel .panel02 {
+  background: url(../img/index/visual2.jpg) no-repeat center;
+}
+#visual .panel .panel03 {
+  background: url(../img/index/visual3.jpg) no-repeat center;
+}
+
+#visual .textBox {
+  width: 100%;
+  margin: 25% auto;
+  color: rgb(241, 146, 123);
   text-align: center;
 }
-.visualText h2 {
-  color: #fff;
-  font-size: 8.5vw;
+
+#visual h2 {
+  letter-spacing: 20px;
+  margin-bottom: 50px;
 }
-.visualText span {
-  font-size: 4vw;
+#visual h2 span {
   display: block;
-  color: #f1927b;
-}
-#visual .bottom {
   color: #fff;
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+}
+
+/* navi */
+
+#visual .navi {
   display: flex;
   align-items: center;
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
 }
-#visual .bottom .bar {
-  width: 200px;
+#visual .navi li:nth-child(2) {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+#visual .navi li:nth-child(2) span {
+  margin: 0px 10px;
+  display: none;
+}
+#visual .bar {
+  width: 500px;
   height: 1px;
-  background-color: #fff;
+  background-color: #ccc;
+  display: block;
 }
-#visual .bottom p {
-  margin: 0px 50px;
+#visual .bar > div {
+  width: 33.33%;
+  height: 100%;
+  background-color: #32f8ff;
+}
+#visual .navi li a {
+  padding: 10px;
+  /* z-index: 10; */
+}
+
+#visual .navi li:first-child {
+  color: rgb(255, 255, 255);
+}
+
+#visual .navi li:last-child {
+  color: rgb(255, 255, 255);
 }
 /* CON01 */
 #con01 {
