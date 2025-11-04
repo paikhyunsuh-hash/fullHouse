@@ -118,6 +118,9 @@ p {
 .num {
   font-family: "AritaBuriKR", "BlackerSans";
 }
+.ko {
+  font-family: "AritaBuriKR";
+}
 
 /* HEADER */
 header {
@@ -131,7 +134,6 @@ header {
   padding: 0 20px;
   box-sizing: border-box;
   z-index: 9;
-
   transition: background-color 1s ease, color 1s ease;
 }
 header.scrolled {
