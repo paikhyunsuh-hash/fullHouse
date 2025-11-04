@@ -250,6 +250,7 @@ footer .bottom {
 #visual .textBox {
   width: 100%;
   margin: 25% auto;
+  color: #fff;
   text-align: center;
 }
 
@@ -257,14 +258,15 @@ footer .bottom {
   letter-spacing: 20px;
   margin-bottom: 50px;
 }
+#visual P {
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
 
 /* navi */
 
 #visual .navi {
-  max-width: 620px;
-  width: 90%;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 10px;
   position: absolute;
@@ -282,7 +284,7 @@ footer .bottom {
   display: none;
 }
 #visual .bar {
-  width: 100%;
+  width: 500px;
   height: 1px;
   background-color: #ccc;
   display: block;
@@ -374,6 +376,33 @@ footer .bottom {
     width: 100%;
     text-align: center;
     margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 620px) {
+  #visual {
+    height: 90vh; /* 모바일 주소창 감안하여 높이 살짝 줄임 */
+  }
+  #visual .titleBox {
+    width: 90%; /* 좌우 여백 확보 */
+    text-align: center;
+  }
+  #visual .titleBox h2 {
+    font-size: 13vw; /* 모바일에서 더 잘 보이도록 vw 값 증가 */
+    letter-spacing: 0.5vw;
+  }
+  #visual .titleBox p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  #visual .navi {
+    flex-direction: column; /* Prev/Next 버튼 세로 배치 */
+  }
+  #visual .navi .bar {
+    display: none; /* 바 숨김 */
+  }
+  #visual .bottom p {
+    margin: 10px 0; /* 상하 여백 */
   }
 }
 
