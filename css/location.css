@@ -718,9 +718,6 @@ iframe {
       padding-top: 60px;
     */
   }
-  header h1 {
-    width: 150px; /* 로고 크기 줄이기 */
-  }
 
   /* --- Visual --- */
   #visual .textBox {

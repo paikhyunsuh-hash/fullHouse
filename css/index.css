@@ -57,10 +57,13 @@ section {
   align-items: center;
 }
 #con01 .innerLeft {
-  width: 500px;
+  width: 50%;
+}
+#con01 .inner .innerLeft .textBox h4 {
+  font-family: "AritaBuriKR";
 }
 #con01 .innerRight {
-  width: 500px;
+  width: 50%;
 }
 #con01 .imgBox {
   height: 600px;
@@ -68,9 +71,18 @@ section {
 }
 #con01 .innerLeft .textBox {
   margin-top: 20px;
+  padding: 10px;
 }
-#con01 .innerRight .textBox {
+/* #con01 .innerRight .textBox {
   margin-bottom: 20px;
+  padding: 10px;
+} */
+#con01 .inner .innerLeft .imgBox {
+  width: 100%;
+}
+#con01 .inner .innerRight .imgBox {
+  width: 100%;
+  height: 100%;
 }
 #con01 img {
   width: 100%;
@@ -98,6 +110,8 @@ section {
 #con02 .inner {
   max-width: 1200px;
   height: 100%;
+  padding: 100px 0px;
+  box-sizing: border-box;
   margin: 0px auto;
   display: flex;
   justify-content: space-between;
@@ -383,6 +397,7 @@ section {
 }
 #con04 .ig {
   width: 100%;
+  height: calc(100% - 211px);
   overflow: hidden;
 }
 #con04 .ig ul {
