@@ -497,66 +497,207 @@ iframe {
 }
 
 /* con04 */
-
 .con04 {
   width: 100%;
   height: 100vh;
-  background: url("../img/location/air2.png") no-repeat center;
-  background-size: cover;
-  margin-top: 100px;
-  position: relative;
+  margin: 50px auto;
 }
-.con04 img {
+/* 기본 설정 */
+.rental-hero {
+  /* 이미지와 유사한 배경 설정 */
+  width: 100%;
+  background: url("/img/location/air2.png") no-repeat center center;
+  background-size: cover;
+  height: 100vh; /* 섹션 높이 */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* 배경 이미지 위에 덮는 어두운 레이어 (선택 사항) */
+.rental-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* 콘텐츠 (텍스트) */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 20px;
+  /* transform: translateY(-150px); */
+}
+.hero-content h2 {
+  text-transform: uppercase;
+  color: #85bfc1;
+  font-size: 70px;
+  margin-top: -300px;
+}
+.hero-content h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  /* 이미지 상의 글자 색상과 유사하게 조정 */
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #eee;
+}
+
+/* 예약 카드 컨테이너 */
+.reservation-card:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.reservation-card {
+  position: absolute;
+  bottom: 150px; /* 섹션 아래로 내려오도록 조정 */
+  background-color: #fff;
+  opacity: 0.8;
+  /* border-radius: 8px; */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  padding: 50px;
+  width: 90%;
+  max-width: 1000px;
+  z-index: 3;
+  transition: 0.5s;
+}
+
+/* 탭 메뉴 */
+.tab-menu {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.tab {
+  background: #85bfc1;
+  border: 1px solid #eee;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  background-color: #f1927b;
+  color: #222;
+  font-weight: 700;
+}
+
+/* 폼 필드 레이아웃 */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px;
+  border-right: 1px solid #eee;
+  min-height: 60px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  padding: 2px 0;
+}
+
+/* 인수 장소 필드 */
+.full-width {
+  width: 30%; /* 이미지와 유사하게 너비 설정 */
+  border-right: 1px solid #eee;
+}
+
+/* 날짜/시간 그룹 */
+.date-time-group {
+  display: flex;
+  align-items: stretch;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border-top: 1px solid #eee; /* 이미지 상의 구분선 */
 }
-.con04 .wrap {
-  width: 100%;
-  /* margin: 0px auto; */
-  padding: 100px 0px 0px 50px;
-  box-sizing: border-box;
+
+/* 날짜/시간 입력 필드 */
+.date-time-group .input-group {
+  flex-grow: 1;
+  flex-basis: 0;
+  border-bottom: 1px solid #eee;
 }
-.con04 h2 {
-  font-size: 70px;
-  color: #fff;
+
+.date-time-group .input-group:last-of-type {
+  /* border-right: none; */
 }
-.con04 h3 {
-  color: #555555;
-  font-size: 24px;
-  margin-bottom: 30px;
+
+.time-input {
+  position: relative;
 }
-.con04 .box {
-  width: 700px;
-  height: 300px;
+
+.time-input input {
+  /* 시간 입력 필드 값의 위치를 아이콘과 맞추기 */
+  padding-right: 25px;
+}
+
+.time-input i {
+  /* 달력 아이콘 스타일링 (폰트어썸 필요) */
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none; /* 아이콘 클릭 방지 */
+  font-size: 1rem;
+}
+
+/* 검색 버튼 */
+.search-btn {
   background-color: #85bfc1;
+  color: #333;
+  border: none;
+  padding: 0 25px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0; /* 줄어들지 않도록 */
+  transition: background-color 0.2s;
 }
-.con04 p {
-  margin-top: 50px;
-  text-align: center;
-  color: #fff;
-  font-size: 16px;
-}
-.con04 .bus {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 10px;
-}
-.con04 .bus li {
-  width: 200px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  font-size: 16px;
-}
-.con04 .pink {
+
+.search-btn:hover {
   background-color: #f1927b;
-  color: #fff;
 }
-.con04 .white {
-  background-color: #fff;
-  color: #f1927b;
+
+/* footer */
+footer {
+  position: relative;
 }
 
 /* ---------------------------------- */
@@ -660,23 +801,48 @@ iframe {
     height: auto;
   }
 
-  /* --- Con04 (Airport) --- */
-  .con04 {
-    width: 100%;
-    height: auto; /* vh 높이 제거 */
-    padding-bottom: 100px;
-    background-position: center;
-    position: relative;
+  /* con04 */
+  .rental-hero {
+    height: 80vh; /* 태블릿에서는 높이 조금 줄이기 */
   }
-  .con04 .wrap {
-    padding: 100px 5%; /* 좌우 패딩 %로 변경 */
-    width: auto;
+  .hero-content h1 {
+    font-size: 2.2rem;
+    margin-top: -100px; /* 타이틀 위치 조정 */
   }
-  .con04 .box {
-    width: 100%; /* 고정 너비 -> 100% */
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .reservation-card {
+    bottom: 50px; /* 카드를 섹션 하단에 가깝게 조정 */
+    width: 95%; /* 너비를 꽉 채우도록 */
+    max-width: 80%;
+    padding: 30px; /* 패딩 감소 */
+  }
+
+  .tab {
+    padding: 8px 15px; /* 탭 버튼 크기 조정 */
+    font-size: 0.95rem;
+  }
+
+  .full-width {
+    width: 35%; /* 인수 장소 필드 비율 조정 */
+  }
+
+  /* 나머지 날짜/시간 필드들은 유연하게 유지 */
+  .date-time-group {
     height: auto;
-    padding: 30px;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-group label {
+    font-size: 0.8rem;
+  }
+
+  .input-group input,
+  .search-btn {
+    font-size: 1rem;
   }
 }
 
@@ -880,37 +1046,99 @@ iframe {
     height: auto;
   }
 
-  /* --- Con04 (Airport) --- */
-  .con04 {
-    height: auto;
-    padding: 80px 0;
-    margin-top: 30px;
-    background-position: center;
+  /* con04 */
+  .rental-hero {
+    height: 100%; /* 모바일에서 섹션 높이 대폭 감소 */
   }
-  .con04 .wrap {
-    padding: 0 15px;
-    width: auto;
+  .hero-content h2 {
+    font-size: 1.8rem;
   }
-  .con04 h3 {
-    font-size: 1.1rem;
+  .hero-content h3 {
+    font-size: 1.8rem;
+    margin-top: 0px; /* 타이틀 위치 조정 */
+  }
+  .hero-content p {
+    font-size: 0.8rem;
+  }
+
+  .reservation-card:hover {
+    transform: scale(0.9);
+  }
+  .reservation-card {
+    bottom: 50px; /* 화면 밖으로 살짝 내려오도록 */
+    width: 95%;
+    padding: 20px 15px; /* 내부 패딩 감소 */
+    /* 모바일에서는 모서리를 둥글게 */
+    border-radius: 8px;
+    opacity: 1;
+  }
+
+  /* 탭 메뉴 */
+  .tab-menu {
+    justify-content: center;
     margin-bottom: 20px;
   }
-  .con04 .box {
+  .tab {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 6px; /* 모바일에서 탭에 둥근 모서리 적용 */
+    margin: 0 5px;
+    background: #f8f8f8; /* 비활성화 탭은 밝은 배경 */
+  }
+  .tab:hover {
+    /* 모바일에서 호버 시 스타일 유지 */
+    background-color: #f1927b;
+  }
+  .tab:first-child {
+    margin-left: 0;
+  }
+  .tab:last-child {
+    margin-right: 0;
+  }
+
+  /* 폼 필드 구조 변경: 모두 수직으로 쌓기 */
+  .date-time-group {
+    flex-wrap: wrap;
+    border-top: none; /* 상단 구분선 제거 */
+    gap: 0; /* 필드 간격 제거 */
+  }
+
+  .full-width,
+  .date-time-group .input-group {
+    width: 100%; /* 너비 전체 사용 */
+    padding: 10px 0;
+    border-right: none;
+    border-bottom: 1px solid #eee; /* 하단 구분선으로 필드 구분 */
+  }
+
+  /* 마지막 필드의 하단 구분선 제거 */
+  .date-time-group .input-group:nth-last-child(2) {
+    border-bottom: none;
+  }
+
+  .full-width {
+    margin-bottom: 0;
+  }
+
+  .input-group label {
+    font-size: 0.75rem;
+  }
+  .input-group input {
+    font-size: 0.95rem;
+  }
+
+  /* 달력 아이콘 위치 조정 */
+  .time-input i {
+    right: 0;
+  }
+
+  /* 검색 버튼은 너비 100%로 아래에 배치 */
+  .search-btn {
     width: 100%;
-    height: auto;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  .con04 p {
-    padding: 10px 0 30px 0;
-    font-size: 14px;
-  }
-  .con04 ul {
-    flex-direction: column; /* 버튼 상하 정렬 */
+    height: 50px;
+    margin-top: 15px;
     padding: 0;
-    gap: 10px;
-  }
-  .con04 li {
-    width: 100%;
+    border-radius: 6px;
+    font-size: 1rem;
   }
 }
