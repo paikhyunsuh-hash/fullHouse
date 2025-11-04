@@ -317,13 +317,17 @@ body {
 }
 .con04 .full h2 {
   color: #f1927b;
-  font-size: 150px;
+  letter-spacing: 2vw;
+  font-size: 9vw;
 }
-.con04 .full p {
-  font-size: 70px;
-  font-weight: bold;
+.con04 .full span {
+  font-size: 4vw;
+  font-weight: 300;
+  letter-spacing: 1px;
   color: #fff;
+  display: block;
 }
+
 .con04 .full .btn {
   width: 250px;
   height: 70px;
