@@ -532,13 +532,14 @@ iframe {
   background-color: #85bfc1;
 }
 .con04 p {
-  padding: 20px 0px 30px 20px;
+  padding-top: 50px;
+  text-align: center;
   color: #fff;
   font-size: 16px;
-  padding: 50px 0px 50px 20px;
 }
 .con04 .bus {
   display: flex;
+  justify-content: center;
   gap: 20px;
   padding: 10px;
 }
