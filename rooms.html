@@ -445,11 +445,21 @@
       });
 
       // con04
+
+      let tl4 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".con04",
+          start: "top center",
+          end: "bottom bottom",
+          scrub: 2,
+        },
+      });
+
       tl4.from(".con04 .full h2", {
         scale: 0.3,
         opacity: 0,
         duration: 1.2,
-        ease: "back.out(2)",
+        // ease: "back.out(2)",
       });
 
       tl4.from(
@@ -459,61 +469,31 @@
           opacity: 0,
           letterSpacing: "50px",
           duration: 1,
-          ease: "power4.out",
+          // ease: "power4.out",
         },
-        "-=0.4"
+        "-=1"
       );
 
-      tl4.fromTo(
-        ".con04 .full .btn",
-        {
-          y: 100,
-          opacity: 0,
-          scale: 0.5,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 1,
-          ease: "back.out(1.7)",
-        },
-        "-=0.3"
-      );
-
-      const btn = document.querySelector(".con04 .full .btn");
-
-      btn.addEventListener("mouseenter", () => {
-        gsap.to(btn, {
-          scale: 1.1,
-          rotation: 5,
-          duration: 0.3,
-          ease: "back.out(2)",
-        });
-      });
-
-      btn.addEventListener("mouseleave", () => {
-        gsap.to(btn, {
-          scale: 1,
-          rotation: 0,
-          duration: 0.3,
-          ease: "back.out(2)",
-        });
+      tl4.from(".con04 .full .btn", {
+        y: 0,
+        opacity: 0,
+        scale: 0.5,
+        duration: 1,
       });
 
       // footer
-
       tl4.from(
         ".con04 footer .info li",
         {
           y: 30,
           opacity: 0,
           duration: 0.5,
-          stagger: 0.1, // 각 항목이 0.1초 간격으로 등장
+          stagger: 0.1,
           ease: "power2.out",
         },
         "-=0.4"
       );
+
       tl4.from(
         ".con04 footer .sns li",
         {
@@ -526,6 +506,7 @@
         },
         "-=0.8"
       );
+
       tl4.from(
         ".con04 footer .bottom",
         {
@@ -534,7 +515,7 @@
           duration: 0.6,
           ease: "power2.out",
         },
-        "-=0.3"
+        "-=1"
       );
     </script>
   </body>
