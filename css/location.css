@@ -210,7 +210,6 @@ iframe {
   width: calc(100% / 2);
   height: 100%;
   /* object-fit: cover; */
-  transition: 1s;
 }
 .con01 .right img {
   width: 100%;
@@ -353,7 +352,7 @@ iframe {
   align-items: right;
   width: 500px;
   height: 691px;
-  transition: all 0.5s ease;
+  /* transition: all 0.5s ease; */
 }
 .con02 .right:hover img {
   transform: scale(1.05);

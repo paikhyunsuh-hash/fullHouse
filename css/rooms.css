@@ -310,9 +310,13 @@ body {
 }
 .con04 .full {
   width: 100%;
-  margin: 100px auto;
+  margin: 0px auto;
   text-align: center;
-  padding-top: 10%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .con04 .full h2 {
   color: #f1927b;
@@ -330,8 +334,10 @@ body {
 .con04 .full .btn {
   width: 250px;
   height: 70px;
+
   line-height: 70px;
-  margin: 10% auto;
+  margin: 0 auto;
+  margin-top: 100px;
   background-color: #ffffff96;
   color: #f1927b;
   border: 2px solid #f1927b;
@@ -462,7 +468,7 @@ body {
 
   /* con04 */
   .con04 {
-    height: 80vh;
+    height: 100vh;
   }
 
   .con04 .full {
@@ -691,8 +697,7 @@ body {
   }
   /* con04 */
   .con04 {
-    height: 70vh;
-    min-height: 500px;
+    height: 100vh;
   }
 
   .con04 .full {

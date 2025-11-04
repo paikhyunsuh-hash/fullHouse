@@ -440,9 +440,10 @@
       gsap.from(".con01 h2", {
         scrollTrigger: {
           trigger: ".con01",
-          start: "top 80%",
-          end: "top 50%",
-          scrub: 1,
+          start: "0 center",
+          end: "10% center",
+          scrub: 3,
+          // markers: true,
         },
         opacity: 0,
         y: 100,
@@ -455,12 +456,11 @@
           trigger: ".con01 .right",
           start: "top 70%",
           end: "top 40%",
-          scrub: 1,
+          scrub: 2,
         },
         opacity: 0,
         x: -100,
         scale: 0.9,
-        duration: 1,
       });
 
       gsap.from(".con01 .left .txt h3", {
@@ -529,6 +529,7 @@
         scale: 0.9,
         duration: 1,
         delay: 0.2,
+        scrub: 2,
       });
 
       gsap.from(".con02 .left .txt h3", {
