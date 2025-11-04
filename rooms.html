@@ -450,8 +450,9 @@
         scrollTrigger: {
           trigger: ".con04",
           start: "top center",
-          end: "bottom bottom",
+          end: "20% center",
           scrub: 2,
+          // markers: true,
         },
       });
 
@@ -459,7 +460,6 @@
         scale: 0.3,
         opacity: 0,
         duration: 1.2,
-        // ease: "back.out(2)",
       });
 
       tl4.from(
@@ -469,13 +469,12 @@
           opacity: 0,
           letterSpacing: "50px",
           duration: 1,
-          // ease: "power4.out",
         },
         "-=1"
       );
 
       tl4.from(".con04 .full .btn", {
-        y: 0,
+        y: 100,
         opacity: 0,
         scale: 0.5,
         duration: 1,

@@ -337,7 +337,7 @@
       <h2>LOCATION</h2>
       <div class="map">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1662.5915828525883!2d126.73765032969276!3d33.54861705292983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350d19004c0eb0c3%3A0x46d27b58f1632412!2z6rmA64WV64-M64u064-F7LGE7ZKA67mM6528!5e0!3m2!1sko!2skr!4v1762234999742!5m2!1sko!2skr"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18834.61119341004!2d126.62445804474625!3d33.43574799670247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350d03224fd537db%3A0x6f0677afeb135aec!2z7KCI66y87Jik66aE!5e0!3m2!1sko!2skr!4v1761120481440!5m2!1sko!2skr"
           width="600"
           height="450"
           style="border: 0"
@@ -432,6 +432,156 @@
         end: "bottom top",
         onEnter: () => header.classList.add("scrolled"),
         onLeaveBack: () => header.classList.remove("scrolled"),
+      });
+      gsap.registerPlugin(ScrollTrigger);
+
+      // CON01
+
+      gsap.from(".con01 h2", {
+        scrollTrigger: {
+          trigger: ".con01",
+          start: "0 center",
+          end: "10% center",
+          scrub: 3,
+          // markers: true,
+        },
+        opacity: 0,
+        y: 100,
+        scale: 0.8,
+        duration: 1,
+      });
+
+      gsap.from(".con01 .right", {
+        scrollTrigger: {
+          trigger: ".con01 .right",
+          start: "top 70%",
+          end: "top 40%",
+          scrub: 2,
+        },
+        opacity: 0,
+        x: -100,
+        scale: 0.9,
+      });
+
+      gsap.from(".con01 .left .txt h3", {
+        scrollTrigger: {
+          trigger: ".con01 .left",
+          start: "top 70%",
+          end: "top 40%",
+          scrub: 1,
+        },
+        opacity: 0,
+        x: 100,
+        duration: 1,
+      });
+
+      gsap.from(".con01 .left .txt p", {
+        scrollTrigger: {
+          trigger: ".con01 .left",
+          start: "top 70%",
+          end: "top 40%",
+          scrub: 1,
+        },
+        opacity: 0,
+        x: 80,
+        duration: 1,
+        delay: 0.2,
+      });
+
+      gsap.from(".con01 .btn", {
+        scrollTrigger: {
+          trigger: ".con01",
+          start: "0% center",
+          end: "30% center",
+          scrub: 1,
+          // markers: true,
+        },
+        opacity: 0,
+        scale: 0.5,
+        duration: 1,
+      });
+
+      gsap.from(".con01 .bg li", {
+        scrollTrigger: {
+          trigger: ".con01 ",
+          start: "top center",
+          end: "30% center",
+          scrub: 1,
+          // markers: true,
+        },
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        duration: 1,
+      });
+
+      // Con02
+
+      gsap.from(".con02 .right", {
+        scrollTrigger: {
+          trigger: ".con02",
+          start: "top 70%",
+          end: "top 40%",
+          scrub: 1,
+        },
+        opacity: 0,
+        x: 100,
+        scale: 0.9,
+        duration: 1,
+        delay: 0.2,
+        scrub: 2,
+      });
+
+      gsap.from(".con02 .left .txt h3", {
+        scrollTrigger: {
+          trigger: ".con02 .left",
+          start: "top 70%",
+          end: "top 40%",
+          scrub: 1,
+        },
+        opacity: 0,
+        x: -80,
+        duration: 1,
+        delay: 0.2,
+      });
+      gsap.from(".con02 .left .txt p", {
+        scrollTrigger: {
+          trigger: ".con02 .left",
+          start: "top 70%",
+          end: "top 40%",
+          scrub: 1,
+        },
+        opacity: 0,
+        x: -80,
+        duration: 1,
+        delay: 0.2,
+      });
+
+      gsap.from(".con02 .btn", {
+        scrollTrigger: {
+          trigger: ".con02",
+          start: "0% center",
+          end: "30% center",
+          scrub: 1,
+          // markers: true,
+        },
+        opacity: 0,
+        scale: 0.5,
+        duration: 1,
+      });
+
+      gsap.from(".con02 .bg li", {
+        scrollTrigger: {
+          trigger: ".con02 ",
+          start: "top center",
+          end: "30% center",
+          scrub: 1,
+          // markers: true,
+        },
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        duration: 1,
       });
     </script>
   </body>
