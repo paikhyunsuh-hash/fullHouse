@@ -14,10 +14,10 @@ section {
   background: url(../img/index/visual1.jpg) no-repeat center;
 }
 #visual .panel .panel02 {
-  background: url(../img/index/visual2.jpg) no-repeat center;
+  background: url(../img/index/visual6.jpg) no-repeat center;
 }
 #visual .panel .panel03 {
-  background: url(../img/index/visual3.jpg) no-repeat center;
+  background: url(../img/index/visual5.jpg) no-repeat center;
 }
 #visual .textBox {
   position: absolute;
@@ -51,27 +51,42 @@ section {
 #con01 .inner {
   max-width: 1200px;
   height: 100%;
+  padding: 100px 0px;
+  box-sizing: border-box;
   margin: 0px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 100px;
 }
-#con01 .innerLeft {
-  width: 500px;
-}
+#con01 .innerLeft,
 #con01 .innerRight {
-  width: 500px;
+  width: calc(50% - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-#con01 .imgBox {
-  height: 600px;
-  width: 500px;
+#con01 .textBox p {
+  font-family: "BlackerSans";
+  font-weight: 200;
 }
-#con01 .innerLeft .textBox {
-  margin-top: 20px;
-}
+
+#con01 .innerLeft .textBox,
 #con01 .innerRight .textBox {
-  margin-bottom: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
 }
+
+#con01 .inner .innerLeft .imgBox,
+#con01 .inner .innerRight .imgBox {
+  width: 100%;
+}
+/* #con01 .inner .innerRight .textBox,
+#con01 .inner .innerRight .imgBox {
+  text-align: right;
+} */
+
 #con01 img {
   width: 100%;
   height: 100%;
@@ -98,6 +113,8 @@ section {
 #con02 .inner {
   max-width: 1200px;
   height: 100%;
+  padding: 100px 0px;
+  box-sizing: border-box;
   margin: 0px auto;
   display: flex;
   justify-content: space-between;
@@ -341,6 +358,13 @@ section {
   #con03 .fixedTxt {
     max-width: 500px;
   }
+  #con02 {
+    width: 100%;
+    background-color: #ddcbbe;
+  }
+  #con02 .inner {
+    padding: 0px;
+  }
 }
 
 /* ---------------------------- */
@@ -359,6 +383,9 @@ section {
   #con03 .fixedTxt {
     max-width: 90%;
     padding: 20px 0;
+  }
+  #con02 .inner {
+    padding: 0px;
   }
 }
 
@@ -383,6 +410,7 @@ section {
 }
 #con04 .ig {
   width: 100%;
+  height: calc(100% - 211px);
   overflow: hidden;
 }
 #con04 .ig ul {
