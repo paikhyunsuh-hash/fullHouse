@@ -679,7 +679,7 @@ iframe {
   background-color: #85bfc1;
 }
 .con04 p {
-  padding-top: 50px;
+  margin-top: 50px;
   text-align: center;
   color: #fff;
   font-size: 16px;
@@ -888,9 +888,6 @@ iframe {
       gap: 20px;
       padding-top: 60px;
     */
-  }
-  header h1 {
-    width: 150px; /* 로고 크기 줄이기 */
   }
 
   /* --- Visual --- */
