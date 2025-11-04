@@ -4,19 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reservation - Luxury Ocean Resort</title>
-    <!-- jQuery 추가 -->
+
+    <!-- 라이브러리 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
       rel="stylesheet"
     />
+
+    <!-- 스타일 분리 -->
     <link rel="stylesheet" href="../css/reservation.css" />
+    <!-- 스크립트 분리 -->
     <script src="../js/reservation.js" defer></script>
   </head>
+
   <body>
-    <!-- ============================================
-         헤더
-         ============================================ -->
+    <!-- 헤더 -->
     <header>
       <div class="inner">
         <h1>
@@ -25,9 +28,7 @@
           </a>
         </h1>
         <nav>
-          <div class="bar">
-            <i class="fa-solid fa-bars"></i>
-          </div>
+          <div class="bar"><i class="fa-solid fa-bars"></i></div>
           <ul>
             <li><a href="reservation.html">RESERVATION</a></li>
             <li><a href="rooms.html">ROOMS</a></li>
@@ -42,17 +43,18 @@
     <section class="hero">
       <div class="inner">
         <h2>RESERVATION</h2>
-        <p>탁 트인 오션뷰에서 휴식과 여유를 즐겨보세요.</p>
+        <p>
+          탁 트인 오션뷰에서 휴식과 여유를 즐겨보세요.<br />“럭셔리
+          풀하우스에서의 특별한 하루, 예약으로 시작하세요.”
+        </p>
       </div>
     </section>
 
-    <!-- PEACHBEACH POINT -->
-    <section id="point" class="point-wrap">
+    <!-- POINT -->
+    <section class="point-wrap">
       <div class="point inner">
         <h2 class="title">PEACHBEACH POINT</h2>
-
         <div class="grid">
-          <!-- 왼쪽 큰 이미지 -->
           <div class="item large pic">
             <img
               src="../img/reservation/sub2_reser_top.jpg"
@@ -60,30 +62,21 @@
             />
             <div class="cap">
               <h4>Private pool</h4>
-              <p>
-                당신만의 프라이빗 풀에서 여유를 만끽하세요. 바다 바람 전경을
-                감상하며 편안함을 느낄 수 있습니다.
-              </p>
+              <p>당신만의 프라이빗 풀에서 여유를 만끽하세요.</p>
             </div>
           </div>
-
-          <!-- 오른쪽 위 -->
           <div class="item med pic">
             <img src="../img/reservation/3 (1).jpg" alt="Jacuzzi" />
             <div class="cap">
               <h4>Jacuzzi</h4>
-              <p>
-                따뜻한 물에 몸을 담그고 오션뷰를 바라보며 힐링을 즐겨보세요.
-              </p>
+              <p>따뜻한 물에 몸을 담그고 힐링을 즐겨보세요.</p>
             </div>
           </div>
-
-          <!-- 오른쪽 아래 -->
           <div class="item small pic">
             <img src="../img/reservation/special_6.jpg" alt="Barbeque" />
             <div class="cap">
               <h4>Barbeque</h4>
-              <p>프라이빗한 바비큐 타임으로 여행의 즐거움을 더하세요.</p>
+              <p>프라이빗한 바비큐 타임으로 즐거움을 더하세요.</p>
             </div>
           </div>
         </div>
@@ -91,32 +84,31 @@
     </section>
 
     <!-- ROOMS -->
-
     <section class="wrap">
       <div class="inner">
-        <div class="grid">
-          <!-- 왼쪽: 큰 이미지 + (아래) 제목/설명/작은 썸네일 -->
+        <div class="grid rooms">
+          <!-- 왼쪽 -->
           <div class="col-left">
             <div class="main"><img id="mainImg" src="" alt="room" /></div>
-
             <div class="lower">
-              <div class="txt">
-                <h2 id="title">ALL ROOMS<br />HAVE OCEANVIEW</h2>
-                <p class="desc" id="desc">
-                  모든 객실에서 아름다운 바다 전망을 감상하실 수 있습니다.
-                </p>
-              </div>
               <div class="small"><img id="small" src="" alt="small" /></div>
             </div>
           </div>
 
-          <!-- 오른쪽: 객실정보 카드(전체 높이 맞춤) -->
+          <!-- 오른쪽 -->
           <div class="info" id="info">
+            <div class="headline">
+              <h2 id="title">ALL ROOMS<br />HAVE OCEANVIEW</h2>
+              <p class="desc" id="desc">
+                모든 객실에서 아름다운 바다 전망을 감상하실 수 있습니다.
+              </p>
+            </div>
+
             <h4>객실 정보</h4>
             <p class="type" id="type"></p>
 
             <div class="box">
-              <h4>구조:</h4>
+              <h4>구조</h4>
               <div class="spec" id="spec"></div>
             </div>
 
@@ -124,20 +116,15 @@
               <h4 id="priceTitle">요금 안내</h4>
               <div class="pgrid" id="pgrid"></div>
             </div>
-
-            <div class="box">
-              <h4>편의시설</h4>
-              <div class="amen" id="amen"></div>
-            </div>
           </div>
+
+          <!-- 하단 썸네일 -->
           <div class="thumbs-wrap">
             <button class="btn btn-prev">‹</button>
             <div class="thumbs" id="thumbs"></div>
             <button class="btn btn-next">›</button>
           </div>
         </div>
-
-        <!-- 하단 썸네일 슬라이더 -->
 
         <div class="prog"><div class="bar" id="bar"></div></div>
       </div>
@@ -154,11 +141,9 @@
             <li><p>주소 : 제주특별자치도 서귀포시 성산읍 성산리 137-1</p></li>
           </ul>
         </div>
-
         <div class="bottomLogo">
           <img src="../img/reservation/logo.svg" alt="Brand Logo" />
         </div>
-
         <div class="bottomSns">
           <ul>
             <li>
@@ -174,11 +159,5 @@
         </div>
       </div>
     </footer>
-
-    <!-- 이미지 모달 -->
-    <div class="modal" id="imgModal">
-      <span class="close">×</span>
-      <img id="modalPic" alt="preview" />
-    </div>
   </body>
 </html>

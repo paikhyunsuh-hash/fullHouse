@@ -18,16 +18,6 @@ var rooms = [
       { date: "11/03 (일)", amt: "340,000" },
       { date: "11/04 (월)", amt: "340,000" },
     ],
-    amen: [
-      "🛏️ 킹사이즈 베드",
-      "📺 스마트 TV",
-      "❄️ 에어컨",
-      "🛁 욕조",
-      "☕ 미니바",
-      "📶 무료 WiFi",
-      "🔒 금고",
-      "🌊 발코니",
-    ],
   },
   {
     img: "../img/reservation/v102_63.png",
@@ -46,16 +36,6 @@ var rooms = [
       { date: "11/02 (토)", amt: "320,000" },
       { date: "11/03 (일)", amt: "280,000" },
       { date: "11/04 (월)", amt: "250,000" },
-    ],
-    amen: [
-      "🛏️ 킹사이즈 베드",
-      "📺 스마트 TV",
-      "❄️ 에어컨",
-      "🛁 욕조",
-      "☕ 미니바",
-      "📶 무료 WiFi",
-      "🔒 금고",
-      "🌊 발코니",
     ],
   },
   {
@@ -76,16 +56,6 @@ var rooms = [
       { date: "11/03 (일)", amt: "450,000" },
       { date: "11/04 (월)", amt: "420,000" },
     ],
-    amen: [
-      "🛏️ 킹사이즈 베드",
-      "📺 스마트 TV",
-      "❄️ 에어컨",
-      "🛁 욕조",
-      "☕ 미니바",
-      "📶 무료 WiFi",
-      "🏊 프라이빗 풀",
-      "🌊 오션뷰",
-    ],
   },
   {
     img: "../img/reservation/3.jpg",
@@ -105,20 +75,10 @@ var rooms = [
       { date: "11/03 (일)", amt: "380,000" },
       { date: "11/04 (월)", amt: "350,000" },
     ],
-    amen: [
-      "🛏️ 킹사이즈 베드",
-      "📺 스마트 TV",
-      "❄️ 에어컨",
-      "🛁 스파 욕조",
-      "🧖 사우나",
-      "📶 무료 WiFi",
-      "🔒 금고",
-      "🌊 오션뷰",
-    ],
   },
 ];
 
-/* ===== 썸네일 생성 ===== */
+/* ===== 썸네일 ===== */
 function makeThumbs() {
   $("#thumbs").empty();
   $.each(rooms, function (i, r) {
@@ -139,16 +99,18 @@ function makeThumbs() {
 /* ===== 채우기 ===== */
 function fill(idx) {
   var r = rooms[idx];
+
   $("#mainImg").fadeOut(180, function () {
     $(this).attr("src", r.img).fadeIn(180);
   });
   $("#small").fadeOut(180, function () {
     $(this).attr("src", r.small).fadeIn(180);
   });
+
   $("#title").html(r.title.toUpperCase().replaceAll(" ", "<br>"));
   $("#desc").text(r.desc);
-  $("#type").text(r.type);
 
+  $("#type").text(r.type);
   $("#spec")
     .empty()
     .append("<p>" + r.spec[0] + "</p>")
@@ -160,22 +122,16 @@ function fill(idx) {
   $("#pgrid").empty();
   $.each(r.prices, function (_, p) {
     $("#pgrid").append(
-      '<div class="pi"><div class="date">' +
+      '<p class="price-item"><span class="date">' +
         p.date +
-        '</div><div class="amt">' +
+        '</span><span class="amt">' +
         p.amt +
-        "</div></div>"
+        "원</span></p>"
     );
-  });
-
-  $("#amen").empty();
-  $.each(r.amen, function (_, a) {
-    $("#amen").append('<div class="a">' + a + "</div>");
   });
 
   $(".thumb").removeClass("active");
   $('.thumb[data-idx="' + idx + '"]').addClass("active");
-
   var percent = ((idx + 1) / rooms.length) * 100;
   $("#bar").css("width", percent + "%");
 }
@@ -183,7 +139,6 @@ function fill(idx) {
 /* ===== 이벤트/자동재생 ===== */
 var now = 0,
   timer = null;
-
 $(document).on("click", ".thumb", function () {
   now = $(this).data("idx");
   fill(now);
@@ -205,7 +160,7 @@ function start() {
     now = (now + 1) % rooms.length;
     fill(now);
   }, 6000);
-} // ← 6초로 느리게
+}
 function stop() {
   clearInterval(timer);
 }
@@ -218,14 +173,11 @@ makeThumbs();
 fill(0);
 start();
 
-/* 썸네일/버튼 hover 시 일시정지 */
-$(".thumbs, .btn-prev, .btn-next")
-  .on("mouseenter", stop)
-  .on("mouseleave", start);
+$(".thumbs,.btn-prev,.btn-next").on("mouseenter", stop).on("mouseleave", start);
 
+// 헤더 색 토글
 function toggleHeaderBg() {
-  var threshold = 10; // 10px 넘으면 핑크
-  if ($(window).scrollTop() > threshold) {
+  if ($(window).scrollTop() > 10) {
     $("header").addClass("scrolled");
   } else {
     $("header").removeClass("scrolled");
