@@ -329,6 +329,9 @@ p {
     반응형 (모바일)
    ==================================== */
 @media (max-width: 620px) {
+  #visual {
+    height: 100vh;
+  }
   #con03 {
     padding: 40px 0;
   }
