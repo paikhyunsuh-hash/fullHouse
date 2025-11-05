@@ -726,10 +726,10 @@ iframe {
 }
 
 /* 예약 카드 컨테이너 */
-.reservation-card:hover {
+/* .reservation-card:hover {
   transform: scale(1.1);
   opacity: 1;
-}
+} */
 
 .reservation-card {
   position: absolute;
@@ -759,7 +759,7 @@ iframe {
   cursor: pointer;
   font-weight: 600;
   color: #555;
-  transition: all 0.2s;
+  /* transition: all 0.2s; */
 }
 
 .tab:hover {
