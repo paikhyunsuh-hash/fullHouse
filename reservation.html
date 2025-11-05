@@ -140,7 +140,7 @@
             <p>123-456-789787-54 빌라은행 (예금주 : 풀하우스)</p>
           </li>
           <li class="more">
-            <a href="#"><h3>- Booking now -</h3></a>
+            <a href="#">- BOOKING NOW -</a>
           </li>
         </ul>
         <div class="imgBox1">
@@ -149,8 +149,8 @@
         <div class="imgBox2">
           <img src="img/reservation/v102_63.png" />
         </div>
+        <div class="bar"></div>
       </div>
-      <!-- <div class="back"></div -->
     </section>
 
     <!-- POINT 인데 con02 입니다 -->
@@ -352,6 +352,69 @@
         end: "bottom top",
         onEnter: () => menu.classList.add("scrolled"),
         onLeaveBack: () => menu.classList.remove("scrolled"),
+      });
+
+      // con01
+
+      gsap.from("#con01 .textBox li", {
+        scrollTrigger: {
+          trigger: "#con01",
+          start: "top 70%",
+          end: "top 30%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        x: -50,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out",
+      });
+
+      gsap.from("#con01 .imgBox1", {
+        scrollTrigger: {
+          trigger: "#con01",
+          start: "top 70%",
+          end: "top 30%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        scale: 1.5,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+      });
+
+      gsap.from("#con01 .imgBox2", {
+        scrollTrigger: {
+          trigger: "#con01",
+          start: "top 70%",
+          end: "top 30%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        x: 100,
+        duration: 1,
+        ease: "power3.out",
+      });
+      gsap.from("#con01 .bar", {
+        scrollTrigger: {
+          trigger: "#con01",
+          start: "top 70%",
+          end: "top 30%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        x: -100,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      // "Booking now" 버튼 펄스 효과
+      gsap.to("#con01 .more", {
+        scale: 1.05,
+        duration: 1,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
       });
 
       //con04
