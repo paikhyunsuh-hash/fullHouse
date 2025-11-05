@@ -551,6 +551,7 @@ iframe {
   font-weight: 600;
   padding: 20px;
   letter-spacing: 1px;
+  box-sizing: border-box;
 }
 
 .con03 .bg2 {
@@ -560,6 +561,7 @@ iframe {
   font-size: 15px;
   line-height: 1.8;
   background: #f8f9fa;
+  box-sizing: border-box;
 }
 
 .con03 .busbox {
@@ -603,6 +605,7 @@ iframe {
   font-weight: 600;
   padding: 20px;
   letter-spacing: 1px;
+  box-sizing: border-box;
 }
 
 .con03 .imgbox {
@@ -612,6 +615,21 @@ iframe {
   position: relative;
 }
 
+.con03 .imgbox .parkingInfo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  list-style: circle;
+  width: 90%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  font-family: "AritaBuriKR";
+  color: #fff;
+}
 .con03 .imgbox::before {
   content: "";
   position: absolute;
