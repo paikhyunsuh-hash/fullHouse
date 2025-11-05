@@ -138,6 +138,7 @@ header {
 header.scrolled {
   background-color: rgba(241, 146, 123, 0.8);
 }
+
 header .inner {
   max-width: 1200px;
   padding: 0px 20px;
@@ -209,10 +210,10 @@ header nav .burger {
   margin-bottom: 50px;
 }
 
-/* #container.active {
-  opacity: 50%;
-  filter: blur(10px);
-} */
+#container.active {
+  opacity: 7.5; /* 화면 반투명 */
+  filter: blur(10px); /* 흐림 */
+}
 
 /* FOOTER */
 footer {
@@ -403,6 +404,9 @@ footer .bottom {
   }
   #visual .bottom p {
     margin: 10px 0; /* 상하 여백 */
+  }
+  #menu {
+    display: none;
   }
 }
 
