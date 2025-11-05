@@ -450,6 +450,7 @@ iframe {
   display: flex;
   align-items: center;
   gap: 15px;
+  font-family: "AritaBuriKR";
 }
 
 .con03 .ph:hover,
@@ -468,6 +469,7 @@ iframe {
 .con03 .add {
   flex-direction: column;
   align-items: flex-start;
+  font-family: "AritaBuriKR";
 }
 
 .con03 .add a {
@@ -480,6 +482,7 @@ iframe {
   font-size: 14px;
   font-weight: 500;
   box-shadow: 0 4px 15px rgba(133, 191, 193, 0.3);
+  font-family: "AritaBuriKR";
 }
 
 .con03 .add a:hover {
@@ -554,6 +557,7 @@ iframe {
   padding: 20px;
   letter-spacing: 1px;
   box-sizing: border-box;
+  font-family: "AritaBuriKR";
 }
 
 .con03 .bg2 {
@@ -564,6 +568,7 @@ iframe {
   line-height: 1.8;
   background: #f8f9fa;
   box-sizing: border-box;
+  font-family: "AritaBuriKR";
 }
 
 .con03 .busbox {
@@ -579,10 +584,11 @@ iframe {
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   padding: 30px;
   position: relative;
+  font-family: "AritaBuriKR";
 }
 
 .con03 .gate {
@@ -596,6 +602,7 @@ iframe {
   align-items: center;
   padding: 30px;
   line-height: 1.7;
+  font-family: "AritaBuriKR";
 }
 
 .con03 .txt {
@@ -608,6 +615,7 @@ iframe {
   padding: 20px;
   letter-spacing: 1px;
   box-sizing: border-box;
+  font-family: "AritaBuriKR";
 }
 
 .con03 .imgbox {
