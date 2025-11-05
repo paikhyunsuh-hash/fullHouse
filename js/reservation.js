@@ -279,15 +279,15 @@ $(".thumbs, .btn-prev, .btn-next")
   .on("mouseenter", stop)
   .on("mouseleave", start);
 
-function toggleHeaderBg() {
-  var threshold = 10; // 10px 넘으면 핑크
-  if ($(window).scrollTop() > threshold) {
-    $("header").addClass("scrolled");
-  } else {
-    $("header").removeClass("scrolled");
-  }
-}
-$(window).on("load scroll", toggleHeaderBg);
+// function toggleHeaderBg() {
+//   var threshold = 10; // 10px 넘으면 핑크
+//   if ($(window).scrollTop() > threshold) {
+//     $("header").addClass("scrolled");
+//   } else {
+//     $("header").removeClass("scrolled");
+//   }
+// }
+// $(window).on("load scroll", toggleHeaderBg);
 
 gsap.registerPlugin(ScrollTrigger);
 
