@@ -469,7 +469,7 @@
       gsap.registerPlugin(ScrollTrigger);
       const header = document.querySelector("header");
       ScrollTrigger.create({
-        trigger: "#con01",
+        trigger: ".con01",
         start: "top top",
         end: "bottom top",
         onEnter: () => header.classList.add("scrolled"),
@@ -479,7 +479,7 @@
       /*스크롤 하면 사이드 메뉴 배경색 바뀜 */
       const menu = document.querySelector("#menu");
       ScrollTrigger.create({
-        trigger: "#con01",
+        trigger: ".con01",
         start: "top top",
         end: "bottom top",
         onEnter: () => menu.classList.add("scrolled"),
