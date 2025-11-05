@@ -6,6 +6,7 @@ $(function () {
     $(".innerRight ul").removeClass("on");
     $(".innerRight ul").eq(i).addClass("on");
   });
+
   const visual_total = $("#visual .panel li").length;
   let visual_i = 0;
   let visual_interval;

@@ -303,6 +303,7 @@ footer .bottom {
   left: 50%;
   bottom: 5%;
   transform: translateX(-50%);
+  font-family: "BlackerSans";
 }
 #visual .navi li:nth-child(2) {
   display: flex;
