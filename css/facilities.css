@@ -110,6 +110,9 @@ a {
   position: relative;
   overflow: hidden;
 }
+#con02 span {
+  font-family: "AritaBuriKR";
+}
 
 /* top  */
 #con02 .top {
