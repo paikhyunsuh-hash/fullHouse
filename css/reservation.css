@@ -284,7 +284,7 @@ p {
   border-top-left-radius: 200px;
   border-top-right-radius: 200px;
   overflow: hidden;
-  background: #ddd;
+
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 .main img {
