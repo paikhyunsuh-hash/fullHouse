@@ -83,7 +83,7 @@ p {
   background-size: cover;
 }
 
-#visual .textBox {
+#visual .textBox p {
   color: #fff;
 }
 
@@ -387,18 +387,12 @@ p {
 /* con04 */
 
 #con04 {
+  width: 100%;
   position: relative;
-  height: auto; /* 고정 높이 제거 */
-  min-height: 100svh; /* 모바일 주소창 대응되는 동적 뷰포트 단위 */
-  overflow: visible; /* 절대요소(.round) 튀어나와도 보이게 */
-  padding: 60px 0; /* 섹션 여백 유지 */
-}
-
-/* 구형 브라우저(iOS 15 이하 등) 폴백 */
-@supports not (height: 100svh) {
-  #con04 {
-    min-height: 100vh;
-  }
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 60px 0;
 }
 
 #con04 .all {
@@ -407,7 +401,6 @@ p {
   margin: 0 auto;
   padding: 0 20px;
 }
-
 #con04 .wrap {
   width: 100%;
   max-width: 1200px;
@@ -442,38 +435,21 @@ p {
   flex-direction: column;
   gap: 25px;
 }
-
 #con04 .rules li {
-  /* background-color: rgba(255, 255, 255, 0.95);
-  padding: 25px 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
-  transition: transform 0.3s, box-shadow 0.3s;
   word-break: keep-all;
 }
-
-#con04 .rules li:hover {
-  transform: translateY(-5px);
-}
-
 #con04 .rules li h4 {
   font-size: 20px;
   color: #85bfc1;
   margin-bottom: 15px;
   padding-bottom: 5px;
 }
-
 #con04 .rules li p {
   font-size: 15px;
   color: #555;
   line-height: 1.8;
   margin-bottom: 10px;
 }
-
-#con04 .rules li p:last-child {
-  margin-bottom: 0;
-}
-/* 움직이는 모션 */
 
 #con04 .round {
   position: absolute;
@@ -482,16 +458,9 @@ p {
   right: -300px;
 }
 .round img {
-  /* 애니메이션 이름: spin */
   animation-name: spin;
-
-  /* 애니메이션 지속 시간: 3초 */
   animation-duration: 10s;
-
-  /* 애니메이션 반복 횟수: 무한히 반복 */
   animation-iteration-count: infinite;
-
-  /* 애니메이션 타이밍 함수: 선형 (일정 속도) */
   animation-timing-function: linear;
 }
 @keyframes spin {
@@ -506,226 +475,19 @@ p {
   }
 }
 
-@supports not (height: 100svh) {
-  #con04 {
-    min-height: 100vh;
-  }
-
-  #con04 {
-    width: 100%;
-    height: 100vh;
-    /* padding: 100px 0 0 0; */
-    position: relative;
-    overflow: hidden;
-
-    box-sizing: border-box;
-  }
-
-  #con04 .all {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  #con04 .wrap {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 80px;
-    /* padding: 50px; */
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-  }
-
-  #con04 .section-block {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-  }
-
-  #con04 .title {
-    width: 35%;
-    min-width: 250px;
-  }
-
-  #con04 .title h2 {
-    font-size: 48px;
-    color: #85bfc1;
-    letter-spacing: 3px;
-    line-height: 1.2;
-  }
-
-  #con04 .rules {
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  #con04 .rules li {
-    /* background-color: rgba(255, 255, 255, 0.95);
-  padding: 25px 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  #con04 .rules li:hover {
-    transform: translateY(-5px);
-  }
-
-  #con04 .rules li h4 {
-    font-size: 20px;
-    color: #85bfc1;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-  }
-
-  #con04 .rules li p {
-    font-size: 15px;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 10px;
-  }
-
-  #con04 .rules li p:last-child {
-    margin-bottom: 0;
-  }
-  /* 움직이는 모션 */
-
-  #con04 .round {
-    position: absolute;
-    width: 45%;
-    top: 5%;
-    right: -300px;
-  }
-  .round img {
-    /* 애니메이션 이름: spin */
-    animation-name: spin;
-
-    /* 애니메이션 지속 시간: 3초 */
-    animation-duration: 10s;
-
-    /* 애니메이션 반복 횟수: 무한히 반복 */
-    animation-iteration-count: infinite;
-
-    /* 애니메이션 타이밍 함수: 선형 (일정 속도) */
-    animation-timing-function: linear;
-  }
-  @keyframes spin {
-    /* 0% (시작): 변형 없음 */
-    0% {
-      transform: rotate(0deg);
-    }
-
-    /* 100% (끝): 360도 회전 */
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-}
-
 /* footer */
 footer {
   position: relative;
 }
 
-/* ------------------------------------
-       7) 푸터(간단)
-    ------------------------------------ */
-
-/* 기본 스타일 - 모바일 우선 */
-
-/* 태블릿 스타일 (가로폭 768px 이상) */
-@media (min-width: 620px) and (max-width: 1200px) {
-  .bottom {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    padding: 0 0px;
-  }
-
-  .bottomInfo {
-    flex: 1;
-  }
-
-  .bottomLogo {
-    flex: 0 0 auto;
-  }
-
-  .bottomSns {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
-  #con04 {
-    min-height: 100svh; /* 100svh 유지 */
-    overflow: visible; /* 잘림 방지 */
-    padding: 40px 0 80px; /* 아래 여백 조금 더 주기(라운드/리스트 대비) */
-  }
-  #con04 .wrap {
-    padding: 0 24px;
-    margin-bottom: 40px;
-    gap: 40px;
-  }
-  /* 절대배치 장식이 잘리는 경우 위치/크기 축소 */
-  #con04 .round {
-    width: 55%;
-    right: -180px; /* 너무 밖으로 나가지 않게 조정 */
-    top: 8%;
-  }
-}
-
-/* PC 스타일 (가로폭 1024px 이상) */
-@media (min-width: 1200px) {
-  footer {
-    padding: 40px 80px;
-  }
-
-  .bottomLogo img {
-    width: 150px;
-  }
-
-  .bottomInfo p {
-    font-size: 16px;
-  }
-
-  .bottomSns ul li a {
-    font-size: 24px;
-  }
-}
-/* 모바일 */
-@media (max-width: 620px) {
-  h2 {
-    font-size: 44px;
-  }
-  .grid {
-    grid-template-columns: 1fr;
-  }
-  .col-left {
-    min-height: auto;
-  }
-  .lower {
-    grid-template-columns: 1fr;
-  }
-  .pgrid,
-  .amen {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
-  }
-
-  .thumb {
-    flex: 0 0 calc(50% - 6px);
-    height: 110px;
-  }
-}
+/*태블릿 */
 
 @media (min-width: 620px) and (max-width: 1200px) {
   #con04 {
     min-height: 100dvh; /* 모바일에 강한 단위 */
-    overflow: visible; /* 핵심 */
-    padding: 30px 0 90px; /* 하단 여백 넉넉히 */
+    overflow: hidden;
+    padding: 30px 0 90px;
+    box-sizing: border-box;
   }
   #con04 .wrap {
     padding: 0 16px;
@@ -742,7 +504,11 @@ footer {
   #con04 .rules {
     gap: 14px;
   }
-
+  #con04 .round {
+    width: 55%;
+    right: -180px;
+    top: 8%;
+  }
   #con04 .rules li h4 {
     font-size: 18px;
   }
@@ -750,33 +516,13 @@ footer {
     font-size: 13px;
     line-height: 1.7;
   }
-
-  footer .inner {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    text-align: center;
-    padding: 0 30px;
-  }
-
-  footer .info li {
-    font-size: 13px;
-  }
-
-  footer .sns li a {
-    font-size: 22px;
-  }
-
-  footer .bottom {
-    margin: 0 30px;
-  }
 }
 
 /* 모바일: ~ 620px */
 
 @media (max-width: 620px) {
   #con04 {
-    padding: 0px 0 0 0;
+    height: 100%;
   }
 
   #con04 .all {
@@ -825,35 +571,25 @@ footer {
     line-height: 1.7;
     margin-bottom: 8px;
   }
-
-  footer {
-    padding: 40px 0 20px;
+  h2 {
+    font-size: 44px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .col-left {
+    min-height: auto;
+  }
+  .lower {
+    grid-template-columns: 1fr;
+  }
+  .pgrid,
+  .amen {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
   }
 
-  footer .inner {
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    text-align: center;
-    padding: 0 20px;
-  }
-
-  footer .info li {
-    font-size: 11px;
-    margin-bottom: 8px;
-  }
-
-  footer .sns {
-    gap: 15px;
-  }
-
-  footer .sns li a {
-    font-size: 20px;
-  }
-
-  footer .bottom {
-    font-size: 10px;
-    padding-top: 20px;
-    margin: 0 20px;
+  .thumb {
+    flex: 0 0 calc(50% - 6px);
+    height: 110px;
   }
 }
