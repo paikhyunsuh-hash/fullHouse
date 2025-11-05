@@ -90,7 +90,7 @@ p {
   display: none;
 }
 #visual .panel .panel01 {
-  background: url(/img/reservation/vis.avif) no-repeat center;
+  background: url(../img/reservation/vis.avif) no-repeat center;
   display: block;
   background-size: cover;
 }
@@ -217,7 +217,7 @@ p {
   color: #fff;
   position: relative;
   overflow: hidden;
-  background-image: url(/img/reservation/back.png);
+  background-image: url(../img/reservation/back.png);
 }
 .point {
   padding: 80px 0;
