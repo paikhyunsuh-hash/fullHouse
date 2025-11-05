@@ -802,9 +802,9 @@ iframe {
   border-bottom: 1px solid #eee;
 }
 
-.date-time-group .input-group:last-of-type {
-  /* border-right: none; */
-}
+/* .date-time-group .input-group:last-of-type {
+  border-right: none;
+} */
 
 .time-input {
   position: relative;
