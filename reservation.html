@@ -122,7 +122,6 @@
     </div>
 
     <!-- con01 -->
-
     <section id="con01">
       <div class="wrap">
         <ul class="textBox">
@@ -156,6 +155,9 @@
       <!-- <div class="back"></div -->
     </section>
 
+    <!-- con02인데 id ="point", class ="point-wrap" 입니당 -->
+    <!-- PEACHBEACH POINT -->
+    <section id="point" class="point-wrap">
     <!-- POINT -->
     <section class="point-wrap">
       <div class="point inner">
@@ -363,6 +365,19 @@
         end: "bottom top",
         onEnter: () => menu.classList.add("scrolled"),
         onLeaveBack: () => menu.classList.remove("scrolled"),
+      });
+
+      /*con02 gsap 애니메이션(줌인,아웃 효과) */
+      gsap.to("#point .grid", {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#point",
+          start: "20% center",
+          end: "30% center",
+          scrub: 3,
+          markers: true,
+        },
       });
     </script>
   </body>
