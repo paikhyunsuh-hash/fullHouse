@@ -398,6 +398,8 @@ iframe {
   height: auto;
   margin: 100px auto;
   padding: 50px 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .con03 h2 {
@@ -706,16 +708,16 @@ iframe {
 }
 
 /* 예약 카드 컨테이너 */
-/* .reservation-card:hover {
+.reservation-card:hover {
   transform: scale(1.1);
   opacity: 1;
-} */
+}
 
 .reservation-card {
   position: absolute;
   bottom: 150px; /* 섹션 아래로 내려오도록 조정 */
   background-color: #fff;
-  opacity: 0.8;
+  opacity: 0.95;
   /* border-radius: 8px; */
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   padding: 50px;
@@ -891,6 +893,7 @@ footer {
   .con02 {
     height: auto; /* vh 높이 제거 */
     margin: 50px auto;
+    box-sizing: border-box;
   }
   .con01 .wrap,
   .con02 .wrap {
@@ -949,6 +952,8 @@ footer {
     width: 90%; /* 고정 너비 -> % 너비 */
     height: auto; /* vh 높이 제거 */
     margin: 50px auto;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   .con03 .map iframe {
     width: 100%;
@@ -971,6 +976,9 @@ footer {
   }
 
   /* con04 */
+  .con04 {
+    overflow: hidden;
+  }
   .rental-hero {
     height: 80vh; /* 태블릿에서는 높이 조금 줄이기 */
   }
@@ -1213,6 +1221,9 @@ footer {
   }
 
   /* con04 */
+  .con04 {
+    overflow: hidden;
+  }
   .rental-hero {
     height: 100%; /* 모바일에서 섹션 높이 대폭 감소 */
   }
