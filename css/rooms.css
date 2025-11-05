@@ -85,6 +85,9 @@ body {
   position: relative;
   overflow: hidden;
 }
+.con02 span {
+  font-family: "AritaBuriKR";
+}
 .con02 .wrap {
   width: 100%;
   margin: 0px auto;
@@ -104,6 +107,7 @@ body {
 .con02 p {
   font-size: 16px;
   text-align: center;
+  font-family: "BlackerSans";
 }
 .con02 .bg3 .icon {
   display: flex;
@@ -168,6 +172,7 @@ body {
   opacity: 0.2;
   font-weight: bold;
   z-index: 1;
+  font-family: "BlackerSans";
 }
 
 @keyframes flowText {
@@ -352,6 +357,7 @@ body {
   height: 100%;
   width: 100%;
   font-size: 24px;
+  font-family: "BlackerSans";
 }
 
 .con04 .full .btn:hover {
