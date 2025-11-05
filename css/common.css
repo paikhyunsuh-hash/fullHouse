@@ -209,10 +209,10 @@ header nav .burger {
   margin-bottom: 50px;
 }
 
-#container.active {
+/* #container.active {
   opacity: 50%;
-  /* filter: blur(1px); */
-}
+  filter: blur(10px);
+} */
 
 /* FOOTER */
 footer {
