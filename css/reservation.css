@@ -69,8 +69,28 @@ p {
   }
 }
 
+#visual {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+
+#visual .panel li {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: none;
+}
 #visual .panel .panel01 {
-  background: url(../img/reservation/vis.avif) no-repeat center;
+  background: url(/img/reservation/vis.avif) no-repeat center;
   display: block;
   background-size: cover;
 }
@@ -83,18 +103,74 @@ p {
   background-size: cover;
 }
 
-#visual P {
+#visual .textBox {
+  width: 100%;
+  margin: 25% auto;
   color: #fff;
+  text-align: center;
+}
+
+#visual h2 {
+  letter-spacing: 20px;
+  margin-bottom: 50px;
+}
+#visual P {
+  line-height: 1.6;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+/* navi */
+
+#visual .navi {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+}
+#visual .navi li:nth-child(2) {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+#visual .navi li:nth-child(2) span {
+  margin: 0px 10px;
+  display: none;
+}
+#visual .bar {
+  width: 500px;
+  height: 1px;
+  background-color: #ccc;
+  display: block;
+}
+#visual .bar > div {
+  width: 33.33%;
+  height: 100%;
+  background-color: #32f8ff;
+}
+#visual .navi li a {
+  padding: 10px;
+  /* z-index: 10; */
+}
+
+#visual .navi li:first-child {
+  color: rgb(255, 255, 255);
+}
+
+#visual .navi li:last-child {
+  color: rgb(255, 255, 255);
 }
 
 /* con01 */
 
 #con01 {
   width: 100%;
-  height: 100vh;
-  max-width: 1200px;
   margin: 0px auto;
   /* padding-top: 200px; */
+  height: 100vh;
   box-sizing: border-box;
   /* position: relative; */
 }
@@ -109,9 +185,7 @@ p {
   height: 100%;
   object-fit: cover;
 }
-#con01 .textBox {
-  width: 50%;
-}
+
 #con01 .textBox p {
   padding: 10px;
   font-size: 20px;
@@ -139,10 +213,6 @@ p {
 
 /* -------- POINT -------- */
 .point-wrap {
-  width: 100%;
-  height: 100vh;
-  margin: 0px auto;
-  box-sizing: border-box;
   background: #85bfc1;
   color: #fff;
   position: relative;

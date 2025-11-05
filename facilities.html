@@ -69,7 +69,7 @@
     </div>
 
     <!-- wrap -->
-    <div class="wrap">
+    <div id="container">
       <!-- #visual -->
       <div id="visual">
         <ul class="panel">
@@ -343,7 +343,7 @@
         },
       });
 
-      // <!-- section04 슬라이드 효과 -->
+      // <!-- section04 스케일 줌인,아웃 효과 -->
       gsap.to("#con04 .left", {
         y: 0,
         scale: 1,
@@ -353,8 +353,6 @@
           end: "30% center",
           scrub: 2,
           // markers: true,
-          // 테스트 할때는 안내선 보이게
-          // markers: false, // 안내선 안보이게
         },
       });
 
@@ -367,8 +365,6 @@
           end: "50% center",
           scrub: 2,
           // markers: true,
-          // 테스트 할때는 안내선 보이게
-          // markers: false, // 안내선 안보이게
         },
       });
 
