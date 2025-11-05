@@ -666,7 +666,7 @@ iframe {
 .con04 {
   width: 100%;
   height: 100vh;
-  margin: 50px auto;
+  margin: 0px auto;
 }
 /* 기본 설정 */
 .rental-hero {
@@ -724,12 +724,6 @@ iframe {
   font-weight: 300;
   color: #eee;
 }
-
-/* 예약 카드 컨테이너 */
-/* .reservation-card:hover {
-  transform: scale(1.1);
-  opacity: 1;
-} */
 
 .reservation-card {
   position: absolute;
@@ -1238,9 +1232,6 @@ footer {
   }
 
   /* con04 */
-  .con04 {
-    overflow: hidden;
-  }
   .rental-hero {
     height: 100%; /* 모바일에서 섹션 높이 대폭 감소 */
   }
