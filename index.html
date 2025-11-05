@@ -244,7 +244,7 @@
           <h2>FOLLOW US</h2>
           <ul>
             <li>
-              <img src="img/index/instaReview1.jpg" />
+              <img src="img/index/instaReview 5.jpg" />
               <p class="hashTag">#프라이빗풀</p>
             </li>
             <li>
@@ -257,7 +257,7 @@
             </li>
 
             <li>
-              <img src="img/index/instaReview 5.jpg" />
+              <img src="img/index/instaReview1.jpg" />
               <p class="hashTag">#수영장</p>
             </li>
             <li>
@@ -410,6 +410,53 @@
         { yPercent: 50, ease: "none" },
         0
       ).fromTo(imgRight, { yPercent: 50 }, { yPercent: -50, ease: "none" }, 0);
+
+      // footer
+      let tl4 = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#con04 footer",
+          start: "10% bottom",
+          end: "30% bottom",
+          scrub: 2,
+          // markers: true,
+        },
+      });
+
+      tl4.from(
+        "#con04 footer .info li",
+        {
+          y: 30,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 1,
+          ease: "power2.out",
+        },
+        "-=0.4"
+      );
+
+      tl4.from(
+        "#con04 footer .sns li",
+        {
+          scale: 0,
+          rotation: 360,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.15,
+          ease: "back.out(1.7)",
+        },
+        "-=0.8"
+      );
+
+      tl4.from(
+        "#con04 footer .bottom",
+        {
+          y: 20,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.out",
+        },
+        "-=1"
+      );
     </script>
   </body>
 </html>
