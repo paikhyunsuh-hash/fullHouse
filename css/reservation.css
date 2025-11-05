@@ -121,9 +121,19 @@ p {
   word-break: keep-all;
 }
 #con01 .more {
-  color: #85bfc1;
-  padding-top: 30px;
-  box-sizing: border-box;
+  color: #fff;
+  background-color: #85bfc1;
+  width: 400px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  margin: 50px auto;
+  border-radius: 50px;
+}
+#con01 .more a {
+  display: block;
+  font-family: "BlackerSans";
+  font-size: 24px;
 }
 #con01 .imgBox1 {
   width: 70px;
@@ -131,14 +141,16 @@ p {
 #con01 .imgBox2 img {
   border-radius: 0px 280px 0px 0px;
 }
-/* #con01 .back {
-  width: 80%;
+#con01 .bar {
+  width: 700px;
+  height: 700px;
   position: absolute;
-  top: 5;
-  right: 10%;
   border: 1px solid #85bfc1;
-  background-color: #32f8ff;
-} */
+  background-color: transparent;
+  border-radius: 280px 0px 0px 0px;
+  z-index: -10;
+  right: 200px;
+}
 
 /* con02  */
 #con02 {
@@ -210,6 +222,13 @@ p {
   text-align: center;
   margin-bottom: 50px;
   color: #85bfc1;
+  font-family: "AritaBuriKR";
+}
+.room-title {
+  font-family: "AritaBuriKR";
+}
+.view-more {
+  font-family: "BlackerSans";
 }
 
 /* --- 슬라이더 컨테이너 (버튼 포함) --- */
@@ -321,6 +340,9 @@ p {
     반응형 (모바일)
    ==================================== */
 @media (max-width: 620px) {
+  #visual {
+    height: 100vh;
+  }
   #con03 {
     padding: 40px 0;
   }
