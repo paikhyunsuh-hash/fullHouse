@@ -248,6 +248,7 @@
         </div>
       </section>
     </div>
+
     <!-- footer  -->
     <footer>
       <div class="inner">
@@ -359,6 +360,40 @@
           // 테스트 할때는 안내선 보이게
           // markers: false, // 안내선 안보이게
         },
+      });
+
+      // footer
+      let tl4 = gsap.timeline({
+        scrollTrigger: {
+          trigger: "footer",
+          start: "10% bottom",
+          end: "30% bottom",
+          scrub: 2,
+          // markers: true,
+        },
+      });
+
+      tl4.from("footer .info li", {
+        y: 30,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 1,
+        ease: "power2.out",
+      });
+      tl4.from("footer .sns li", {
+        scale: 0,
+        rotation: 360,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: "back.out(1.7)",
+      });
+
+      tl4.from("footer .bottom", {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.out",
       });
     </script>
   </body>
