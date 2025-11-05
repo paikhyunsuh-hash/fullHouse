@@ -92,25 +92,24 @@ body {
 
 /* 폰트 */
 h2 {
-  font-family: "BlackerSans";
+  font-family: "BlackerSans", "AritaBuriKR";
   font-size: 70px;
   font-weight: bold;
   text-transform: uppercase;
 }
 h3 {
-  font-family: "BlackerSans";
+  font-family: "BlackerSans", "AritaBuriKR";
   font-size: 40px;
   font-weight: bold;
   text-transform: uppercase;
 }
 h4 {
-  font-family: "BlackerSans";
-
+  font-family: "BlackerSans", "AritaBuriKR";
   font-size: 24px;
   font-weight: bold;
 }
 p {
-  font-family: "AritaBuriKR";
+  font-family: "AritaBuriKR", "BlackerSans";
   font-size: 16px;
   font-weight: normal;
 }
@@ -119,7 +118,7 @@ p {
   font-family: "AritaBuriKR", "BlackerSans";
 }
 .ko {
-  font-family: "AritaBuriKR";
+  font-family: "AritaBuriKR", "BlackerSans";
 }
 
 /* HEADER */
@@ -175,7 +174,7 @@ header nav ul {
 header nav ul li a {
   display: flex;
   align-items: center;
-  height: 50px; /* same as logo height */
+  height: 50px;
 }
 header nav .burger {
   display: none;
@@ -183,14 +182,41 @@ header nav .burger {
 
 /* SIDE MENU */
 #menu {
+  background-color: transparent;
+  color: #fff;
+  width: 100%;
+  text-align: right;
+  height: calc(100vh - 80px);
+  position: fixed;
+  top: 80px;
+  right: 0%;
+  top: 80px;
+  z-index: 10;
+  transition: background-color 1s ease, color 1s ease;
   font-family: "BlackerSans";
   display: none;
+}
+#menu.active {
+  display: block;
+}
+#menu.scrolled {
+  background-color: rgba(241, 146, 123, 0.8);
+}
+#menu ul {
+  padding: 10px 20px;
+}
+#menu ul li {
+  margin-bottom: 50px;
+}
+
+#container.active {
+  opacity: 50%;
+  /* filter: blur(1px); */
 }
 
 /* FOOTER */
 footer {
   width: 100%;
-  /* background-color: rgba(241, 146, 123, 0.8); */
   background-color: rgba(133, 191, 193, 0.8);
   color: #fff;
   box-sizing: border-box;
@@ -267,7 +293,7 @@ footer .bottom {
   margin-bottom: 50px;
 }
 
-/* navi */
+/* VISUAL navi */
 
 #visual .navi {
   display: flex;
@@ -329,38 +355,7 @@ footer .bottom {
   header nav ul {
     display: none;
   }
-  /* SIDE MENU */
-  #menu {
-    background-color: transparent;
-    color: #fff;
-    width: 100%;
-    text-align: right;
-    height: calc(100vh - 80px);
-    position: fixed;
-    top: 80px;
-    right: 0%;
-    top: 80px;
-    z-index: 10;
-    transition: background-color 1s ease, color 1s ease;
-    display: none;
-  }
-  #menu.active {
-    display: block;
-  }
-  #menu.scrolled {
-    background-color: rgba(241, 146, 123, 0.8);
-  }
-  #menu ul {
-    padding: 10px 20px;
-  }
-  #menu ul li {
-    margin-bottom: 50px;
-  }
 
-  #container.active {
-    opacity: 50%;
-    /* filter: blur(1px); */
-  }
   /* FOOTER */
   footer .inner {
     display: block;
