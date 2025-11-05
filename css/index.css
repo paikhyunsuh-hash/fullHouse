@@ -9,15 +9,15 @@ section {
 }
 
 /* VISUAL */
-
-#visual .panel .panel01 {
-  background: url(../img/index/visual1.jpg) no-repeat center;
+#visual .video-background {
+  width: 100%;
+  height: 100%;
 }
-#visual .panel .panel02 {
-  background: url(../img/index/visual6.jpg) no-repeat center;
-}
-#visual .panel .panel03 {
-  background: url(../img/index/visual5.jpg) no-repeat center;
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
 }
 #visual .textBox {
   position: absolute;
@@ -82,10 +82,6 @@ section {
 #con01 .inner .innerRight .imgBox {
   width: 100%;
 }
-/* #con01 .inner .innerRight .textBox,
-#con01 .inner .innerRight .imgBox {
-  text-align: right;
-} */
 
 #con01 img {
   width: 100%;
@@ -103,6 +99,44 @@ section {
 .circleTxt img {
   height: 100%;
   width: 100%;
+}
+/* 태블릿 */
+@media (min-width: 620px) and (max-width: 1200px) {
+  #con01 .inner {
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #con01 .innerLeft {
+    width: 50%;
+  }
+  #con01 .innerRight {
+    width: 500px;
+  }
+  #con01 .imgBox {
+    height: 600px;
+    width: 500px;
+  }
+  #con01 .innerLeft .textBox {
+    margin-top: 20px;
+  }
+  #con01 .innerRight .textBox {
+    margin-bottom: 20px;
+  }
+  #con01 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+/* 모바일 */
+@media (max-width: 620px) {
+  .circleTxt {
+    display: none;
+  }
 }
 
 /* CON02 */
@@ -243,14 +277,12 @@ section {
   text-decoration: none;
   border-radius: 5px;
   transition: 0.3s;
+  font-family: "AritaBuriKR", "BlackerSans";
 }
 
 #con03 .fixedTxt a:hover {
   background: rgba(133, 191, 193, 1);
 }
-
-/* ---------------------------- */
-/* Image scroll container */
 
 #con03 .imgScroll {
   position: absolute;
@@ -272,7 +304,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center; /* center images horizontally */
+  align-items: center;
   box-sizing: border-box;
   padding-top: 20px;
 }
@@ -447,48 +479,4 @@ section {
   left: 0;
   bottom: 0;
   color: #fff;
-}
-
-/* 모바일 */
-@media (max-width: 620px) {
-  .circleTxt {
-    display: none;
-  }
-}
-
-/* 태블릿 */
-@media (min-width: 620px) and (max-width: 1200px) {
-  #con01 .inner {
-    width: 100%;
-    height: 100%;
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  #con01 .innerLeft {
-    width: 50%;
-  }
-  #con01 .innerRight {
-    width: 500px;
-  }
-  #con01 .imgBox {
-    height: 600px;
-    width: 500px;
-  }
-  #con01 .innerLeft .textBox {
-    margin-top: 20px;
-  }
-  #con01 .innerRight .textBox {
-    margin-bottom: 20px;
-  }
-  #con01 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-/* PC */
-@media (min-width: 1200px) {
 }
