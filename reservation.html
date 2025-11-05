@@ -166,7 +166,7 @@
             </div>
           </div>
           <div class="item med pic">
-            <img src="/img/reservation/3 (1).jpg" alt="Jacuzzi" />
+            <img src="img/reservation/3 (1).jpg" alt="Jacuzzi" />
             <div class="cap">
               <h4>Jacuzzi</h4>
               <p>따뜻한 물에 몸을 담그고 힐링을 즐겨보세요.</p>
@@ -354,8 +354,20 @@
         onLeaveBack: () => menu.classList.remove("scrolled"),
       });
 
-      //con04
+      //con02
+      gsap.to("#con02 .grid", {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#con02",
+          start: "20% center",
+          end: "40% center",
+          scrub: 2,
+          // markers: true,
+        },
+      });
 
+      //con04
       gsap.from("#con04 .title h2", {
         scrollTrigger: {
           trigger: "#con04",
