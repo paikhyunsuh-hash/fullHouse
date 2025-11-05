@@ -6,15 +6,14 @@
     <title>Reservation - Luxury Ocean Resort</title>
     <!-- jQuery 추가 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script src="js/header.js"></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/reservation.css" />
-    <!-- <script src="js/reservation.js"></script> -->
-    <script src="js/header.js"></script>
+    <script src="js/reservation.js" defer></script>
     <!-- font-awesome CDN  -->
     <link
       rel="stylesheet"
@@ -24,7 +23,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
   </head>
-
   <body>
     <!--    헤더   -->
     <header>
@@ -159,7 +157,7 @@
         <!-- <div class="back"></div -->
       </section>
 
-      <!-- POINT -->
+      <!-- POINT 인데 con02 입니다 -->
       <section class="point-wrap">
         <div class="point inner">
           <h2 class="title">PEACHBEACH POINT</h2>
@@ -192,57 +190,52 @@
         </div>
       </section>
 
-      <!-- ROOMS -->
-      <section class="wrap">
-        <div class="inner">
-          <div class="grid rooms">
-            <!-- 왼쪽 -->
-            <div class="col-left">
-              <div class="main"><img id="mainImg" src="" alt="room" /></div>
-              <div class="lower">
-                <div class="small"><img id="small" src="" alt="small" /></div>
+      <!-- con03입니다 -->
+      <section id="con03" class="room-type-section">
+        <h2 class="section-title">ROOM FEATURE</h2>
+
+        <div class="slider-container">
+          <div class="room-list">
+            <div class="room-card-wrapper">
+              <div class="room-image">
+                <img
+                  src="img/reservation/23.jpg"
+                  alt="디럭스 오션 더블 이미지"
+                />
+              </div>
+              <div class="room-info-card">
+                <span class="room-category">DELUXE</span>
+                <h3 class="room-title">디럭스 오션 더블</h3>
+                <a href="#" class="view-more">VIEW MORE ></a>
+
+                <ul class="room-specs">
+                  <li><span class="spec-label">침대타입</span> 더블</li>
+                  <li><span class="spec-label">전망</span> 오션뷰</li>
+                  <li><span class="spec-label">투숙인원</span> 2명</li>
+                  <li><span class="spec-label">객실면적</span> 26㎡</li>
+                </ul>
               </div>
             </div>
 
-            <h4 class="type" id="type"></h4>
-
-            <div class="box">
-              <h4>Room layout</h4>
-              <div class="spec" id="spec"></div>
-            </div>
-
-            <div class="prices">
-              <h4 id="priceTitle">Room Rate Information</h4>
-              <!-- <div class="pgrid" id="pgrid"></div> -->
-              <div class="price-info"></div>
-            <!-- 오른쪽 -->
-            <div class="info" id="info">
-              <div class="headline">
-                <h2 id="title">ALL ROOMS<br />HAVE OCEANVIEW</h2>
-                <p class="desc" id="desc">
-                  모든 객실에서 아름다운 바다 전망을 감상하실 수 있습니다.
-                </p>
+            <div class="room-card-wrapper">
+              <div class="room-image">
+                <img
+                  src="img/reservation/354.jpg"
+                  alt="디럭스 오션 트윈 이미지"
+                />
               </div>
+              <div class="room-info-card">
+                <span class="room-category">DELUXE</span>
+                <h3 class="room-title">디럭스 오션 트윈</h3>
+                <a href="#" class="view-more">VIEW MORE ></a>
 
-              <h4>객실 정보</h4>
-              <p class="type" id="type"></p>
-
-              <div class="box">
-                <h4>구조</h4>
-                <div class="spec" id="spec"></div>
+                <ul class="room-specs">
+                  <li><span class="spec-label">침대타입</span> 싱글/싱글</li>
+                  <li><span class="spec-label">전망</span> 오션뷰</li>
+                  <li><span class="spec-label">투숙인원</span> 2명</li>
+                  <li><span class="spec-label">객실면적</span> 26㎡</li>
+                </ul>
               </div>
-
-              <div class="prices">
-                <h4 id="priceTitle">요금 안내</h4>
-                <div class="pgrid" id="pgrid"></div>
-              </div>
-            </div>
-
-            <!-- 하단 썸네일 -->
-            <div class="thumbs-wrap">
-              <div class="btn btn-prev">Prev</div>
-              <div class="thumbs" id="thumbs"></div>
-              <div class="btn btn-next">Next</div>
             </div>
           </div>
         </div>
