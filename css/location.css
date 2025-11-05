@@ -715,7 +715,7 @@ iframe {
 
 .reservation-card {
   position: absolute;
-  bottom: 150px; /* 섹션 아래로 내려오도록 조정 */
+  bottom: 150px;
   background-color: #fff;
   opacity: 0.95;
   /* border-radius: 8px; */
@@ -724,7 +724,6 @@ iframe {
   width: 90%;
   max-width: 1000px;
   z-index: 3;
-  /* transition: 0.5s; */
 }
 
 /* 탭 메뉴 */
