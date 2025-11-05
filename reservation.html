@@ -342,6 +342,40 @@
     </div>
     <!-- visual -->
 
+    <script>
+      /* 스크롤하면 HEADER 배경색 바뀜 */
+      gsap.registerPlugin(ScrollTrigger);
+      const header = document.querySelector("header");
+      ScrollTrigger.create({
+        trigger: "#con01",
+        start: "top top",
+        end: "bottom top",
+        onEnter: () => header.classList.add("scrolled"),
+        onLeaveBack: () => header.classList.remove("scrolled"),
+      });
+      /*스크롤 하면 사이드 메뉴 배경색 바뀜 */
+      const menu = document.querySelector("#menu");
+      ScrollTrigger.create({
+        trigger: "#con01",
+        start: "top top",
+        end: "bottom top",
+        onEnter: () => menu.classList.add("scrolled"),
+        onLeaveBack: () => menu.classList.remove("scrolled"),
+      });
+
+      /*con02 gsap 애니메이션(줌인,아웃 효과) */
+      gsap.to("#point .grid", {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#point",
+          start: "20% center",
+          end: "30% center",
+          scrub: 3,
+          // markers: true,
+        },
+      });
+    </script>
     <script></script>
   </body>
 </html>
