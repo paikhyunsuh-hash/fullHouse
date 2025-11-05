@@ -611,6 +611,210 @@
         stagger: 0.2,
         duration: 1,
       });
+
+      // con03
+      gsap.from(".con03 h2", {
+        scrollTrigger: {
+          trigger: ".con03",
+          start: "top 80%",
+          end: "top 50%",
+          scrub: 2,
+        },
+        opacity: 0,
+        scale: 0.5,
+        y: 50,
+      });
+
+      gsap.from(".con03 .map", {
+        scrollTrigger: {
+          trigger: ".con03 .map",
+          start: "top 80%",
+          end: "top 50%",
+          scrub: 2,
+        },
+        opacity: 0,
+        y: 100,
+        scale: 0.9,
+      });
+
+      gsap.from(".con03 .ph", {
+        scrollTrigger: {
+          trigger: ".con03 .ph",
+          start: "top 85%",
+          end: "top 60%",
+          scrub: 1,
+        },
+        opacity: 0,
+        y: 100,
+      });
+
+      gsap.from(".con03 .add", {
+        scrollTrigger: {
+          trigger: ".con03 .add",
+          start: "top 85%",
+          end: "top 60%",
+          scrub: 1,
+        },
+        opacity: 0,
+        y: 100,
+      });
+
+      gsap.from(".con03 h3", {
+        scrollTrigger: {
+          trigger: ".con03 h3",
+          start: "top 85%",
+          end: "top 60%",
+          scrub: 1,
+        },
+        opacity: 0,
+        y: 30,
+      });
+
+      gsap.from(".con03 .box .left", {
+        scrollTrigger: {
+          trigger: ".con03 .box",
+          start: "top 80%",
+          end: "top 50%",
+          scrub: 2,
+        },
+        opacity: 0,
+        x: -80,
+        rotationY: -15,
+      });
+
+      gsap.from(".con03 .box .right", {
+        scrollTrigger: {
+          trigger: ".con03 .box",
+          start: "top 80%",
+          end: "top 50%",
+          scrub: 2,
+        },
+        opacity: 0,
+        x: 80,
+        rotationY: 15,
+      });
+
+      // con04
+
+      gsap.from(".hero-content h2", {
+        scrollTrigger: {
+          trigger: ".rental-hero",
+          start: "top 70%",
+          end: "top 40%",
+          scrub: 2,
+        },
+        opacity: 0,
+        y: -80,
+        scale: 0.8,
+      });
+
+      gsap.from(".hero-content h3", {
+        scrollTrigger: {
+          trigger: ".rental-hero",
+          start: "top 70%",
+          end: "top 40%",
+          scrub: 2,
+        },
+        opacity: 0,
+        y: 50,
+        delay: 0.2,
+      });
+
+      gsap.from(".hero-content p", {
+        scrollTrigger: {
+          trigger: ".rental-hero",
+          start: "top 70%",
+          end: "top 40%",
+          scrub: 2,
+        },
+        opacity: 0,
+        y: 30,
+        delay: 0.4,
+      });
+
+      gsap.from(".reservation-card", {
+        scrollTrigger: {
+          trigger: ".rental-hero",
+          start: "top 60%",
+          end: "top 30%",
+          scrub: 2,
+        },
+        opacity: 0,
+        y: 100,
+        scale: 1.1,
+      });
+
+      gsap.from(".tab-menu .tab", {
+        scrollTrigger: {
+          trigger: ".reservation-card",
+          start: "top 80%",
+          end: "top 60%",
+          scrub: 1,
+        },
+        opacity: 0,
+        x: -30,
+        stagger: 0.1,
+      });
+
+      gsap.from(".form-fields .input-group", {
+        scrollTrigger: {
+          trigger: ".form-fields",
+          start: "top 85%",
+          end: "top 65%",
+          scrub: 1,
+        },
+        opacity: 0,
+        y: 20,
+        stagger: 0.1,
+      });
+
+      // footer
+
+      let tl4 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".con04 footer",
+          start: "10% bottom",
+          end: "30% bottom",
+          scrub: 2,
+          // markers: true,
+        },
+      });
+
+      tl4.from(
+        ".con04 footer .info li",
+        {
+          y: 30,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 1,
+          ease: "power2.out",
+        },
+        "-=0.4"
+      );
+
+      tl4.from(
+        ".con04 footer .sns li",
+        {
+          scale: 0,
+          rotation: 360,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.15,
+          ease: "back.out(1.7)",
+        },
+        "-=0.8"
+      );
+
+      tl4.from(
+        ".con04 footer .bottom",
+        {
+          y: 20,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.out",
+        },
+        "-=1"
+      );
     </script>
   </body>
 </html>
