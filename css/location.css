@@ -783,12 +783,14 @@ iframe {
   padding: 0 10px;
   border-right: 1px solid #eee;
   min-height: 60px;
+  font-family: "AritaBuriKR";
 }
 
 .input-group label {
   font-size: 0.85rem;
   color: #777;
   margin-bottom: 5px;
+  font-family: "AritaBuriKR";
 }
 
 .input-group input {
@@ -797,6 +799,7 @@ iframe {
   font-size: 1rem;
   color: #333;
   padding: 2px 0;
+  font-family: "AritaBuriKR";
 }
 
 /* 인수 장소 필드 */
@@ -811,6 +814,7 @@ iframe {
   align-items: stretch;
   width: 100%;
   height: 100%;
+  font-family: "AritaBuriKR";
   border-top: 1px solid #eee; /* 이미지 상의 구분선 */
 }
 
@@ -819,6 +823,7 @@ iframe {
   flex-grow: 1;
   flex-basis: 0;
   border-bottom: 1px solid #eee;
+  font-family: "AritaBuriKR";
 }
 
 /* .date-time-group .input-group:last-of-type {
@@ -827,11 +832,13 @@ iframe {
 
 .time-input {
   position: relative;
+  font-family: "AritaBuriKR";
 }
 
 .time-input input {
   /* 시간 입력 필드 값의 위치를 아이콘과 맞추기 */
   padding-right: 25px;
+  font-family: "AritaBuriKR";
 }
 
 .time-input i {
@@ -856,6 +863,7 @@ iframe {
   cursor: pointer;
   flex-shrink: 0; /* 줄어들지 않도록 */
   transition: background-color 0.2s;
+  font-family: "AritaBuriKR";
 }
 
 .search-btn:hover {
@@ -1019,6 +1027,7 @@ footer {
   .tab {
     padding: 8px 15px; /* 탭 버튼 크기 조정 */
     font-size: 0.95rem;
+    font-family: "AritaBuriKR";
   }
 
   .full-width {
@@ -1034,11 +1043,13 @@ footer {
 
   .input-group label {
     font-size: 0.8rem;
+    font-family: "AritaBuriKR";
   }
 
   .input-group input,
   .search-btn {
     font-size: 1rem;
+    font-family: "AritaBuriKR";
   }
 }
 
