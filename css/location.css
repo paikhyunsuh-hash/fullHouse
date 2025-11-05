@@ -759,7 +759,7 @@ iframe {
   cursor: pointer;
   font-weight: 600;
   color: #555;
-  transition: all 0.2s;
+  /* transition: all 0.2s; */
 }
 
 .tab:hover {
