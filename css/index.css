@@ -56,6 +56,7 @@ section {
   background-color: #ffefef;
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 #con01 .inner {
   max-width: 1200px;
