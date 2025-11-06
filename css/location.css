@@ -679,7 +679,7 @@ iframe {
 
 .rental-hero {
   width: 100%;
-  background: url("/img/location/air2.png") no-repeat center center;
+  background: url("../img/location/air2.png") no-repeat center center;
   background-size: cover;
   height: 100vh;
   position: relative;
@@ -1192,6 +1192,7 @@ footer {
   }
 
   /* con04 */
+
   .rental-hero {
     height: 100%; /* 모바일에서 섹션 높이 대폭 감소 */
   }
@@ -1216,6 +1217,7 @@ footer {
     /* 모바일에서는 모서리를 둥글게 */
     border-radius: 8px;
     opacity: 1;
+    box-sizing: border-box;
   }
 
   /* 탭 메뉴 */
