@@ -176,11 +176,9 @@ p {
   position: relative;
   overflow: hidden;
   background-image: url(../img/reservation/back.png);
-  padding: 80px 0;
-  box-sizing: border-box;
 }
-#con02 .pointinner {
-  width: 1200px;
+#con02 {
+  padding: 80px 0;
 }
 #con02 .title {
   margin-bottom: 32px;
@@ -229,6 +227,9 @@ p {
   box-sizing: border-box;
   height: 100vh;
 }
+#con03 .slider-container {
+  height: 100%;
+}
 
 .section-title {
   /* 기존 폰트 스타일 상속 */
@@ -251,6 +252,7 @@ p {
   margin: 0px auto;
   position: relative;
   padding: 0;
+  height: 100%;
 }
 
 .room-list {
@@ -260,7 +262,7 @@ p {
   justify-content: center;
   gap: 30px;
   transition: transform 0.5s ease-in-out; /* JS 슬라이드 애니메이션 효과 */
-  padding-bottom: 20px; /* 혹시 모를 그림자나 하단 여백 확보 */
+  /* padding-bottom: 20px; 혹시 모를 그림자나 하단 여백 확보 */
 }
 /* .room-list::-webkit-scrollbar {
   display: none;
@@ -345,6 +347,9 @@ p {
   margin-right: 5px;
 }
 
+/* ====================================
+    반응형 (태블릿)
+   ==================================== */
 @media (max-width: 1200px) {
   .section-title {
     font-size: 36px;
@@ -361,11 +366,14 @@ p {
   #visual {
     height: 100vh;
   }
-
+  /* #con03 {
+    padding: 40px 0;
+  } */
   #con03 .room-top {
     display: block;
   }
   #con03 .room-list {
+    /* display: block; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -380,6 +388,7 @@ p {
     margin-bottom: 30px;
   }
 
+  /* 모바일에서는 한 화면에 1개씩만 보이도록 설정 */
   .room-card-wrapper {
     flex: 0 0 100%;
     min-width: 100%;
@@ -403,18 +412,24 @@ p {
 
 #con04 {
   width: 100%;
+  position: relative;
   height: 100vh;
   box-sizing: border-box;
   overflow: hidden;
   padding: 60px 0;
 }
 
+#con04 .all {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 #con04 .wrap {
   width: 100%;
-  max-width: 1200px;
   height: 100%;
-  position: relative;
-
+  max-width: 1200px;
   margin: 0 auto 80px;
   /* padding: 50px; */
   display: flex;
@@ -441,7 +456,7 @@ p {
 }
 
 #con04 .rules {
-  width: 60%;
+  width: 65%;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -709,7 +724,11 @@ footer {
   }
   /* con03 */
   #con03 {
-    padding: 40px 0;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  #con03 .slider-container {
+    height: 100%;
   }
   .room-card-wrapper {
     flex: 0 0 100%;
