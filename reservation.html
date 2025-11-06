@@ -420,7 +420,6 @@
         ease: "power3.out",
       });
 
-      // "Booking now" 버튼 펄스 효과
       gsap.to("#con01 .more", {
         scale: 1.05,
         duration: 1,
@@ -429,7 +428,6 @@
         ease: "power1.inOut",
       });
 
-      //con04
       //con02
       gsap.to("#con02 .grid", {
         y: 0,
@@ -441,6 +439,86 @@
           scrub: 2,
           // markers: true,
         },
+      });
+      //con03
+      // 섹션 타이틀 애니메이션
+      gsap.from("#con03 .section-title", {
+        scrollTrigger: {
+          trigger: "#con03",
+          start: "top 80%",
+          end: "top 50%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      // 룸 카드 동시 애니메이션 (stagger 제거)
+      gsap.from("#con03 .room-card-wrapper", {
+        scrollTrigger: {
+          trigger: "#con03 .room-list",
+          start: "top 75%",
+          end: "top 40%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 80,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      // 룸 이미지 줌 효과 (동시)
+      gsap.from("#con03 .room-image img", {
+        scrollTrigger: {
+          trigger: "#con03 .room-list",
+          start: "top 75%",
+          end: "top 40%",
+          toggleActions: "play none none reverse",
+        },
+        scale: 1.2,
+        duration: 1.2,
+        ease: "power2.out",
+      });
+
+      // 룸 정보 카드 내부 요소 동시 애니메이션
+      gsap.from("#con03 .room-category", {
+        scrollTrigger: {
+          trigger: "#con03 .room-list",
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        x: -20,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+
+      gsap.from("#con03 .room-top", {
+        scrollTrigger: {
+          trigger: "#con03 .room-list",
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        delay: 0.2,
+        ease: "power2.out",
+      });
+
+      gsap.from("#con03 .room-specs", {
+        scrollTrigger: {
+          trigger: "#con03 .room-list",
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        delay: 0.4,
+        ease: "power2.out",
       });
 
       //con04

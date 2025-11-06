@@ -52,4 +52,38 @@ $(function () {
     fadeSlide();
     startSlide();
   });
+
+  // con03
+  document.querySelectorAll("#con03 .room-card-wrapper").forEach((card) => {
+    const img = card.querySelector(".room-image img");
+    const viewMore = card.querySelector(".view-more");
+
+    card.addEventListener("mouseenter", () => {
+      gsap.to(img, {
+        scale: 1.1,
+        duration: 0.6,
+        ease: "power2.out",
+      });
+      gsap.to(viewMore, {
+        x: 10,
+        color: "#85bfc1",
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    });
+
+    card.addEventListener("mouseleave", () => {
+      gsap.to(img, {
+        scale: 1,
+        duration: 0.6,
+        ease: "power2.out",
+      });
+      gsap.to(viewMore, {
+        x: 0,
+        color: "#999",
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    });
+  });
 });
