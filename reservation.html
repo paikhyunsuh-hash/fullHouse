@@ -273,6 +273,7 @@
               <span class="room-category">DELUXE</span>
               <h3 class="room-title">디럭스 오션 트윈</h3>
               <a href="#" class="view-more">VIEW MORE ></a>
+              
       <!-- con03입니다 -->
       <section id="con03" class="room-type-section">
         <h2 class="section-title">객실 타입 소개</h2>
@@ -573,40 +574,6 @@
         scale: 0.5,
         duration: 1.2,
         ease: "back.out(1.7)",
-      });
-
-      // footer
-      let tl4 = gsap.timeline({
-        scrollTrigger: {
-          trigger: "footer",
-          start: "10% bottom",
-          end: "30% bottom",
-          scrub: 2,
-          // markers: true,
-        },
-      });
-
-      tl4.from("footer .info li", {
-        y: 30,
-        opacity: 0,
-        duration: 0.5,
-        stagger: 1,
-        ease: "power2.out",
-      });
-      tl4.from("footer .sns li", {
-        scale: 0,
-        rotation: 360,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: "back.out(1.7)",
-      });
-
-      tl4.from("footer .bottom", {
-        y: 20,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power2.out",
       });
     </script>
   </body>
