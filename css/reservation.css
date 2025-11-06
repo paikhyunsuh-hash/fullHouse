@@ -208,7 +208,9 @@ p {
 }
 /* con03 */
 #con03 {
-  padding: 80px 0;
+  padding-top: 160px;
+  box-sizing: border-box;
+  height: 100vh;
 }
 
 .section-title {
@@ -229,27 +231,28 @@ p {
 /* --- 슬라이더 컨테이너 (버튼 포함) --- */
 .slider-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
+  margin: 0px auto;
   position: relative;
-  overflow: hidden;
+  padding: 0;
 }
 
 .room-list {
+  width: 100%;
+  margin: 0px auto;
   display: flex;
+  justify-content: center;
   gap: 30px;
-  transition: transform 0.5s ease-in-out;
-  padding-bottom: 20px;
+  transition: transform 0.5s ease-in-out; /* JS 슬라이드 애니메이션 효과 */
+  padding-bottom: 20px; /* 혹시 모를 그림자나 하단 여백 확보 */
 }
-
-.room-list::-webkit-scrollbar {
+/* .room-list::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .room-card-wrapper {
-  flex: 0 0 50%;
-  min-width: 50%;
-  scroll-snap-align: start;
+  /* flex: 0 0 50%; PC: 한 화면에 2개씩 보이게 설정 */
+  /* min-width: 50%; 최소 너비 유지 */
+  width: calc((100% - 25px) / 2);
   box-sizing: border-box;
 }
 
@@ -263,12 +266,16 @@ p {
 
 .room-image img {
   height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 
 /* --- 룸 정보 카드 --- */
 .room-info-card {
   padding: 10px 0;
+}
+.room-info-card {
+  display: block;
 }
 
 .room-category {
@@ -287,8 +294,8 @@ p {
 }
 
 .view-more {
-  float: right;
   color: #999;
+  display: block;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 28px; /* 제목과 높이 맞추기 */
@@ -314,6 +321,64 @@ p {
   font-weight: 700;
   color: #333;
   margin-right: 5px;
+}
+
+/* ====================================
+    반응형 (태블릿)
+   ==================================== */
+@media (max-width: 1200px) {
+  .section-title {
+    font-size: 36px;
+  }
+  .slider-container {
+    padding: 0 20px;
+  }
+}
+
+/* ====================================
+    반응형 (모바일)
+   ==================================== */
+@media (max-width: 620px) {
+  #visual {
+    height: 100vh;
+  }
+  #con03 {
+    padding: 40px 0;
+  }
+  #con03 .room-list {
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #con03 .room-specs {
+    border: none;
+  }
+
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  /* 모바일에서는 한 화면에 1개씩만 보이도록 설정 */
+  .room-card-wrapper {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+
+  .room-image {
+    height: 300px;
+  }
+
+  .room-title {
+    font-size: 24px;
+  }
+
+  /* 스펙 리스트는 세로로 나열 */
+  .room-specs {
+    gap: 10px 20px;
+  }
 }
 
 /* con04 */
