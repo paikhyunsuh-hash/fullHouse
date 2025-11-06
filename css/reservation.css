@@ -742,6 +742,7 @@ footer {
   /* con04 */
   #con04 {
     height: 100vh;
+    padding: 0px;
   }
 
   #con04 .all {
@@ -772,24 +773,24 @@ footer {
 
   #con04 .rules {
     width: 100%;
-    gap: 18px;
+    /* gap: 18px; */
   }
 
   #con04 .rules li {
-    padding: 20px;
+    /* padding: 20px; */
     border-radius: 12px;
   }
 
   #con04 .rules li h4 {
     font-size: 16px;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
+    /* margin-bottom: 12px;
+    padding-bottom: 8px; */
   }
 
   #con04 .rules li p {
     font-size: 13px;
     line-height: 1.7;
-    margin-bottom: 8px;
+    /* margin-bottom: 8px; */
   }
   h2 {
     font-size: 44px;
