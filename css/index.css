@@ -83,7 +83,7 @@ section {
 
 #con01 .innerLeft .textBox,
 #con01 .innerRight .textBox {
-  padding: 20px 0px;
+  /* padding: 20px 0px; */
   box-sizing: border-box;
   width: 100%;
 }
@@ -413,6 +413,9 @@ section {
   }
   #con02 .inner {
     padding: 0px;
+  }
+  #con01 .textBox {
+    padding: 10px 10px;
   }
 }
 
