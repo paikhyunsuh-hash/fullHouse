@@ -94,18 +94,16 @@ body {
   width: 100%;
 }
 
-/* 기존 마우스 커서 스타일 */
 .cursor1 {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   position: fixed;
-  pointer-events: none; /* 마우스 이벤트 방해 방지 */
-  transform: translate(0%, 10%); /* 중앙 정렬로 변경 (0%, 10%보다 일반적) */
+  pointer-events: none;
+  transform: translate(0%, 10%);
   z-index: 999;
 }
 
-/* 두 번째 이미지 초기 스타일 */
 .cursor2 {
   width: 50px;
   height: 50px;
@@ -114,8 +112,7 @@ body {
   z-index: 1000;
 }
 .cursor2 .click-image {
-  display: none; /* 👈 초기에는 숨김 */
-  /* transform: translate(-50%, -50%); /* 중앙 정렬로 변경 */
+  display: none;
 }
 
 /* 폰트 */
