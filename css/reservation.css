@@ -402,12 +402,14 @@ p {
 
 #con04 .all {
   width: 100%;
+  height: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 #con04 .wrap {
   width: 100%;
+  height: 100%;
   max-width: 1200px;
   margin: 0 auto 80px;
   /* padding: 50px; */
@@ -489,14 +491,14 @@ footer {
 
 @media (min-width: 620px) and (max-width: 1200px) {
   #con04 {
-    min-height: 100dvh; /* 모바일에 강한 단위 */
+    /* min-height: 100dvh; 모바일에 강한 단위 */
     overflow: hidden;
     /* padding: 30px 0 90px; */
     box-sizing: border-box;
   }
   #con04 .wrap {
     padding: 0 16px;
-    margin-bottom: 32px;
+    /* margin-bottom: 32px; */
     gap: 28px;
   }
   #con04 .section-block {
@@ -657,16 +659,17 @@ footer {
 
   /* con04 */
   #con04 {
-    height: 100%;
+    height: 100vh;
   }
 
   #con04 .all {
     padding: 0 15px;
+    height: 100%;
   }
 
   #con04 .wrap {
     padding: 0px 20px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     gap: 40px;
   }
 
