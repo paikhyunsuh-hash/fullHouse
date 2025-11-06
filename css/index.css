@@ -82,7 +82,7 @@ section {
 
 #con01 .innerLeft .textBox,
 #con01 .innerRight .textBox {
-  padding: 20px;
+  padding: 20px 0px;
   box-sizing: border-box;
   width: 100%;
 }
@@ -135,10 +135,17 @@ section {
   #con01 .innerRight .textBox {
     margin-bottom: 20px;
   }
-  #con01 img {
-    width: 100%;
+  #con01 .circleTxt {
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    top: 30%;
+    transform: translate(0% -50%);
+    transform: rotate(-45deg);
+  }
+  .circleTxt img {
     height: 100%;
-    object-fit: cover;
+    width: 100%;
   }
 }
 /* 모바일 */
