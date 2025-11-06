@@ -1,4 +1,4 @@
-.container {
+#container {
   width: 100%;
   margin: 0px auto;
 }
@@ -7,50 +7,153 @@ section {
   /* max-width: 1200px; */
   height: 100vh;
 }
+
 /* VISUAL */
 #visual {
   width: 100%;
-  background-image: url(../img/index/visual1.jpg);
-  background-position: center;
-  background-size: cover;
-  position: relative;
+  height: 100vh;
 }
-.visualText {
+#visual .video-background {
+  width: 100%;
+  height: 100%;
+}
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.video-background video source {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#visual .textBox {
   position: absolute;
+  margin: 0px auto;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
-.visualText h2 {
+
+#visual h2 {
+  letter-spacing: 2vw;
+  font-size: 9vw;
   color: #fff;
-  font-size: 8.5vw;
 }
-.visualText span {
-  font-size: 4vw;
+#visual h2 span {
   display: block;
-  color: #f1927b;
+  color: rgb(241, 146, 123);
+  font-size: 4vw;
+  font-weight: 300;
+  letter-spacing: 1vw;
 }
-#visual .bottom {
-  color: #fff;
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-}
-#visual .bottom .bar {
-  width: 200px;
-  height: 1px;
-  background-color: #fff;
-}
-#visual .bottom p {
-  margin: 0px 50px;
-}
+
 /* CON01 */
 #con01 {
+  width: 100%;
+  background-color: #ffefef;
   position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+#con01 .inner {
+  max-width: 1200px;
+  height: 100%;
+  padding: 100px 0px;
+  box-sizing: border-box;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+}
+#con01 .innerLeft,
+#con01 .innerRight {
+  width: calc(50% - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#con01 .textBox p {
+  font-family: "BlackerSans";
+  font-weight: 200;
+}
+
+#con01 .innerLeft .textBox,
+#con01 .innerRight .textBox {
+  padding: 20px 0px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#con01 .inner .innerLeft .imgBox,
+#con01 .inner .innerRight .imgBox {
+  width: 100%;
+}
+
+#con01 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#con01 .circleTxt {
+  width: 50%;
+  position: absolute;
+  left: 25%;
+  top: 0;
+  transform: translate(0% -50%);
+  transform: rotate(-45deg);
+}
+.circleTxt img {
+  height: 100%;
+  width: 100%;
+}
+/* 태블릿 */
+@media (min-width: 620px) and (max-width: 1200px) {
+  #con01 .inner {
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #con01 .innerLeft {
+    width: 50%;
+  }
+  #con01 .innerRight {
+    width: 500px;
+  }
+  #con01 .imgBox {
+    height: 600px;
+    width: 500px;
+  }
+  #con01 .innerLeft .textBox {
+    margin-top: 20px;
+  }
+  #con01 .innerRight .textBox {
+    margin-bottom: 20px;
+  }
+  #con01 .circleTxt {
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    top: 30%;
+    transform: translate(0% -50%);
+    transform: rotate(-45deg);
+  }
+  .circleTxt img {
+    height: 100%;
+    width: 100%;
+  }
+}
+/* 모바일 */
+@media (max-width: 620px) {
+  .circleTxt {
+    display: none;
+  }
 }
 
 /* CON02 */
@@ -59,43 +162,330 @@ section {
   background-color: #ddcbbe;
 }
 #con02 .inner {
-  /* width: 1200px; */
+  max-width: 1200px;
   height: 100%;
+  padding: 100px 0px;
+  box-sizing: border-box;
   margin: 0px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 #con02 .innerLeft {
   width: 50%;
   height: 100%;
   background-image: url(../img/index/con02.jpg);
   background-position: center;
   background-size: cover;
+  box-sizing: border-box;
+}
+#con02 .innerLeft .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  line-height: 2;
+}
+#con02 .innerLeft .title li {
+  font-size: 3vw;
+  font-weight: bold;
+  color: #fff;
+  font-family: "BlackerSans";
+  height: calc(25%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#con02 .inner .innerLeft .title li {
+  opacity: 25%;
+  cursor: pointer;
+}
+
+#con02 .inner .innerLeft .title li.clicked {
+  opacity: 100%;
 }
 #con02 .innerRight {
   width: 50%;
   height: 100%;
+  position: relative;
 }
-#con02 .innerRight .imageList {
-  width: 250px;
+
+#con02 .innerRight ul {
+  width: 100%;
   height: 100%;
   margin: 0px auto;
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  opacity: 0;
+  transition: 1s ease-in-out;
+}
+#con02 .innerRight ul.on {
+  opacity: 1;
 }
 #con02 .innerRight li {
-  width: 250px;
-  height: 200px;
+  width: 100%;
+  height: calc(25%);
 }
 #con02 .innerRight img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-/* CON03 */
+
+/* #con03 Section CSS */
+
+#con03 {
+  width: 100%;
+  height: calc(100vh - 160px);
+  position: relative;
+  overflow: hidden;
+  background-color: #ffefef;
+  color: rgba(133, 191, 193);
+  margin: 80px 0px;
+  padding-top: 160px;
+}
+
+/* Inner wrapper for fixed text */
+#con03 .inner {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+/* Fixed Text */
+#con03 .fixedTxt {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  color: rgba(133, 191, 193);
+}
+#con03 h2 {
+  font-family: Arita Buri Kr;
+}
+#con03 .fixedTxt h2,
+#con03 .fixedTxt h3 {
+  margin: 0 0 10px;
+}
+
+#con03 .fixedTxt p {
+  margin-bottom: 20px;
+  color: #000;
+}
+
+#con03 .fixedTxt a {
+  display: inline-block;
+  padding: 10px 25px;
+  background: rgba(133, 191, 193, 0.8);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+  font-family: "AritaBuriKR", "BlackerSans";
+}
+
+#con03 .fixedTxt a:hover {
+  background: rgba(133, 191, 193, 1);
+}
+
+#con03 .imgScroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 1;
+}
+
+/* Left column */
+#con03 .imgScrollLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 20px;
+}
+
+/* Right column */
+#con03 .imgScrollRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; /* center images horizontally */
+  box-sizing: border-box;
+  padding-top: 20px;
+}
+
+/* Individual images */
+#con03 .imgScrollLeft li,
+#con03 .imgScrollRight li {
+  width: 70%; /* desktop width */
+  height: 25%;
+  margin-bottom: 60px;
+  overflow: hidden;
+}
+
+#con03 .imgScrollLeft li:last-child,
+#con03 .imgScrollRight li:last-child {
+  margin-bottom: 0;
+}
+
+#con03 .imgScrollLeft img,
+#con03 .imgScrollRight img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+/* ---------------------------- */
+
+/* PC (1200px 이상일 때) */
+@media (min-width: 1200px) {
+  #con03 .imgScrollLeft li,
+  #con03 .imgScrollRight li {
+    width: 600px; /* 각 이미지 열의 너비 조정 */
+    height: 25%;
+    margin-bottom: 60px;
+  }
+
+  /* 왼쪽 이미지는 왼쪽 끝에 붙이기 */
+  #con03 .imgScrollLeft {
+    align-items: flex-start; /* 왼쪽 정렬 */
+    padding-left: 0;
+  }
+
+  /* 오른쪽 이미지는 오른쪽 끝에 붙이기 */
+  #con03 .imgScrollRight {
+    align-items: flex-end; /* 오른쪽 정렬 */
+    padding-right: 0;
+  }
+
+  /* 중앙 텍스트 유지 */
+  #con03 .fixedTxt {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+/* Responsive: Tablet (620px ~ 1200px) */
+@media (max-width: 1200px) and (min-width: 620px) {
+  #con03 .imgScrollLeft li,
+  #con03 .imgScrollRight li {
+    width: 100%; /* images touch edges of screen */
+    height: 25%;
+    margin-bottom: 50px;
+  }
+  #con03 .fixedTxt {
+    max-width: 500px;
+  }
+  #con02 {
+    width: 100%;
+    background-color: #ddcbbe;
+  }
+  #con02 .inner {
+    padding: 0px;
+  }
+}
+
+/* ---------------------------- */
+/* Responsive: Mobile (<620px) */
+@media (max-width: 620px) {
+  #con01 .inner {
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0px auto;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px; */
+    display: block;
+  }
+  #con01 .innerLeft,
+  #con01 .innerRight {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #con01 .innerRight {
+    flex-direction: column-reverse;
+  }
+  #con01 .textBox {
+    width: 100%;
+  }
+  #con01 .textBox p {
+    font-family: "BlackerSans";
+    font-weight: 200;
+  }
+
+  #con01 .innerLeft .textBox,
+  #con01 .innerRight .textBox {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  #con01 .inner .innerLeft .imgBox,
+  #con01 .inner .innerRight .imgBox {
+    width: 100%;
+    height: 200px;
+  }
+
+  #con01 img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  #con03 {
+    height: 100vh;
+  }
+  /* Keep images visible and animated */
+  #con03 .imgScrollLeft li,
+  #con03 .imgScrollRight li {
+    width: 100%; /* full width */
+    height: 25%;
+    margin-bottom: 40px;
+  }
+  #con03 .fixedTxt {
+    max-width: 90%;
+    padding: 20px 0;
+  }
+  #con02 .inner {
+    padding: 0px;
+  }
+}
+
 /* CON04 */
 #con04 {
   width: 100%;
@@ -117,6 +507,7 @@ section {
 }
 #con04 .ig {
   width: 100%;
+  height: calc(100% - 211px);
   overflow: hidden;
 }
 #con04 .ig ul {
@@ -126,15 +517,15 @@ section {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 2380px;
-  animation: scroll 5s linear infinite;
+  width: 4000px;
+  animation: scroll 30s linear infinite;
 }
 @keyframes scroll {
   0% {
-    transform: translateX(0) translateY(-50%);
+    margin-left: 0;
   }
   100% {
-    transform: translateX(-220px) translateY(-50%);
+    margin-left: -2200px;
   }
 }
 #con04 .ig ul li {

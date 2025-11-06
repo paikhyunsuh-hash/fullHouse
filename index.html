@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <!--FONT AWESOME-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <!--GSAP CDN-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!--GSAP ScrollTrigger CDN-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="js/header.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/custom.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <h1>
+          <a href="index.html">
+            <img src="img/logos/logo.svg" />
+          </a>
+        </h1>
+        <nav>
+          <div class="burger">
+            <div class="open"><i class="fa-solid fa-bars"></i></div>
+            <div class="close"><i class="fa-solid fa-xmark"></i></div>
+          </div>
+          <ul>
+            <li>
+              <a href="reservation.html">RESERVATION</a>
+            </li>
+            <li>
+              <a href="rooms.html">ROOMS</a>
+            </li>
+            <li>
+              <a href="facilities.html">FACILITIES</a>
+            </li>
+            <li>
+              <a href="location.html">LOCATION</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div id="menu">
+      <ul>
+        <li>
+          <a href="reservation.html"> RESERVATION</a>
+        </li>
+        <li><a href="rooms.html">ROOMS</a></li>
+        <li><a href="facilities.html">FACILITIES</a></li>
+        <li><a href="location.html">LOCATION</a></li>
+      </ul>
+    </div>
+    <div id="container">
+      <section id="visual">
+        <div class="video-background">
+          <video autoplay muted loop>
+            <source src="img/index/visualVid.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="textBox">
+          <h2>FULL HOUSE<span>LUXURY POOL VILLA</span></h2>
+        </div>
+      </section>
+      <section id="con01">
+        <div class="inner">
+          <div class="innerLeft">
+            <div class="textBox">
+              <h4>FULL HOUSE</h4>
+              <p>
+                A harmony of calm and light. Where design breathes ease, and
+                every moment drifts in quiet elegance.
+              </p>
+            </div>
+            <div class="imgBox">
+              <img src="img/index/1.jpg" />
+            </div>
+          </div>
+          <div class="innerRight">
+            <div class="imgBox"><img src="img/index/7.jpg" /></div>
+            <div class="textBox">
+              <h4>LUXURY POOL VILLA</h4>
+              <p>
+                Still water. Soft air. Nature and space in gentle conversation.
+                At Full House, tranquility becomes art.
+              </p>
+            </div>
+          </div>
+          <div class="circleTxt">
+            <img src="img/index/circleText2.svg" />
+          </div>
+        </div>
+      </section>
+      <section id="con02">
+        <div class="inner">
+          <div class="innerLeft">
+            <ul class="title">
+              <li class="clicked"><span>PRIVATE POOL</span></li>
+              <li><span>BEACH ACCESS</span></li>
+              <li><span>TOUR BOOKING</span></li>
+              <li><span>AIRPORT TRANSFER</span></li>
+            </ul>
+          </div>
+          <div class="innerRight">
+            <ul class="imageList1 on">
+              <li><img src="img/index/pool.jpg" alt="" /></li>
+              <li><img src="img/index/pool2.jpg" alt="" /></li>
+              <li><img src="img/index/pool3.jpg" alt="" /></li>
+              <li><img src="img/index/pool4.jpg" alt="" /></li>
+            </ul>
+            <ul class="imageList2">
+              <li>
+                <img src="img/index/beach.jpg" alt="" />
+              </li>
+              <li>
+                <img src="img/index/beach2.jpg" alt="" />
+              </li>
+              <li>
+                <img src="img/index/beach3.jpg" alt="" />
+              </li>
+              <li>
+                <img src="img/index/beach4.jpg" alt="" />
+              </li>
+            </ul>
+            <ul class="imageList3">
+              <li>
+                <img src="img/index/tour.jpg" alt="" />
+              </li>
+              <li>
+                <img src="img/index/tour2.png" alt="" />
+              </li>
+
+              <li>
+                <img src="img/index/tour4.jpg" alt="" />
+              </li>
+              <li>
+                <img src="img/index/tour3.jpg" alt="" />
+              </li>
+            </ul>
+            <ul class="imageList4">
+              <li>
+                <img src="img/index/airport.jpg" alt="" />
+              </li>
+              <li>
+                <img src="img/index/airport3.jpg" alt="" />
+              </li>
+              <li>
+                <img src="img/index/airport5.jfif" alt="" />
+              </li>
+              <li>
+                <img src="img/index/airport4.jpg" alt="" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id="con03">
+        <div class="inner">
+          <div class="fixedTxt">
+            <h2>
+              풀하우스에서,<br />
+              세상에 없던 아름다움을 만나다.
+            </h2>
+            <h3>Discover your inner self</h3>
+            <p>
+              머무는 모든 순간이 세련된 감성으로 가득 차는 곳, <br />최고의
+              휴식을 위해 준비된 완벽한 공간에서 당신의 여정이 더욱 빛날 수
+              있도록 세심하게 배려합니다.
+            </p>
+            <div>
+              <a href="reservation.html">BOOK NOW</a>
+            </div>
+          </div>
+          <div class="imgScroll">
+            <ul class="imgScrollLeft">
+              <li>
+                <img src="img/index/main_img3.jpg" />
+              </li>
+              <li>
+                <img src="img/index/main_img2.jpg" />
+              </li>
+              <li>
+                <img src="img/index/main_img1.jpg" />
+              </li>
+            </ul>
+            <ul class="imgScrollRight">
+              <li>
+                <img src="img/index/main_img4.jpg" />
+              </li>
+              <li>
+                <img src="img/index/main_img5.jpg" />
+              </li>
+              <li>
+                <img src="img/index/main_img6.jpg" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id="con04">
+        <div class="ig">
+          <h2>FOLLOW US</h2>
+          <ul>
+            <li>
+              <img src="img/index/instaReview 5.jpg" />
+              <p class="hashTag">#프라이빗풀</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview2.jpeg" />
+              <p class="hashTag">#제주펜션</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview3.jpeg" />
+              <p class="hashTag">#독채펜션</p>
+            </li>
+
+            <li>
+              <img src="img/index/instaReview1.jpg" />
+              <p class="hashTag">#수영장</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview6.jfif" />
+              <p class="hashTag">#오션뷰</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview7.jpg" />
+              <p class="hashTag">#바다뷰</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview4.jpg" />
+              <p class="hashTag">#개인풀장</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview8.jpg" />
+              <p class="hashTag">#포토스팟</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview9.jpg" />
+              <p class="hashTag">#감성숙소</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview10.jpg" />
+              <p class="hashTag">#풀하우스</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview 5.jpg" />
+              <p class="hashTag">#프라이빗풀</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview2.jpeg" />
+              <p class="hashTag">#제주펜션</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview3.jpeg" />
+              <p class="hashTag">#독채펜션</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview4.jpg" />
+              <p class="hashTag">#개인풀장</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview1.jpg" />
+              <p class="hashTag">#수영장</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview6.jfif" />
+              <p class="hashTag">#오션뷰</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview7.jpg" />
+              <p class="hashTag">#바다뷰</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview8.jpg" />
+              <p class="hashTag">#포토스팟</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview9.jpg" />
+              <p class="hashTag">#감성숙소</p>
+            </li>
+            <li>
+              <img src="img/index/instaReview10.jpg" />
+              <p class="hashTag">#풀하우스</p>
+            </li>
+          </ul>
+        </div>
+        <footer>
+          <div class="inner">
+            <ul class="info">
+              <li>상호 : 풀하우스 (FullHouse)</li>
+              <li>전화번호 : 064-567-8910</li>
+              <li>사업자번호 : 682-77-00101</li>
+              <li>주소 : 제주특별자치도 서귀포시 성산읍 성산리 137-1</li>
+            </ul>
+
+            <ul class="sns">
+              <li>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-comment"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="bottom">© FULL HOUSE 2025 | ALL RIGHTS RESERVED</div>
+        </footer>
+      </section>
+    </div>
+    <script>
+      /* 스크롤하면 HEADER 배경색 바뀜 */
+      gsap.registerPlugin(ScrollTrigger);
+      const header = document.querySelector("header");
+      ScrollTrigger.create({
+        trigger: "#con01",
+        start: "top top",
+        end: "bottom top",
+        onEnter: () => header.classList.add("scrolled"),
+        onLeaveBack: () => header.classList.remove("scrolled"),
+      });
+      /*스크롤 하면 사이드 메뉴 배경색 바뀜 */
+      const menu = document.querySelector("#menu");
+      ScrollTrigger.create({
+        trigger: "#con01",
+        start: "top top",
+        end: "bottom top",
+        onEnter: () => menu.classList.add("scrolled"),
+        onLeaveBack: () => menu.classList.remove("scrolled"),
+      });
+
+      //#con01 scroll animation
+      gsap.to("#con01 .circleTxt", {
+        rotate: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#con01",
+          start: "10% center",
+          end: "80% center",
+          scrub: 4,
+          // markers: true,
+          // 테스트 할때는 안내선 보이게
+          // markers: false, // 안내선 안보이게
+        },
+      });
+
+      // #con03 scroll animation
+      let con03 = document.querySelector("#con03");
+      let imgLeft = con03.querySelector(".imgScrollLeft");
+      let imgRight = con03.querySelector(".imgScrollRight");
+      let fixedTxt = con03.querySelector(".fixedTxt");
+
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: con03,
+          start: "top top",
+          end: "+=200%", // the scroll length; increase for longer animation
+          scrub: 1,
+          pin: true, // pin the entire section
+          anticipatePin: 1,
+        },
+      });
+
+      tl.fromTo(
+        imgLeft,
+        { yPercent: -50 },
+        { yPercent: 50, ease: "none" },
+        0
+      ).fromTo(imgRight, { yPercent: 50 }, { yPercent: -50, ease: "none" }, 0);
+
+      // footer
+      let tl4 = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#con04 footer",
+          start: "10% bottom",
+          end: "30% bottom",
+          scrub: 2,
+          // markers: true,
+        },
+      });
+
+      tl4.from(
+        "#con04 footer .info li",
+        {
+          y: 30,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 1,
+          ease: "power2.out",
+        },
+        "-=0.4"
+      );
+
+      tl4.from(
+        "#con04 footer .sns li",
+        {
+          scale: 0,
+          rotation: 360,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.15,
+          ease: "back.out(1.7)",
+        },
+        "-=0.8"
+      );
+
+      tl4.from(
+        "#con04 footer .bottom",
+        {
+          y: 20,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.out",
+        },
+        "-=1"
+      );
+    </script>
+
+    <div class="cursor1">
+      <img src="img/index/Asset 3.png" alt="fllow_img" />
+    </div>
+    <div class="cursor2">
+      <img src="img/index/Asset 1.png" alt="클릭 이미지" class="click-image" />
+    </div>
+  </body>
+</html>

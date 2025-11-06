@@ -16,52 +16,35 @@ a {
 #visual {
   width: 100%;
   height: 100vh;
-  background-image: url(/img/facilities/9.jpg);
-  background-position: center;
-  background-image: cover;
-  background-repeat: no-repeat;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  background-size: cover;
   position: relative;
 }
-#visual .titleBox {
-  position: absolute;
+
+#visual .panel li {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-#visual .bottom {
-  color: #fff;
   position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
+  display: none;
 }
-#visual .bottom .bar {
-  width: 200px;
-  height: 1px;
-  background-color: #fff;
+#visual .panel .panel01 {
+  background: url(../img/facilities/9.jpg) no-repeat center;
+  background-size: cover;
+  display: block;
 }
-#visual .bottom p {
-  margin: 0px 50px;
+#visual .panel .panel02 {
+  background: url(../img/facilities/visual4.jpg) no-repeat center;
+  background-size: cover;
 }
-
-/* titleBox */
-.titleBox {
-  color: #fff;
-}
-.titleBox h2 {
-  font-size: 8.5vw;
-  letter-spacing: 1vw;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.titleBox p {
-  line-height: 1.5;
+#visual .panel .panel03 {
+  background: url(../img/facilities/visual2.jpg) no-repeat bottom;
+  background-size: cover;
 }
 
 /* #con01 */
@@ -71,7 +54,7 @@ a {
   margin: 100px auto;
 }
 /* .fa1 */
-.fa1 {
+#con01 .fa1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -79,35 +62,41 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 1s;
 }
 
 /* .t1 */
-.t1 {
+#con01 .fa1:hover {
+  transform: scale(90%);
+}
+#con01 .t1 {
   color: #333;
   width: calc(100% / 2);
+  line-height: 2;
 }
-.t1 h2 {
+#con01 .t1 h2 {
   color: #85bfc1;
 }
-.t1 ul {
+#con01 .t1 ul {
   width: 100%;
   transform: translate(25%);
   /* margin: 0px auto; */
   /* text-align: left; */
 }
-.t1 ul li {
+#con01 .t1 ul li {
   margin: 5% 0%;
 }
-.t1 li img {
+#con01 .t1 li img {
   width: 50%;
 }
 
 /* .img1  */
-.img1 {
+
+#con01 .img1 {
   width: calc(100% / 2);
   height: 100%;
 }
-.img1 img {
+#con01 .img1 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -119,39 +108,47 @@ a {
   height: 100vh;
   margin: 100px auto;
   position: relative;
+  overflow: hidden;
+}
+#con02 span {
+  font-family: "AritaBuriKR";
 }
 
 /* top  */
-.top {
+#con02 .top {
   width: 100%;
   height: calc(100% / 2);
   display: flex;
 }
-.top h2 {
+#con02 .top h2 {
   color: #85bfc1;
 }
-.top ul {
-  width: calc(100% / 2);
-  transform: translate(25%, 10%);
+#con02 .top p {
+  line-height: 2;
 }
-.top ul li {
+#con02 .top ul {
+  width: calc(100% / 2);
+  transform: translate(25%, 0%);
+}
+#con02 .top ul li {
   margin: 2% 0%;
 }
-.top ul img {
+#con02 .top ul img {
   width: 25%;
   object-fit: cover;
 }
-.top img {
+#con02 .top img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 /* imgBox  */
-.imgBox {
+#con02 .imgBox {
   width: calc(100% / 2);
   height: 100%;
   object-fit: cover;
+  transform: translate(1000px);
 }
 
 /* bottom  */
@@ -165,6 +162,7 @@ a {
   height: 100%;
   display: flex;
   justify-content: space-between;
+  transform: translate(-1000px);
 }
 
 #con02 .bottom img {
@@ -172,14 +170,14 @@ a {
   height: 100%;
   object-fit: cover;
 }
-.round {
+#con02 .round {
   /* width: 100%;
   height: 100%; */
   position: absolute;
   right: 150px;
   bottom: 100px;
 }
-.round img {
+#con02 .round img {
   /* 애니메이션 이름: spin */
   animation-name: spin;
 
@@ -274,7 +272,7 @@ a {
   right: 50px;
   top: 0%;
   filter: brightness(10);
-  opacity: 0.5;
+  opacity: 0.7;
 }
 #con04 .vertical img {
   width: 100%;
@@ -287,6 +285,10 @@ a {
   scale: 0;
 }
 
+/* footer */
+footer {
+  position: relative;
+}
 /* ---------------------------------- */
 /* 태블릿 (min-width: 620px) and (max-width: 1200px) */
 /* ---------------------------------- */

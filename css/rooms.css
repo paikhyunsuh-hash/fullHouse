@@ -16,93 +16,16 @@ body {
 /* header */
 
 /* visual */
-#visual {
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  position: relative;
-}
 
-#visual .panel li {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  display: none;
-}
 #visual .panel .panel01 {
-  background: url(/img/rooms/4.jpg) no-repeat center;
+  background: url(../img/rooms/4.jpg) no-repeat center;
   display: block;
 }
 #visual .panel .panel02 {
-  background: url(/img/rooms/visual.jpg) no-repeat center;
+  background: url(../img/rooms/visual.jpg) no-repeat center;
 }
 #visual .panel .panel03 {
-  background: url(/img/rooms/visual2.jpg) no-repeat center;
-}
-
-#visual .textBox {
-  width: 100%;
-  margin: 25% auto;
-  color: #fff;
-  text-align: center;
-}
-
-#visual h2 {
-  letter-spacing: 20px;
-  margin-bottom: 50px;
-}
-#visual P {
-  line-height: 1.6;
-  margin-bottom: 50px;
-}
-
-/* navi */
-
-#visual .navi {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  position: absolute;
-  left: 50%;
-  bottom: 5%;
-  transform: translateX(-50%);
-}
-#visual .navi li:nth-child(2) {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-#visual .navi li:nth-child(2) span {
-  margin: 0px 10px;
-  display: none;
-}
-#visual .bar {
-  width: 500px;
-  height: 1px;
-  background-color: #ccc;
-}
-#visual .bar > div {
-  width: 25%;
-  height: 100%;
-  background-color: #32f8ff;
-}
-#visual .navi li a {
-  padding: 10px;
-}
-
-#visual .navi li:first-child {
-  color: rgb(255, 255, 255);
-}
-
-#visual .navi li:last-child {
-  color: rgb(255, 255, 255);
+  background: url(../img/rooms/visual2.jpg) no-repeat center;
 }
 
 /* con01 */
@@ -110,11 +33,13 @@ body {
 .con01 {
   width: 100%;
   max-width: 1200px;
-  height: 100vh;
+  min-height: 100dvh;
+  height: auto;
   margin: 0px auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .con01 .wrap {
   display: flex;
@@ -156,10 +81,14 @@ body {
 /* con02 */
 .con02 {
   width: 100%;
-  height: 100vh;
+  min-height: 100dvh;
+  height: auto;
   background-color: #f1927b;
   position: relative;
   overflow: hidden;
+}
+.con02 span {
+  font-family: "AritaBuriKR";
 }
 .con02 .wrap {
   width: 100%;
@@ -180,6 +109,7 @@ body {
 .con02 p {
   font-size: 16px;
   text-align: center;
+  font-family: "BlackerSans";
 }
 .con02 .bg3 .icon {
   display: flex;
@@ -190,14 +120,22 @@ body {
 }
 .con02 .icon li {
   width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.con02 .icon li i {
+  display: block;
+}
 .con02 .round {
   position: absolute;
   right: -30%;
+
   bottom: 0%;
   width: 60%;
-  height: 100%px;
+  /* height: 100%; */
   border-radius: 50%;
 }
 
@@ -217,158 +155,36 @@ body {
   }
 }
 
-/* con03 */
+/* con03  */
 
 .con03 {
   width: 100%;
-  height: 100vh;
-  margin: 0px auto;
+  min-height: 100%;
+  padding: 150px 20px 200px;
   position: relative;
   overflow: hidden;
-}
-
-/* con03밑에 내용 */
-
-.con03 .wrap {
-  width: 100%;
-  height: 100vh;
-  margin: 200px auto;
-}
-.con03 h2 {
-  font-size: 70px;
-  color: #85bfc1;
-  text-align: center;
-  padding-bottom: 50px;
-}
-
-/* li img */
-.con03 .imgBox {
-  width: 80%;
-  height: 50%;
-  display: flex;
-  justify-content: space-between;
-  margin: 50px auto;
-  /* padding-bottom: 50px; */
+  background-color: #ffefef;
   box-sizing: border-box;
-  gap: 50px;
-  /* height: 500px; */
 }
 
-.con03 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.con03 .bg1 {
-  width: calc(100% / 3);
-  background: url(/img/rooms/LUCA.jpg) no-repeat center;
-  background-size: cover;
-  clip-path: polygon(0 15%, 50% 0, 100% 15%, 100% 100%, 0 100%);
-}
-.con03 .bg2 {
-  width: calc(100% / 3);
-  background: url(/img/rooms/ROSE.jpg) no-repeat center;
-  background-size: cover;
-  border-radius: 250px 250px 0px 0px;
-}
-.con03 .bg3 {
-  width: calc(100% / 3);
-  background: url(/img/rooms/23.jpg) no-repeat center;
-  background-size: cover;
-  clip-path: polygon(0 15%, 50% 0, 100% 15%, 100% 100%, 0 100%);
-}
-.con03 .imgBox {
-  position: relative; /* 가운데 정렬 기준 잡기 */
-  overflow: hidden;
-}
-.con03 .imgBox li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  color: #555555;
-}
-/* 눌렀을때 효과주기 hover */
-.con03 .imgBox li a:hover {
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-}
-.con03 .imgBox li:nth-child(2) a:hover {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  width: 100%;
-  border-radius: 250px 250px 0px 0px;
-}
-
-/* 양옆 */
-.con03 .prev {
-  position: absolute;
-  transform: translateY(-50%);
-  top: 65%;
-  left: 5%;
-}
-.con03 .next {
-  position: absolute;
-  top: 65%;
-  transform: translateY(-50%);
-  right: 5%;
-}
-.con03 .prev a,
-.con03 .next a {
-  color: #555555;
-  font-size: 20px;
-  transition: 0.3s;
-}
-.con03 .prev a:hover,
-.con03 .next a:hover {
-  color: #85bfc1;
-}
-
-/* bar */
-.con03 .bottom {
-  width: 100%;
-  color: #555555;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.con03 .bottom .bar {
-  width: 350px;
-  height: 1px;
-  background-color: #555555;
-}
-.con03 .bottom .on {
-  width: 350px;
-  height: 1px;
-  background-color: #32f8ff;
-}
-.con03 .bottom p {
-  margin: 0px 50px;
-}
-
-/* con04 */
-
-/* 위에 흘러가는 로고 */
+/* 위에 흘러가는 텍스트 */
 .con03 .top {
   position: absolute;
   white-space: nowrap;
   display: flex;
   gap: 80px;
-  font-size: 40px;
+  font-size: 50px;
   color: #85bfc1;
-  /* border: 1px solid #85bfc1; */
-  /box-sizing: border-box;
   animation: flowText 25s linear infinite;
-  bottom: -1%;
-  left: 0%;
+  top: 15%;
+  left: 0;
   pointer-events: none;
-
-  opacity: 0.3;
+  opacity: 0.2;
+  font-weight: bold;
+  z-index: 1;
+  font-family: "BlackerSans";
 }
+
 @keyframes flowText {
   0% {
     transform: translateX(0);
@@ -377,41 +193,175 @@ body {
     transform: translateX(-50%);
   }
 }
+.con03 .wrap {
+  width: 50px auto;
+  padding-top: 150px;
+  box-sizing: border-box;
+}
+.con03 h2 {
+  font-size: 80px;
+  color: #85bfc1;
+  text-align: center;
+  margin-bottom: 80px;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+.con03 .accordion-container {
+  max-width: 100%;
+  height: 600px; /* 전체 높이 고정 */
+  margin: 0 auto;
+  position: relative;
+
+  /* gsap */
+  opacity: 0;
+  transform: translateY(50px);
+}
+.con03 .accordion-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 아코디언 (기존 .carousel 대체) */
+.con03 .accordion {
+  width: 100%;
+  height: 100%;
+  display: flex; /* Flexbox 사용 */
+  gap: 10px; /* 아이템 간 간격 */
+  overflow: hidden;
+}
+
+.con03 .accordion-item {
+  position: relative;
+  flex-grow: 1; /* 기본적으로 공간을 균등하게 나눠 가짐 */
+  height: 100%;
+  /* border-radius: 20px; */
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  /* 애니메이션 효과를 위해 transition 설정 */
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.con03 .accordion-item.active {
+  flex-grow: 4; /* 활성화되면 더 넓은 공간을 차지 */
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+}
+
+.con03 .accordion-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* 비활성화 시 더 어둡게 만들어 집중도 높이기 */
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+  /* border-radius: 20px; */
+  opacity: 1;
+  transition: opacity 0.6s;
+}
+
+/* 활성화된 아이템의 오버레이를 덜 어둡게 */
+.con03 .accordion-item.active::before {
+  background: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.5));
+}
+
+.con03 .bg1 {
+  background: url(../img/rooms/cc.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.con03 .bg2 {
+  background: url(../img/rooms/roomimg.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.con03 .bg3 {
+  background: url(../img/rooms/visual2.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.con03 .bg4 {
+  background: url(../img/rooms/visual.jpg) no-repeat center;
+  background-size: cover;
+}
+
+/* 라벨 */
+.con03 .accordion-item .label {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  color: white;
+  z-index: 2;
+  transition: opacity 0.3s, transform 0.6s;
+}
+
+.con03 .accordion-item:not(.active) .label {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.con03 .accordion-item h3 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.con03 .accordion-item p {
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* con04 */
 
 .con04 {
   width: 100%;
-  height: 100%;
-  background: url(/img/rooms/3.jpg) no-repeat center;
+  min-height: 100dvh;
+  height: auto;
+  padding-bottom: 300px;
+  background: url(../img/rooms/3.jpg) no-repeat center;
   background-size: cover;
+  position: relative;
 }
 .con04 .full {
   width: 100%;
-  margin: 100px auto;
+  margin: 0px auto;
   text-align: center;
-  padding-top: 10%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .con04 .full h2 {
   color: #f1927b;
-  font-size: 150px;
+  letter-spacing: 2vw;
+  font-size: 9vw;
 }
-.con04 .full p {
-  font-size: 70px;
-  font-weight: bold;
+.con04 .full span {
+  font-size: 4vw;
+  font-weight: 300;
+  letter-spacing: 1px;
   color: #fff;
+  display: block;
 }
+
 .con04 .full .btn {
   width: 250px;
   height: 70px;
-  line-height: 70px;
-  margin: 10% auto;
 
+  line-height: 70px;
+  margin: 0 auto;
+  margin-top: 100px;
   background-color: #ffffff96;
   color: #f1927b;
   border: 2px solid #f1927b;
   border-radius: 20px;
   font-weight: bold;
   /* 귀여운 효과용 */
-  transition: all 0.2s ease; /* 부드럽게 변화 */
+  /* transition: all 0.2s ease;  */
   box-shadow: 0 5px 0 #f1927b; /* 살짝 입체 느낌 */
 }
 .con04 .full .btn a {
@@ -419,75 +369,403 @@ body {
   height: 100%;
   width: 100%;
   font-size: 24px;
+  font-family: "BlackerSans";
 }
 
 .con04 .full .btn:hover {
   transform: scale(0.95); /* 눌릴 때 살짝 줄어듬 */
   box-shadow: 0 2px 0 #f1927b; /* 그림자도 낮아짐 */
 }
-@media (min-width: 1200px) {
-  .con03 .imgBox {
-    width: 80%;
-    gap: 50px;
-  }
-  .con03 h2 {
-    font-size: 70px;
-  }
-  .con03 .top {
-    font-size: 40px;
-  }
-  .con03 .bottom .bar {
-    width: 350px;
-  }
-}
 
-/* 태블릿 */
+/* 반응형 - 태블릿 */
+
 @media (min-width: 620px) and (max-width: 1200px) {
-  .con03 .imgBox {
-    width: 90%;
-    gap: 30px;
+  /* con01 */
+  .con01 {
+    min-height: auto;
+    height: auto;
+    padding: 20px 30px;
+    box-sizing: border-box;
   }
-  .con03 h2 {
-    font-size: 50px;
-  }
-  .con03 .top {
-    font-size: 30px;
-  }
-  .con03 .bottom .bar {
-    width: 250px;
-  }
-}
 
-/* 모바일 */
-@media (max-width: 620px) {
-  .con03 .wrap {
-    margin: 100px auto;
-  }
-  .con03 h2 {
-    font-size: 35px;
-    padding-bottom: 30px;
-  }
-  .con03 .imgBox {
+  .con01 .wrap {
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
+  }
+
+  .con01 .right,
+  .con01 .left {
+    width: 100%;
     height: auto;
   }
-  .con03 .imgBox li {
+  .con01 .right,
+  .con01 .left img {
     width: 100%;
-    height: 200px;
+    object-fit: cover;
   }
-  .con03 .top {
-    font-size: 20px;
+  .con01 .right {
+    order: -1; /* 이미지를 먼저 보이게 */
+    height: 500px;
+  }
+
+  .con01 .leftText {
+    margin-top: 0;
+  }
+
+  .con01 .leftText h2 {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .con01 .leftText p {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .con01 .leftText .pinkbox {
+    margin-top: 30px;
+    padding: 30px 20px;
+    border-radius: 50px 0px 50px 0px;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .con01 .leftimgbox {
+    margin-top: 30px;
+  }
+
+  /* con02 */
+  .con02 {
+    min-height: auto;
+    height: auto;
+    padding: 10px 30px;
+    box-sizing: border-box;
+  }
+
+  .con02 .wrap {
+    padding: 60px 30px;
+  }
+
+  .con02 h2 {
+    font-size: 36px;
+    padding: 30px 0;
+  }
+
+  .con02 .bg1,
+  .con02 .bg2 {
+    margin-bottom: 30px;
+  }
+
+  .con02 .bg3 .icon {
+    width: 80%;
     gap: 40px;
-    bottom: -5%;
+    font-size: 45px;
   }
-  .con03 .bottom .bar {
-    width: 150px;
+
+  .con02 .icon li {
+    width: 15%;
   }
-  .con03 .prev,
-  .con03 .next {
-    top: auto;
-    bottom: 0;
-    transform: translateY(0);
+
+  .con02 .round {
+    right: -40%;
+    width: 70%;
+  }
+
+  .con03 h2 {
+    font-size: 60px;
+    margin-bottom: 60px;
+  }
+
+  .con03 .top {
+    font-size: 35px;
+  }
+
+  .con03 .accordion-container {
+    height: 500px;
+  }
+
+  /* con04 */
+  .con04 {
+    height: 100vh;
+  }
+
+  .con04 .full .btn {
+    width: 220px;
+    height: 60px;
+    line-height: 60px;
+    margin: 8% auto;
+  }
+
+  .con04 .full .btn a {
+    font-size: 20px;
+  }
+
+  /* footer */
+  footer {
+    padding: 50px 30px 30px;
+  }
+
+  footer .inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  footer .info li {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  footer .sns {
+    gap: 20px;
+  }
+
+  footer .sns li a {
+    font-size: 22px;
+  }
+
+  footer .bottom {
+    padding-top: 25px;
+    font-size: 12px;
+  }
+}
+
+/* 반응형 - 모바일 */
+
+@media (max-width: 620px) {
+  /* con01 */
+  .con01 {
+    height: auto;
+    min-height: auto;
+    padding: 60px 20px;
+    box-sizing: border-box;
+  }
+
+  .con01 .wrap {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .con01 .right,
+  .con01 .left {
+    width: 100%;
+    height: auto;
+  }
+
+  .con01 .right {
+    order: -1;
+    height: 300px;
+  }
+
+  .con01 .right img {
+    border-radius: 15px;
+  }
+
+  .con01 .leftText {
+    margin-top: 0;
+  }
+
+  .con01 .leftText p {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .con01 .leftText h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .con01 .leftText .pinkbox {
+    margin-top: 20px;
+    padding: 25px 18px;
+    border-radius: 40px 0px 40px 0px;
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .con01 .leftimgbox {
+    margin-top: 20px;
+  }
+
+  .con01 .leftimgbox img {
+    border-radius: 10px;
+  }
+
+  /* con02 */
+  .con02 {
+    height: auto;
+    padding: 60px 20px 80px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .con02 .wrap {
+    padding: 40px 20px;
+  }
+
+  .con02 h2 {
+    font-size: 28px;
+    padding: 30px 0;
+  }
+
+  .con02 span,
+  .con02 p {
+    font-size: 14px;
+  }
+
+  .con02 .bg1,
+  .con02 .bg2 {
+    margin-bottom: 20px;
+    padding: 25px 20px;
+    border-radius: 15px;
+    text-align: center;
+  }
+
+  .con02 .bg3 {
+    padding: 25px 15px;
+    border-radius: 15px;
+  }
+
+  .con02 h2 {
+    text-align: center;
+  }
+  .con02 .bg3 .icon {
+    width: 100%;
+    gap: 20px;
+    font-size: 32px;
+    justify-content: center;
+  }
+
+  .con02 .icon li {
+    width: calc(25% - 20px);
+    min-width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .con02 .icon li i {
+    font-size: 32px;
+  }
+
+  .con02 .icon li p {
+    font-size: 11px;
+  }
+
+  .con02 .round {
+    right: -50%;
+    bottom: -10%;
+    width: 80%;
+  }
+
+  .con03 {
+    padding: 100px 0 200px;
+    box-sizing: border-box;
+  }
+
+  .con03 h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+
+  .con03 .accordion-container {
+    height: 700px;
+    padding: 0 20px; /* 좌우 패딩 추가 */
+    box-sizing: border-box;
+  }
+
+  .con03 .accordion {
+    flex-direction: column; /* 모바일에서는 세로로 쌓기 */
+    gap: 10px;
+  }
+
+  .con03 .accordion-item.active {
+    flex-grow: 3; /* 활성화된 아이템이 더 많은 공간 차지 */
+  }
+
+  .con03 .accordion-item {
+    flex-grow: 1;
+    /* border-radius: 15px; */
+  }
+
+  .con03 .accordion-item h3 {
+    font-size: 22px;
+  }
+
+  .con03 .accordion-item p {
+    font-size: 12px;
+  }
+
+  .con03 .top {
+    font-size: 25px;
+    gap: 50px;
+  }
+  /* con04 */
+  .con04 {
+    height: 100vh;
+  }
+
+  .con04 .full {
+    margin: 50px auto;
+    padding-top: 20%;
+  }
+
+  .con04 .full h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+
+  .con04 .full p {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .con04 .full .btn {
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    margin: 15% auto;
+    border-radius: 15px;
+  }
+
+  .con04 .full .btn a {
+    font-size: 16px;
+  }
+
+  /* footer */
+  footer {
+    padding: 40px 20px 25px;
+  }
+
+  footer .inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  footer .info li {
+    font-size: 11px;
+    margin-bottom: 7px;
+    line-height: 1.5;
+  }
+
+  footer .sns {
+    gap: 15px;
+  }
+
+  footer .sns li a {
+    font-size: 18px;
+  }
+
+  footer .bottom {
+    padding-top: 20px;
+    font-size: 10px;
   }
 }

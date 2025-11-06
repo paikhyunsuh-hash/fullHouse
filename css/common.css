@@ -90,28 +90,60 @@ body {
   word-break: keep-all;
 }
 
+.cursor img {
+  width: 100%;
+}
+
+.cursor1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(0%, 10%);
+  z-index: 999;
+}
+
+.cursor2 {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+}
+.cursor2 .click-image {
+  display: none;
+}
+
 /* 폰트 */
 h2 {
-  font-family: "BlackerSans";
+  font-family: "BlackerSans", "AritaBuriKR";
   font-size: 70px;
   font-weight: bold;
   text-transform: uppercase;
 }
 h3 {
-  font-family: "BlackerSans";
+  font-family: "BlackerSans", "AritaBuriKR";
   font-size: 40px;
   font-weight: bold;
   text-transform: uppercase;
 }
 h4 {
-  font-family: "BlackerSans";
+  font-family: "BlackerSans", "AritaBuriKR";
   font-size: 24px;
   font-weight: bold;
 }
 p {
-  font-family: "AritaBuriKR";
+  font-family: "AritaBuriKR", "BlackerSans";
   font-size: 16px;
   font-weight: normal;
+}
+
+.num {
+  font-family: "AritaBuriKR", "BlackerSans";
+}
+.ko {
+  font-family: "AritaBuriKR", "BlackerSans";
 }
 
 /* HEADER */
@@ -126,12 +158,12 @@ header {
   padding: 0 20px;
   box-sizing: border-box;
   z-index: 9;
-
   transition: background-color 1s ease, color 1s ease;
 }
 header.scrolled {
   background-color: rgba(241, 146, 123, 0.8);
 }
+
 header .inner {
   max-width: 1200px;
   padding: 0px 20px;
@@ -156,7 +188,7 @@ header h1 img {
   object-fit: cover;
   filter: invert();
 }
-header nav .bar {
+header nav .burger {
   display: none;
   cursor: pointer;
 }
@@ -168,7 +200,7 @@ header nav ul {
 header nav ul li a {
   display: flex;
   align-items: center;
-  height: 50px; /* same as logo height */
+  height: 50px;
 }
 header nav .burger {
   display: none;
@@ -176,23 +208,51 @@ header nav .burger {
 
 /* SIDE MENU */
 #menu {
+  background-color: transparent;
+  color: #fff;
+  width: 100%;
+  text-align: right;
+  height: calc(100vh - 80px);
+  position: fixed;
+  top: 80px;
+  right: 0%;
+  top: 80px;
+  z-index: 10;
+  transition: background-color 1s ease, color 1s ease;
   font-family: "BlackerSans";
   display: none;
+}
+#menu.active {
+  display: block;
+}
+#menu.scrolled {
+  background-color: rgba(241, 146, 123, 0.8);
+}
+#menu ul {
+  padding: 10px 20px;
+}
+#menu ul li {
+  margin-bottom: 50px;
+}
+#container {
+  transition: 0.5s;
+}
+#container.active {
+  opacity: 0.8;
+  filter: blur(5px);
 }
 
 /* FOOTER */
 footer {
   width: 100%;
-  /* background-color: rgba(241, 146, 123, 0.8); */
   background-color: rgba(133, 191, 193, 0.8);
   color: #fff;
-  font-family: "BlackerSans";
   box-sizing: border-box;
   padding: 50px 20px;
-  /* position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 999; */
+  z-index: 999;
   overflow-x: hidden;
   font-family: "AritaBuriKR";
   font-size: 16px;
@@ -222,6 +282,92 @@ footer .bottom {
   font-size: 12px;
 }
 
+/* visual */
+#visual {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+
+#visual .panel li {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: none;
+}
+
+#visual .textBox {
+  width: 100%;
+  margin: 25% auto;
+  color: #fff;
+  text-align: center;
+}
+
+#visual h2 {
+  letter-spacing: 20px;
+  margin-bottom: 50px;
+  font-size: 5vw;
+}
+#visual P {
+  line-height: 1.6;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+/* VISUAL navi */
+
+#visual .navi {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  font-family: "BlackerSans";
+}
+#visual .navi li:nth-child(2) {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+#visual .navi li:nth-child(2) span {
+  margin: 0px 10px;
+  display: none;
+}
+#visual .bar {
+  width: 500px;
+  height: 1px;
+  background-color: #ccc;
+  display: block;
+}
+#visual .bar > div {
+  width: 33.33%;
+  height: 100%;
+  background-color: #32f8ff;
+}
+#visual .navi li a {
+  padding: 10px;
+  /* z-index: 10; */
+}
+
+#visual .navi li:first-child {
+  color: rgb(255, 255, 255);
+}
+
+#visual .navi li:last-child {
+  color: rgb(255, 255, 255);
+}
+
+/* 모바일 */
 @media (max-width: 620px) {
   /* HEADER */
   header nav .burger {
@@ -239,38 +385,7 @@ footer .bottom {
   header nav ul {
     display: none;
   }
-  /* SIDE MENU */
-  #menu {
-    background-color: transparent;
-    color: #fff;
-    width: 100%;
-    text-align: right;
-    height: calc(100vh - 80px);
-    position: fixed;
-    top: 80px;
-    right: 0%;
-    top: 80px;
-    z-index: 10;
-    transition: background-color 1s ease, color 1s ease;
-    display: none;
-  }
-  #menu.active {
-    display: block;
-  }
-  #menu.scrolled {
-    background-color: rgba(241, 146, 123, 0.8);
-  }
-  #menu ul {
-    padding: 10px 20px;
-  }
-  #menu ul li {
-    margin-bottom: 50px;
-  }
 
-  #container.active {
-    opacity: 50%;
-    /* filter: blur(1px); */
-  }
   /* FOOTER */
   footer .inner {
     display: block;
@@ -291,4 +406,41 @@ footer .bottom {
     text-align: center;
     margin-bottom: 16px;
   }
+}
+
+@media (max-width: 620px) {
+  #visual {
+    height: 90vh; /* 모바일 주소창 감안하여 높이 살짝 줄임 */
+  }
+  #visual .titleBox {
+    width: 90%; /* 좌우 여백 확보 */
+    text-align: center;
+  }
+  #visual .titleBox h2 {
+    font-size: 13vw; /* 모바일에서 더 잘 보이도록 vw 값 증가 */
+    letter-spacing: 0.5vw;
+  }
+  #visual .titleBox p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  #visual .navi {
+    flex-direction: column; /* Prev/Next 버튼 세로 배치 */
+  }
+  #visual .navi .bar {
+    display: none; /* 바 숨김 */
+  }
+  #visual .bottom p {
+    margin: 10px 0; /* 상하 여백 */
+  }
+  #menu {
+    display: none;
+  }
+}
+
+/* 태블릿 */
+@media (min-width: 620px) and (max-width: 1200px) {
+}
+/* PC */
+@media (min-width: 1200px) {
 }
