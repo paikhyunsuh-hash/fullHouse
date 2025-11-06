@@ -285,6 +285,11 @@ p {
   margin-bottom: 5px;
   font-weight: 700;
 }
+.room-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .room-title {
   /* 기존 h3 스타일 상속 */
@@ -342,8 +347,11 @@ p {
   #visual {
     height: 100vh;
   }
-  #con03 {
+  /* #con03 {
     padding: 40px 0;
+  } */
+  #con03 .room-top {
+    display: block;
   }
   #con03 .room-list {
     /* display: block; */
@@ -483,7 +491,7 @@ footer {
   #con04 {
     min-height: 100dvh; /* 모바일에 강한 단위 */
     overflow: hidden;
-    padding: 30px 0 90px;
+    /* padding: 30px 0 90px; */
     box-sizing: border-box;
   }
   #con04 .wrap {
