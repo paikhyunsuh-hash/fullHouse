@@ -572,8 +572,8 @@ footer {
 
   #con04 {
     overflow: hidden;
-
     box-sizing: border-box;
+    padding: 0px;
   }
   #con04 .wrap {
     padding: 0 16px;
@@ -581,11 +581,16 @@ footer {
     gap: 28px;
   }
   #con04 .section-block {
-    gap: 16px;
+    /* gap: 16px; */
+    display: block;
+  }
+  #con04 .section-block ul {
+    display: flex;
   }
   #con04 .title h2 {
     font-size: 28px; /* 제목 줄바꿈 시 높이 과도 증가 방지 */
     letter-spacing: 1px;
+    margin-bottom: 10px;
   }
   #con04 .rules {
     gap: 14px;
