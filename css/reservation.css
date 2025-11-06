@@ -229,6 +229,9 @@ p {
   box-sizing: border-box;
   height: 100vh;
 }
+#con03 .slider-container {
+  height: 100%;
+}
 
 .section-title {
   /* 기존 폰트 스타일 상속 */
@@ -251,6 +254,7 @@ p {
   margin: 0px auto;
   position: relative;
   padding: 0;
+  height: 100%;
 }
 
 .room-list {
@@ -709,7 +713,11 @@ footer {
   }
   /* con03 */
   #con03 {
-    padding: 40px 0;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  #con03 .slider-container {
+    height: 100%;
   }
   .room-card-wrapper {
     flex: 0 0 100%;
