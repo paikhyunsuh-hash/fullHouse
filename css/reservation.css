@@ -221,7 +221,9 @@ p {
   color: #ddd;
   font-size: 14px;
 }
+
 /* con03 */
+
 #con03 {
   padding-top: 160px;
   box-sizing: border-box;
@@ -232,7 +234,6 @@ p {
 }
 
 .section-title {
-  /* 기존 폰트 스타일 상속 */
   font-size: 40px;
   text-align: center;
   margin-bottom: 50px;
@@ -246,7 +247,6 @@ p {
   font-family: "BlackerSans";
 }
 
-/* --- 슬라이더 컨테이너 (버튼 포함) --- */
 .slider-container {
   max-width: 1200px;
   margin: 0px auto;
@@ -261,16 +261,10 @@ p {
   display: flex;
   justify-content: center;
   gap: 30px;
-  transition: transform 0.5s ease-in-out; /* JS 슬라이드 애니메이션 효과 */
-  /* padding-bottom: 20px; 혹시 모를 그림자나 하단 여백 확보 */
+  transition: transform 0.5s ease-in-out;
 }
-/* .room-list::-webkit-scrollbar {
-  display: none;
-} */
 
 .room-card-wrapper {
-  /* flex: 0 0 50%; PC: 한 화면에 2개씩 보이게 설정 */
-  /* min-width: 50%; 최소 너비 유지 */
   width: calc((100% - 25px) / 2);
   box-sizing: border-box;
 }
@@ -724,8 +718,9 @@ footer {
   }
   /* con03 */
   #con03 {
-    padding: 0px;
+    padding: 100px 0px;
     box-sizing: border-box;
+    height: 100%;
   }
   #con03 .slider-container {
     height: 100%;
